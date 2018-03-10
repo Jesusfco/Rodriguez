@@ -1,0 +1,148 @@
+.slider {
+    height: 100vh;
+    padding-top: 100px;
+    width: 100%;
+    position: relative;
+}
+
+.slider-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.img-container {
+    width: 100%;
+    height: 100%;
+}
+
+.slider-piece {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+}
+
+.slider-circles {
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: absolute;
+    display: table;
+}
+
+.slider-circles div {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin: 7px;
+    background: rgb(80, 80, 80);
+    display: inline-block;
+}
+
+.slider-circles .active {
+    background: #003A66;
+}
+
+.slider .indicators {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.indicators.left {
+    left: 10px;
+}
+
+.indicators.right {
+    right: 10px;
+}
+
+
+/* Quien soy section */
+
+.quien {
+    padding: 40px 0
+}
+
+.quien-container {
+    width: 70%;
+    max-width: 900px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.quien .text {
+    width: 60%;
+    padding: 0 20px 0 0;
+}
+
+.quien .text div {
+    margin-top: 10px;
+    background: #003A66;
+    float: right;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 10px;
+}
+
+.quien-container img {
+    width: 100%;
+    display: block;
+}
+
+h1 {}
+
+
+/* Parralax 1 */
+
+.parallax1 {
+    height: 50vh;
+    overflow: hidden;
+}
+
+.parallax1 img {
+    width: 100%;
+}
+
+
+/* servicios */
+
+.servicios {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.servicios-container {
+    display: flex;
+    width: 85%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 40px;
+    justify-content: space-between;
+}
+
+.servicios-piece {
+    width: 30%;
+    display: block;
+    cursor: pointer;
+}
+
+.servicios-piece h3 {
+    text-align: center;
+}
+
+.servicios-piece img {
+    width: 100%;
+    display: block;
+}
+
+.servicios-piece div {
+    text-align: center;
+    width: 100%;
+    padding: 7px 0;
+    background: #003A66;
+    color: white;
+    font-size: 12px;
+}
