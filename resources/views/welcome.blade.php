@@ -120,7 +120,7 @@
 
         
         
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="{{ url('js/jquery-2.1.1.min.js') }}"></script>
         <script src="{{ url('js/menu.js') }}"></script>
     </body> 
 </html>
