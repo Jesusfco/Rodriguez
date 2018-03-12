@@ -86,8 +86,21 @@
             </div>
         </div>
         
-        <div class="parallax1" style="background-image: url(img/index/parallax1.jpg)">
-            
+        <div class="enterprise-slider">
+            <div class="enterprise-slider-container">
+                <div><img src="img/index/enterprise-logo1.png"></div>
+                <div><img src="img/index/enterprise-logo2.png"></div>
+                <div><img src="img/index/enterprise-logo3.png"></div>
+                <div><img src="img/index/enterprise-logo8.png"></div>
+                <div><img src="img/index/enterprise-logo4.png"></div>
+                <div><img src="img/index/enterprise-logo5.png"></div>
+                <div><img src="img/index/enterprise-logo6.png"></div>
+                <div><img src="img/index/enterprise-logo7.png"></div>
+                
+                <div><img src="img/index/enterprise-logo9.png"></div>
+                <div><img src="img/index/enterprise-logo10.png"></div>
+                <!-- <div><img src="img/index/enterprise-logo11.png"></div>                 -->
+            </div>
         </div>
 
         <div class="servicios">
@@ -118,10 +131,12 @@
 
         </div>      
 
-        
+        <div class="parallax1" style="background-image: url(img/index/parallax1.jpg)">            
+        </div>
         
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="{{ url('js/menu.js') }}"></script>
         <script src="{{ url('js/parralax-image.js') }}"></script>
+        <script src="js/slider-logos-enterprise.js"></script>
     </body> 
 </html>
