@@ -37,7 +37,7 @@
 
                     <div class="slider-piece centrar" style=" background-image: url('{{ url('img/index/1.jpg') }}') ">
                         <div>
-                            <h3>Apasionado por Código</h3>
+                            <h3>Apasionado por el Código</h3>
                             <a class="linea"></a>
                             <p>El desarrollo de software ofrece el poder de crear únicamente necesitando un computador</p>
                             
