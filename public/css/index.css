@@ -97,7 +97,8 @@ h1 {}
 /* Parralax 1 */
 
 .parallax1 {
-    height: 50vh;
+    height: 40vh;
+    max-height: 700px;
     max-height: 450px;
     overflow: hidden;
     background-size: cover;
@@ -179,4 +180,36 @@ h1 {}
     max-width: 100%;
     display: block;
     margin: auto;
+}
+
+.proyects {
+    padding: 100px 0;
+    display: block;
+}
+
+.proyects-container{
+    width: 70%;
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.proyects-piece{
+    width: 100%;
+    padding: 20px 0px;
+    display: flex;
+}
+
+.proyects-piece div {
+    width: 50%;
+    text-align: center;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+}
+
+.proyects-piece div img {
+    display: block;
+    width: 100%;
 }
