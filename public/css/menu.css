@@ -161,4 +161,7 @@ nav {
     .movMenu .lenguage a {
         display: inline-block;
     }
+    .movMenu .lenguage img {
+        margin: 10px
+    }
 }
