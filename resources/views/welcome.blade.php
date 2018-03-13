@@ -9,10 +9,13 @@
         <title>Rodríguez Services</title>
 
         <!-- Fonts -->      
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway:100i,300,400,900" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">        
 
         <!-- CSS -->
         <link href="{{ url('css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
+        <link href="{{ url('css/loader.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
         <link href="{{ url('css/menu.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
         <link href="{{ url('css/index.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
 
@@ -20,56 +23,72 @@
     </head>
     <body>
         
-            <!-- @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif -->
-
-        <nav>
-            <div class="container">
-                
-                <div class="logo"> 
-                    <img src="{{ url('img/logoNav.png') }}">
-                </div>
-                
-                <div class="links">
-                    <a class="pc">QUIEN SOY</a> 
-                    <a class="pc">SERVICIOS</a>
-                    <a class="pc">PORTAFOLIO</a>
-                    <a class="pc">CONTACTO</a>
-
-                    <div id="nav-icon" class="mov">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-
-                
+            <div class="loader">
+                <div class="backgroundImg"></div>
+                <div class="loaderContainer">
+                    <ul class="hidden">
+                        <li>R</li>
+                        <li>O</li>
+                        <li>D</li>
+                        <li>R</li>
+                        <li>I</li>
+                        <li>G</li>
+                        <li>U</li>
+                        <li>E</li>
+                        <li>Z</li>
+                    </ul> 
+                    <p class="hidden"> SERVICES & SOLUTIONS</p> 
+                </div>    
             </div>
-        </nav>
+
+        @include('menuNav')
 
         <div class="slider">
+
             <div class="slider-container">
+
                 <div class="img-container">
-                    <div class="slider-piece" style=" background-image: url('{{ url('img/index/1.jpg') }}') "></div>
+
+                    <div class="slider-piece centrar" style=" background-image: url('{{ url('img/index/1.jpg') }}') ">
+                        <div>
+                            <h3>Apasionado por Codigo</h3>
+                            <a class="linea"></a>
+                            <p>El desarrollo de software ofrece el poder de crear unicamente necesitando un computador</p>
+                            
+                        </div>
+                    </div>
+
+                    <div class="slider-piece centrar" style=" background-image: url('{{ url('img/index/2.jpg') }}') ">
+
+                        <div>
+                            <h3>Ideología</h3>
+                            <a class="linea"></a>
+                            <p>Las metas de mi carrera profesional se resumen en la filosofía de un desarrollo y progreso constante (KAIZEN)</p>
+                            <a></a>
+                        </div>
+
+                    </div>
+
+                    <div class="slider-piece" style=" background-image: url('{{ url('img/index/3.jpg') }}') "></div>
+                    <div class="slider-piece centrar" style=" background-image: url('{{ url('img/index/4.jpg') }}') ">
+
+                        <div>
+                            <h3>TRABAJO COLABORATIVO</h3>
+                            <a class="linea"></a>
+                            <p>Proximo desarrollo de aplicación con enfoque en procesos conductuales.</p>
+                            
+                        </div>
+
+                    </div>
+
                 </div>
-                <div class="indicators left"><</div>
-                <div class="indicators right">></div>
+                <div class="indicators left" onclick="sliderBefore()"><i class="material-icons" >keyboard_arrow_left</i></div>
+                <div class="indicators right" onclick="sliderNext()"><i class="material-icons">keyboard_arrow_right</i></div>
 
             </div>
 
             <div class="slider-circles">
-                <div class="active"></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                
             </div>
 
         </div>
@@ -198,7 +217,9 @@
         </div>
         
         <script src="{{ url('js/jquery-2.1.1.min.js') }}"></script>
+        <script src="{{ url('js/loader.js') }}"></script>
         <script src="{{ url('js/menu.js') }}"></script>
+        <script src="{{ url('js/sliderIndex.js') }}"></script>
         <script src="{{ url('js/parralax-image.js') }}"></script>
         <script src="js/slider-logos-enterprise.js"></script>
     </body> 

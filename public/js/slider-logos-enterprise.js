@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     $('.enterprise-slider-container').width(sliderLogoLenght * sliderLogoWidth);
 
-    setInterval(moveRight, 4000);
+    setInterval(moveRight, 3000);
 });
 
 $(document).resize(function() {
@@ -18,7 +18,7 @@ $(document).resize(function() {
 function moveRight() {
     $('.enterprise-slider-container').animate({
         left: -$('.enterprise-slider-container div').innerWidth()
-    }, 1000, function() {
+    }, 500, function() {
         $('.enterprise-slider-container div:first-child').appendTo('.enterprise-slider-container');
         $('.enterprise-slider-container').css('left', '');
     });

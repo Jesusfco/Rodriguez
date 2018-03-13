@@ -21,6 +21,31 @@
     height: 100%;
     position: absolute;
     background-size: cover;
+    background-position: center;
+}
+
+.slider-piece div {
+    width: 50%;
+    max-width: 650px;
+    text-align: center;
+    color: white;
+}
+
+.slider-piece div h3 {
+    font-size: 50px;
+}
+
+.slider-piece .linea {
+    margin: 2px 0;
+    padding: 2px 10px;
+    background: rgb(248, 190, 0);
+    border-radius: 4px;
+    display: block;
+}
+
+.slider-piece div img {
+    width: 70px;
+    /* display: block; */
 }
 
 .slider-circles {
@@ -48,6 +73,12 @@
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
+    color: white;
+    cursor: pointer;
+}
+
+.slider .indicators i {
+    font-size: 4em
 }
 
 .indicators.left {
@@ -56,6 +87,30 @@
 
 .indicators.right {
     right: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .slider-piece div {
+        width: 90%;
+    }
+    .slider-piece div h3 {
+        font-size: 30px;
+    }
+    .slider-piece .linea {
+        padding: 1px;
+    }
+    .indicators.left {
+        left: 0;
+    }
+    .indicators.right {
+        right: 0;
+    }
+    .indicators {
+        height: 100%;
+        top: 0;
+        transform: translate(0);
+        opacity: 0;
+    }
 }
 
 

@@ -53,6 +53,7 @@ nav {
     -o-transition: .5s ease-in-out;
     transition: .5s ease-in-out;
     cursor: pointer;
+    z-index: 20;
 }
 
 #nav-icon span {
@@ -109,4 +110,35 @@ nav {
     transform: rotate(-135deg);
 }
 
-@media screen and (max-width: 800px) {}
+.movMenu {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .movMenu {
+        display: block;
+        position: fixed;
+        width: 250px;
+        right: 0;
+        top: 0;
+        background: rgb(37, 37, 37);
+        z-index: 15;
+        transition: .5s ease;
+        height: 100vh;
+    }
+    .movMenu img {
+        width: 80%;
+        margin: 40px auto;
+        display: block;
+        /* margin-bottom: 50px; */
+    }
+    .movMenu li {
+        list-style: none;
+        color: white;
+        padding: 10px 20px;
+        border-top: 1px solid rgb(71, 71, 71);
+    }
+    .movMenu.hidden {
+        transform: translatex(100%)
+    }
+}
