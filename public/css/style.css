@@ -23,7 +23,7 @@ div {
 }
 
 .mov {
-    display: none;
+    display: none !important;
 }
 
 .centrar {
@@ -34,9 +34,9 @@ div {
 
 @media screen and (max-width: 800px) {
     .mov {
-        display: block;
+        display: block !important;
     }
     .pc {
-        display: none;
+        display: none !important;
     }
 }

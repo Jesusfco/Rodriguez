@@ -138,7 +138,8 @@
     float: right;
     padding: 5px 10px;
     color: white;
-    border-radius: 10px;
+    border-radius: 0px;
+    box-shadow: 3px 3px 17px black;
 }
 
 .quien-container img {
@@ -146,7 +147,17 @@
     display: block;
 }
 
-h1 {}
+@media screen and (max-width: 800px) {
+    .quien-container {
+        width: 90%;
+    }
+    .quien .text {
+        width: 100%;
+    }
+    .quien h1 {
+        text-align: center;
+    }
+}
 
 
 /* Parralax 1 */
@@ -301,4 +312,19 @@ h1 {}
 .proyects-piece div img {
     display: block;
     width: 100%;
+}
+
+@media screen and (max-width:800px) {
+    .proyects-piece div {
+        width: 100%;
+    }
+    .proyects-container {
+        width: 100%;
+    }
+    .proyects-piece .text {
+        padding: 0;
+    }
+    .proyects-piece .text p {
+        padding: 5px 20px;
+    }
 }

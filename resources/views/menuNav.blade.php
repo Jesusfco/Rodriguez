@@ -24,11 +24,11 @@
         <div class="movMenu hidden">
             <img src="{{ url('img/logoNav.png') }}">
             <ul>
-                <li>INICIO</li>
-                <li>QUIEN SOY</li>
-                <li>PORTAFOLIO</li>
-                <li>CONTACTO</li>
-                <li>LOGIN</li>
+                <li class="hidden">INICIO</li>
+                <li class="hidden">QUIEN SOY</li>
+                <li class="hidden">PORTAFOLIO</li>
+                <li class="hidden">CONTACTO</li>
+                <li class="hidden">LOGIN</li>
             </ul>    
         </div>        
     </div>
