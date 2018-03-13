@@ -21,3 +21,16 @@ li,
 div {
     font-family: 'Open Sans', sans-serif;
 }
+
+.mov {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .mov {
+        display: block;
+    }
+    .pc {
+        display: none;
+    }
+}

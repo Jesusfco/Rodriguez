@@ -8,7 +8,7 @@
 
         <title>Rodríguez Services</title>
 
-        <!-- Fonts -->
+        <!-- Fonts -->      
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- CSS -->
@@ -39,11 +39,19 @@
                 </div>
                 
                 <div class="links">
-                    <a>QUIEN SOY</a> 
-                    <a>SERVICIOS</a>
-                    <a>PORTAFOLIO</a>
-                    <a>CONTACTO</a>
+                    <a class="pc">QUIEN SOY</a> 
+                    <a class="pc">SERVICIOS</a>
+                    <a class="pc">PORTAFOLIO</a>
+                    <a class="pc">CONTACTO</a>
+
+                    <div id="nav-icon" class="mov">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
+
+                
             </div>
         </nav>
 
@@ -110,6 +118,7 @@
             <div class="servicios-container">
 
                 <div class="servicios-piece">
+                    
                     <h3>SOFTWARE</h3>
                     <img src="img/index/servicio1.jpg">
                     <div> VER MÁS </div>
@@ -141,11 +150,13 @@
             <div class="proyects-container">
 
                 <div class="proyects-piece">
-                    <div>
-                        <h3>Amerigas</h3>
-                        <p>Desarrollo de pagina y aplicación web Amerigas 
-                        enfocada a la administración de ventas y proveedores
-                        de productos quimicos.</p>
+                    <div class="text">
+                        
+                            <h3>Amerigas</h3>
+                            <p>Desarrollo de pagina y aplicación web Amerigas 
+                            enfocada a la administración de ventas y proveedores
+                            de productos quimicos.</p>
+                            
                     </div>
                     <div>
                         <img src="img/index/destacados1.jpg">
@@ -156,14 +167,14 @@
                     <div>
                         <img src="img/index/destacados2.jpg">
                     </div>
-                    <div>
+                    <div class="text">
                         <h3>Wolosky Gym</h3>
                         <p>Desarrollo de pagina y aplicacion web de escritorio enfocada a la administración de pagos de alumnos y profesores mediante el acceso con sistema biometrico</p>
                     </div>
                 </div>
 
                 <div class="proyects-piece">
-                    <div>
+                    <div class="text">
                         <h3>RESIDENCIAL CHULAVISTA</h3>
                         <p>Desarrollo de pagina y aplicación web Residencial Chulavista enfocada a la administracion de contratos de venta y pagos de casa de un fraccionamiento. 
                         </p>
@@ -178,7 +189,7 @@
                     <div>
                         <img src="img/index/destacados4.jpg">
                     </div>
-                    <div>
+                    <div class="text">
                         <h3>GRUPO RUILO</h3>
                         <p>Aplicación web enfocada a la administración de tareas a trabajadores mediante una interfaz estilo proveedor de correo, diseñado para generar bitacoras de progreso segun las nuevas entradas de los empleados por la tarea asignada.</p>
                     </div>
