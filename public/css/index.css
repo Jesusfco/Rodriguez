@@ -116,6 +116,7 @@
 
 /* Quien soy section */
 
+
 .quien {
     padding: 40px 0
 }
@@ -125,11 +126,12 @@
     max-width: 900px;
     display: flex;
     margin: 0 auto;
+    
 }
 
 .quien .text {
     width: 60%;
-    padding: 0 20px 0 0;
+    padding: 15px;
 }
 
 .quien .text div {
@@ -142,8 +144,11 @@
     box-shadow: 3px 3px 17px black;
 }
 
-.quien-container img {
-    width: 100%;
+
+
+.quien-container .img {
+    width: 50%;
+    height: 350px;
     display: block;
 }
 
@@ -197,6 +202,23 @@
     cursor: pointer;
 }
 
+.servicios-piece .imgCard {
+    position: relative;
+    padding: 0;
+}
+
+.servicios-piece .imgCard  h3 {
+    position: absolute;
+    display: block;
+    bottom: 3px;
+    left: 10px;
+    color: white;
+    /*transform: translate(-50%, -50%);*/
+
+    font-size: 1.5em;
+    text-shadow: 0px 2px 4px #000001b5;
+}
+
 .servicios-piece h3 {
     text-align: center;
 }
@@ -206,13 +228,19 @@
     display: block;
 }
 
-.servicios-piece div {
-    text-align: center;
+.servicios-piece div:nth-child(2) {
+    
     width: 100%;
-    padding: 7px 0;
-    background: #003A66;
+    height: 120px;
+    padding: 7px;
+    background: rgb(37, 37, 37);
     color: white;
     font-size: 12px;
+}
+
+.servicios-piece a {
+    color: rgb(252, 204, 0);
+    font-style: normal;
 }
 
 @media screen and (max-width: 800px) {
@@ -234,7 +262,9 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-    background: rgb(238, 238, 238);
+    background: rgb(238, 238, 238) url(https://www.optimizacion-online.com/wp-content/uploads/2016/01/fondocolaboradores.jpg);
+    background-attachment: fixed;
+    /*background: rgb(238, 238, 238);*/
     padding: 50px 0;
 }
 
@@ -327,4 +357,171 @@
     .proyects-piece .text p {
         padding: 5px 20px;
     }
+}
+
+
+
+/*LINEA DEL TIEMPO*/
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+    position: relative;
+    
+    margin: 0 auto;
+    background-color: #001b2d;
+    position: cover;
+    color: white;
+}
+
+.timeline h3 {
+    color: white;
+}
+
+.timeline .backgr {
+    opacity: .3;
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #fccc00;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+/* Container around content */
+.timeline .container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: ;
+    width: 400px;
+}
+
+.timeline .container div {
+    position: relative;
+}
+.timeline .container div h3 {
+    position: absolute;
+    bottom: 6px;
+    left: 5px;
+    text-shadow: 0px 2px 4px #000001b5;
+}
+
+.timeline .container p {
+    padding: 7px
+}
+.timeline .container img {
+    width: 100%;
+}
+
+/* The circles on the timeline */
+.timeline .container::after {
+    content: '';
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    right: -11px;
+    background-color: white;
+    /*border: 4px solid #FF9F55;*/
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Fix the circle for containers on the right side */
+.timeline .right::after {
+    left: -11px;
+}
+
+/* Place the container to the left */
+.timeline .left {
+    left: 50%;
+    transform: translate(-100%,0);
+}
+
+
+/* Place the container to the right */
+.timeline .right {
+    margin-left: 50% !important;
+}
+
+/* Add arrows to the left container (pointing right) */
+.timeline .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.timeline .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+
+
+/* The actual content */
+.timeline .content {
+    /*padding: 20px 30px;*/
+    background-color: white;
+    position: relative;
+    border-radius: 2px;
+    color: black;
+    overflow: hidden;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline .timeline::after {
+    left: 31px;
+  }
+  
+  /* Full-width containers */
+  .timeline .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .timeline .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .timeline .left::after, .timeline .right::after {
+    left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .timeline .right {
+    left: 0%;
+  }
 }

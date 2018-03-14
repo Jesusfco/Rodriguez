@@ -22,6 +22,14 @@ div {
     font-family: 'Open Sans', sans-serif;
 }
 
+
+
+.img-background {
+     background-size: cover;
+    background-position: center;
+}
+
+
 .mov {
     display: none !important;
 }
@@ -30,6 +38,18 @@ div {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+.card{
+    box-shadow: 2px 2px 7px black;
+    border-radius: 2px;
+    transition: all .4s;
+}
+
+.card:hover {
+    box-shadow: 2px 2px 12px black;
+    /*transform: scale(1.05);*/
 }
 
 @media screen and (max-width: 800px) {
