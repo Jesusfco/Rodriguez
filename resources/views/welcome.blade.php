@@ -8,39 +8,25 @@
 
         <title>Rodríguez Services</title>
 
+        <!-- CSS -->
+        <link href="{{ url('css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
+        <link href="{{ url('css/loader.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
+        <link href="{{ url('css/menu.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
+        <link href="{{ url('css/index.css') }}" type="text/css" rel="stylesheet" media="screen,projection"> 
+        
         <!-- Fonts -->      
         <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway:100i,300,400,900" rel="stylesheet">
 
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">        
 
-        <!-- CSS -->
-        <link href="{{ url('css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
-        <link href="{{ url('css/loader.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
-        <link href="{{ url('css/menu.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
-        <link href="{{ url('css/index.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
+           
 
         
     </head>
     <body>
         
-            <div class="loader">
-                <div class="backgroundImg"></div>
-                <div class="loaderContainer">
-                    <ul class="hidden">
-                        <li>R</li>
-                        <li>O</li>
-                        <li>D</li>
-                        <li>R</li>
-                        <li>I</li>
-                        <li>G</li>
-                        <li>U</li>
-                        <li>E</li>
-                        <li>Z</li>
-                    </ul> 
-                    <p class="hidden"> SERVICES & SOLUTIONS</p> 
-                </div>    
-            </div>
-
+            
+        @include('loader')
         @include('menuNav')
 
         <div class="slider">

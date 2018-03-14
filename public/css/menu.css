@@ -134,6 +134,11 @@ nav {
         display: block;
         /* margin-bottom: 50px; */
     }
+    .movMenu i {
+        font-size: 25px;
+        position: relative;
+        top: 4px;
+    }
     .movMenu li {
         list-style: none;
         color: white;

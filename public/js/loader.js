@@ -1,5 +1,8 @@
 $(document).ready(function() {
-    $('.loader ul').removeClass('hidden');
+
+    setTimeout(function() {
+        $('.loader ul').removeClass('hidden');
+    }, 600);
     setTimeout(function() {
         $('.loader p').removeClass('hidden');
     }, 2000);

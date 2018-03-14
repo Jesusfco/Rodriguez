@@ -24,12 +24,18 @@
         <div class="movMenu hidden">
             <img src="{{ url('img/logoNav.png') }}">
             <ul>
-                <li class="hidden">INICIO</li>
-                <li class="hidden">QUIEN SOY</li>
-                <li class="hidden">PORTAFOLIO</li>
-                <li class="hidden">CONTACTO</li>
-                <li class="hidden">LOGIN</li>
-            </ul>    
+                <li class="hidden"> <i class="material-icons">home</i> INICIO</li>
+                <li class="hidden"> <i class="material-icons">person</i> QUIEN SOY</li>
+                <li class="hidden"> <i class="material-icons">build</i> SERVICIOS</li>
+                <li class="hidden"> <i class="material-icons">folder_special</i> PORTAFOLIO</li>
+                <li class="hidden"> <i class="material-icons">message</i> CONTACTO</li>
+                <li class="hidden"> <i class="material-icons">account_circle</i> LOGIN</li>
+            </ul>   
+            
+            <div class="lenguage">
+                <a> <img src="{{ url('img/mex.png') }}"></a>
+                <a> <img src="{{ url('img/usa.png') }}"></a>
+            </div>
         </div>        
     </div>
 </nav>

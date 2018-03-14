@@ -11,7 +11,7 @@
 }
 
 .backgroundImg {
-    background-image: url(https://semantic-ui.com/images/backgrounds/4.jpg);
+    background-image: url(http://rodriguez.amerigas.mx/img/loader.jpg);
     background-size: cover;
     position: absolute;
     height: 100%;
@@ -20,6 +20,7 @@
 }
 
 .loader ul {
+    display: block !important;
     list-style: none;
     margin: 0 auto;
     transition: all 2.5s ease;
@@ -33,6 +34,7 @@
 }
 
 .loaderContainer p {
+    display: block !important;
     transition: all 3s;
     opacity: 1;
 }
