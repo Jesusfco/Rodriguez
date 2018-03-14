@@ -152,4 +152,13 @@ nav {
     .movMenu.hidden {
         transform: translatex(100%)
     }
+    .movMenu .lenguage {
+        display: block;
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+    }
+    .movMenu .lenguage a {
+        display: inline-block;
+    }
 }
