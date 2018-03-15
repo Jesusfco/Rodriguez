@@ -200,6 +200,14 @@
     width: 30%;
     display: block;
     cursor: pointer;
+    transition: 2s ease;
+    transform: translate(0,0);
+}
+
+
+.servicios-piece.hidden{
+    transform: translate(-100vw,0);
+
 }
 
 .servicios-piece .imgCard {
@@ -212,9 +220,7 @@
     display: block;
     bottom: 3px;
     left: 10px;
-    color: white;
-    /*transform: translate(-50%, -50%);*/
-
+    color: white;    
     font-size: 1.5em;
     text-shadow: 0px 2px 4px #000001b5;
 }
@@ -364,20 +370,38 @@
 /*LINEA DEL TIEMPO*/
 
 /* The actual timeline (the vertical ruler) */
+.timelineContainer {
+    position: relative;
+    padding-top: 25px; 
+    background-color: white;
+}
+
+.timelineContainer h1 {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-bottom: 25px;
+    color: black;
+}
+
 .timeline {
     position: relative;
     
     margin: 0 auto;
-    background-color: #001b2d;
+    
     position: cover;
     color: white;
+    padding-top: 50px; 
 }
+
+
 
 .timeline h3 {
     color: white;
 }
 
-.timeline .backgr {
+.timelineContainer .backgr {
+    top: 0;
     opacity: .3;
     position: absolute; 
     width: 100%; 
@@ -395,6 +419,11 @@
     bottom: 0;
     left: 50%;
     margin-left: -3px;
+}
+
+.timeline .hidden {
+    opacity: 0 !important;
+    transform: scale(.9) !important;
 }
 
 /* Container around content */
@@ -429,7 +458,7 @@
     width: 23px;
     height: 23px;
     right: -11px;
-    background-color: white;
+    background-color: #fccc00;
     /*border: 4px solid #FF9F55;*/
     top: 15px;
     border-radius: 50%;
@@ -450,7 +479,7 @@
 
 /* Place the container to the right */
 .timeline .right {
-    margin-left: 50% !important;
+    margin-left: 50% ;
 }
 
 /* Add arrows to the left container (pointing right) */
@@ -491,10 +520,20 @@
     border-radius: 2px;
     color: black;
     overflow: hidden;
+    transition:  1.5s;
+    opacity: 1;
+    transform: scale(1);
 }
 
+
 /* Media queries - Responsive timeline on screens less than 600px wide */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
+    .timeline::after {
+        left: 15px;
+    }
+    .timeline .content {
+        width: 100%;
+    }
   /* Place the timelime to the left */
   .timeline .timeline::after {
     left: 31px;
@@ -503,13 +542,13 @@
   /* Full-width containers */
   .timeline .container {
     width: 100%;
-    padding-left: 70px;
+    padding-left: 45px;
     padding-right: 25px;
   }
   
   /* Make sure that all arrows are pointing leftwards */
   .timeline .container::before {
-    left: 60px;
+    left: 35px;
     border: medium solid white;
     border-width: 10px 10px 10px 0;
     border-color: transparent white transparent transparent;
@@ -517,11 +556,17 @@
 
   /* Make sure all circles are at the same spot */
   .timeline .left::after, .timeline .right::after {
-    left: 15px;
+    left: 2.4px;
   }
   
   /* Make all right containers behave like the left ones */
   .timeline .right {
-    left: 0%;
+    left: 0;
+    margin: 0;
+  }
+
+  .timeline .left {
+    transform: translate(0,0);
+    left: 0;
   }
 }

@@ -44,7 +44,7 @@ div {
 .card{
     box-shadow: 2px 2px 7px black;
     border-radius: 2px;
-    transition: all .4s;
+    transition: 1s;
 }
 
 .card:hover {

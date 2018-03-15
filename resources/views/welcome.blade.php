@@ -87,7 +87,7 @@
                 <div class="text">
 
                     <h1>SOY <br> FRANCISCO RODRÍGUEZ</h1>
-                    <img class="mov" src="{{ url('img/index/quien.jpg') }}">
+                    <img class="mov" width="100%" src="{{ url('img/index/quien.jpg') }}">
                     <p>Encontré en el desarrollo de software una pasión por la creación a través
                         del código, siempre sintiéndome sediento de conocer más.
                         <br><br>
@@ -125,7 +125,7 @@
 
             <div class="servicios-container">
 
-                <div class="servicios-piece card">
+                <div class="servicios-piece card hidden">
                     <div class="imgCard">
                         <img src="img/index/servicio1.jpg">
                         <h3>SOFTWARE</h3>
@@ -136,7 +136,7 @@
                         aplicaciones de escritorio, aplicaciones moviles o aplicaciones web</div>
                 </div>    
 
-                <div class="servicios-piece card">
+                <div class="servicios-piece card hidden">
                     <div class="imgCard">
                         <h3>MULTIMEDIA</h3>
                         <img src="img/index/servicio2.jpg">
@@ -149,7 +149,7 @@
 
                 </div>    
 
-                <div class="servicios-piece card">
+                <div class="servicios-piece card hidden">
                     <div class="imgCard">
                         <h3>FOTOGRAFÍA</h3>
                         <img src="img/index/servicio3.jpg">
@@ -167,139 +167,84 @@
         <div class="parallax1" style="background-image: url(img/index/parallax1.jpg)">  
         </div>
 
-        <!-- <div class="proyects">
+        
 
-            <h1>Trabajos Destacados</h1>
+        <div class="timelineContainer">
+            <h1 text-align="center">TRABAJOS DESTACADOS</h1>
+            <img class="backgr" alt="" data-type="image" src="img/index/timeline.webp" >
 
-            <div class="proyects-container">
+            <div class="timeline">
+            
+              
+                  <div class="container left">
+                    <div class="content card hidden">
 
-                <div class="proyects-piece">
-                    <div class="text">
-                        
+                        <div>
                             <h3>Amerigas</h3>
-                            <img class="mov" src="img/index/destacados1.jpg">
-                            <p>Desarrollo de página y aplicación web Amerigas 
-                            enfocada a la administración de ventas y proveedores
-                            de productos químicos.</p>
-                            
-                    </div>
-                    <div class="pc">
-                        <img src="img/index/destacados1.jpg">
-                    </div>
-                </div>
+                            <img src="img/index/destacados1.jpg">
+                        </div>       
 
-                <div class="proyects-piece">                
-                    <div class="pc">
-                        <img src="img/index/destacados2.jpg">
+                        <p>Desarrollo de página y aplicación web Amerigas 
+                        enfocada a la administración de ventas y proveedores
+                        de productos químicos.</p>
+
                     </div>
-                    <div class="text">
-                        <h3>Wolosky Gym</h3>
-                        <img class="mov" src="img/index/destacados2.jpg">
+                  </div>
+
+                  <div class="container right">
+                    <div class="content card hidden ">
+
+                        <div>
+                            <h3>Wolosky Gym</h3>
+                            <img src="img/index/destacados2.jpg">
+                        </div>
+                            
                         <p>Desarrollo de página y aplicación web de escritorio enfocada a la 
                             administración de pagos de alumnos y profesores mediante el acceso con sistema biométrico</p>
-                    </div>
-                </div>
 
-                <div class="proyects-piece">
-                    <div class="text">
-                        <h3>RESIDENCIAL CHULAVISTA</h3>
-                        <img class="mov" src="img/index/destacados3.jpg">
+                    </div>
+                  </div>
+
+                  <div class="container left">
+                    <div class="content card hidden">
+
+                        <div>
+                            <h3>RESIDENCIAL CHULAVISTA</h3>
+                            <img src="img/index/destacados3.jpg">
+                        </div>
+                            
                         <p>Desarrollo de página y aplicación web Residencial Chulavista enfocada a la administración de 
                             contratos de venta y pagos de casa de un fraccionamiento. 
                         </p>
-                    </div>
-                    <div class="pc">
-                        <img src="img/index/destacados3.jpg">
-                    </div>
-                </div>
 
-                <div class="proyects-piece">
-                    
-                    <div class="pc">
-                        <img src="img/index/destacados4.jpg">
                     </div>
-                    <div class="text">
-                        <h3>GRUPO RUILO</h3>
-                        <img class="mov" src="img/index/destacados4.jpg">
+                  </div>
+
+                  <div class="container right">
+                    <div class="content card hidden">
+
+                        <div>
+                            <h3>GRUPO RUILO</h3>
+                            <img src="img/index/destacados4.jpg">
+                        </div>    
                         <p>Aplicación web enfocada a la administración de tareas a trabajadores 
                             mediante una interfaz estilo proveedor de correo, diseñado para generar 
-                            bitácoras de progreso según las nuevas entradas de los empleados por la tarea asignada.</p>
+                            bitácoras de progreso según las nuevas entradas de los empleados por la tarea asignada.
+                        </p>
+
                     </div>
-                </div>
-            </div>
-        </div> -->
-
-
-        <div class="timeline">
-            <h1 text-align="center">TRABAJOS DESTACADOS</h1>
-            <img class="backgr" alt="" data-type="image" src="img/index/timeline.webp" >
-          
-              <div class="container left">
-                <div class="content">
-
-                    <div>
-                        <h3>Amerigas</h3>
-                        <img src="img/index/destacados1.jpg">
-                    </div>       
-
-                    <p>Desarrollo de página y aplicación web Amerigas 
-                    enfocada a la administración de ventas y proveedores
-                    de productos químicos.</p>
-
-                </div>
-              </div>
-
-              <div class="container right">
-                <div class="content">
-
-                    <div>
-                        <h3>Wolosky Gym</h3>
-                        <img src="img/index/destacados2.jpg">
-                    </div>
-                        
-                    <p>Desarrollo de página y aplicación web de escritorio enfocada a la 
-                        administración de pagos de alumnos y profesores mediante el acceso con sistema biométrico</p>
-
-                </div>
-              </div>
-
-              <div class="container left">
-                <div class="content">
-
-                    <div>
-                        <h3>RESIDENCIAL CHULAVISTA</h3>
-                        <img src="img/index/destacados3.jpg">
-                    </div>
-                        
-                    <p>Desarrollo de página y aplicación web Residencial Chulavista enfocada a la administración de 
-                        contratos de venta y pagos de casa de un fraccionamiento. 
-                    </p>
-
-                </div>
-              </div>
-
-              <div class="container right">
-                <div class="content">
-
-                    <div>
-                        <h3>GRUPO RUILO</h3>
-                        <img src="img/index/destacados4.jpg">
-                    </div>    
-                    <p>Aplicación web enfocada a la administración de tareas a trabajadores 
-                        mediante una interfaz estilo proveedor de correo, diseñado para generar 
-                        bitácoras de progreso según las nuevas entradas de los empleados por la tarea asignada.
-                    </p>
-
-                </div>
-              </div>
-              
-            </div>
+                  </div>
+                  
+                </div> <!-- //timeline -->
+            </div> <!-- TIMELINE CONTAINER -->    
         
         <script src="{{ url('js/jquery-2.1.1.min.js') }}"></script>
+        <script src="{{ url('js/jquery.waypoints.min.js') }}"></script>
+        <script src="{{ url('js/index/waypoints.js') }}"></script>
         <script src="{{ url('js/loader.js') }}"></script>
         <script src="{{ url('js/menu.js') }}"></script>
-        <script src="{{ url('js/sliderIndex.js') }}"></script>
-        <script src="{{ url('js/parralax-image.js') }}"></script>
-        <script src="js/slider-logos-enterprise.js"></script>
+        <script src="{{ url('js/index/sliderIndex.js') }}"></script>
+        <script src="{{ url('js/index/parralax-image.js') }}"></script>
+        <script src="js/index/slider-logos-enterprise.js"></script>
     </body> 
 </html>
