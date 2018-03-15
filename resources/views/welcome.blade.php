@@ -95,12 +95,17 @@
                         Considero que el mundo de la programación se encuentra en constante evolución
                         y expansión por lo que para mí es importante actualizarme continuamente.
                     </p>
-                    <!-- <div>LEER MAS...</div> -->
+
+                    <div>LEER MAS...</div>
 
                 </div>
 
                 <div class="img pc img-background" style="background-image: url({{ url('img/index/quien.jpg') }})"></div>
             </div>
+
+                <a href="CV_RODRIGUEZ_2018.pdf">
+                    <div class="btnCV">DESCARGAR CV</div>
+                </a>    
         </div>
                 
 
@@ -243,6 +248,7 @@
             <div class="contact">
 
                 <div class="formContact card hidden">
+                <div class="progressBar hidden"></div>
 
                     <div class="information">
                         <h1>Contacto</h1>
@@ -261,13 +267,13 @@
                     </div>
 
                     <div>
-                        <form>
-                            
-                            <input type="text" placeholder="Nombre *">
-                            <input type="mail" placeholder="Correo *">
+                        <form action="mail" method="POST">
+                            {{ csrf_field() }}
+                            <input type="text" name="name" placeholder="Nombre *">
+                            <input type="mail" name="mail" placeholder="Correo *">
                             
 
-                            <textarea placeholder="Mensaje"></textarea>
+                            <textarea name="text" placeholder="Mensaje"></textarea>
 
                             <button>Enviar mensaje  <i class="material-icons">send</i></button>
                         </form>
@@ -285,6 +291,7 @@
         <script src="{{ url('js/loader.js') }}"></script>
         <script src="{{ url('js/menu.js') }}"></script>
         <script src="{{ url('js/index/sliderIndex.js') }}"></script>
+        <script src="{{ url('js/index/mail.js') }}"></script>
         <script src="{{ url('js/index/parralax-image.js') }}"></script>
         <script src="js/index/slider-logos-enterprise.js"></script>
     </body> 

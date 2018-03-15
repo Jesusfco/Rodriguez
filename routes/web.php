@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'VisitorController@index');
+
+Route::post('/mail', 'VisitorController@mail');
