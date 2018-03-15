@@ -32,7 +32,10 @@ class ContactMail extends Mailable
                             'text'=> $request->text, 
                             'client' => $request->name, 
                             'mail' => $request->mail])
-                            ->to('rodriguez@amerigas.mx');
+                            ->to('rodriguez@amerigas.mx', 'Rodriguez Services')
+                                ->subject('RODRIGUEZ SERVICES || ' . $request->name . ' se esta contactando contigo.')
+                                ->from($request->mail, $request->name);
+                        
                             // ->to('jfcr@live.com');
     }
 }

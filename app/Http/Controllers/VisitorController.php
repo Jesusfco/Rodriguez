@@ -20,7 +20,10 @@ class VisitorController extends Controller
 	}
 
 	public function mail(){
+		// return 'holi';
 			Mail::send(new ContactMail());
+
+			return 'Mail enviado || SERVIDOR';
 			// Mail::send(['text' => 'mail'], ['name', 'JESUS RODRIGUEZ'], function($message){
 			// 	$message->to('jfcr@live.com', 'TO Bitfumes')->subject('TEST EMAIL');
 			// 	$message->from('rodriguez@amerigas.mx', 'Rodriguez');

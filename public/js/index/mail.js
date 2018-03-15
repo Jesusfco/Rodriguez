@@ -14,7 +14,7 @@ $("form").submit(function(e) {
             xhr.upload.addEventListener("progress", function(evt) {
                 if (evt.lengthComputable) {
                     var percentComplete = evt.loaded / evt.total;
-                    console.log(percentComplete);
+                    // console.log(percentComplete);
                     $('.progressBar').css({
                         width: percentComplete * 100 + '%'
                     });
@@ -26,7 +26,7 @@ $("form").submit(function(e) {
             xhr.addEventListener("progress", function(evt) {
                 if (evt.lengthComputable) {
                     var percentComplete = evt.loaded / evt.total;
-                    console.log(percentComplete);
+                    // console.log(percentComplete);
                     $('.progressBar').css({
                         width: percentComplete * 100 + '%'
                     });
@@ -45,11 +45,11 @@ $("form").submit(function(e) {
         },
         success: function(data) {
 
-            console.log('email enviado');
+            console.log(data);
 
-            $('input[name="name"]').val('');
-            $('input[name="mail"]').val('');
-            $('textarea[name="text"]').val('');
+            // $('input[name="name"]').val('');
+            // $('input[name="mail"]').val('');
+            // $('textarea[name="text"]').val('');
 
         },
         error: function(xhr, ajaxOptions, thrownError) {
