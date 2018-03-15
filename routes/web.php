@@ -11,8 +11,4 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-    return 'holi';
-
-});
+Route::get('/', 'VisitorController@index');

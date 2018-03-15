@@ -25,8 +25,9 @@
     </head>
     <body>
         
-            
-       @include('loader')
+        @if(!$visited)
+            @include('loader')
+         @endif   
         @include('menuNav')
 
         <div class="slider">
@@ -101,7 +102,53 @@
                 <div class="img pc img-background" style="background-image: url({{ url('img/index/quien.jpg') }})"></div>
             </div>
         </div>
-        
+                
+
+        <div class="servicios">
+
+            <h1>SERVICIOS</h1>
+
+            <div class="servicios-container">
+
+                <div class="servicios-piece card hidden">
+                    <div class="imgCard">
+                        <img src="img/index/servicio1.jpg">
+                        <h3>SOFTWARE</h3>
+                    </div>
+                    
+                    
+                    <div class="pc"> Los servicios de software se divide en diversas ramas como la creación de páginas web (estaticas/ dinamicas), 
+                        aplicaciones de escritorio, aplicaciones moviles o aplicaciones web</div>
+                </div>    
+
+                <div class="servicios-piece card hidden">
+                    <div class="imgCard">
+                        <h3>MULTIMEDIA</h3>
+                        <img src="img/index/servicio2.jpg">
+                    </div>
+                        
+                    <div class="pc"> 
+                        Los servicios de multimedia contiene diferentes variante como la creación 
+                        de comerciales, creación de animaciones o coberturas de eventos.
+                    </div>
+
+                </div>    
+
+                <div class="servicios-piece card hidden">
+                    <div class="imgCard">
+                        <h3>FOTOGRAFÍA</h3>
+                        <img src="img/index/servicio3.jpg">
+                    </div>    
+                    <div class="pc"> 
+                        Los servicios de fotografía abarcan distintos aspectos como cobertura de eventos (XV, BODAS, CUMPLEAÑOS, ETC),
+                         o sesiones fotograficas trabajando colaborativamente con <a href="http://www.lilianapineda.com/">Liliana Pineda</a>
+                    </div>
+                </div>    
+
+            </div>        
+
+        </div>      
+
         <div class="enterprise-slider">
             <div class="enterprise-slider-container">
                 <div><img src="img/index/enterprise-logo1.png"></div>
@@ -119,54 +166,9 @@
             </div>
         </div>
 
-        <div class="servicios">
-
-            <h1>SERVICIOS</h1>
-
-            <div class="servicios-container">
-
-                <div class="servicios-piece card hidden">
-                    <div class="imgCard">
-                        <img src="img/index/servicio1.jpg">
-                        <h3>SOFTWARE</h3>
-                    </div>
-                    
-                    
-                    <div> Los servicios de software se divide en diversas ramas como la creación de páginas web (estaticas/ dinamicas), 
-                        aplicaciones de escritorio, aplicaciones moviles o aplicaciones web</div>
-                </div>    
-
-                <div class="servicios-piece card hidden">
-                    <div class="imgCard">
-                        <h3>MULTIMEDIA</h3>
-                        <img src="img/index/servicio2.jpg">
-                    </div>
-                        
-                    <div> 
-                        Los servicios de multimedia contiene diferentes variante como la creación 
-                        de comerciales, creación de animaciones o coberturas de eventos.
-                    </div>
-
-                </div>    
-
-                <div class="servicios-piece card hidden">
-                    <div class="imgCard">
-                        <h3>FOTOGRAFÍA</h3>
-                        <img src="img/index/servicio3.jpg">
-                    </div>    
-                    <div> 
-                        Los servicios de fotografía abarcan distintos aspectos como cobertura de eventos (XV, BODAS, CUMPLEAÑOS, ETC),
-                         o sesiones fotograficas trabajando colaborativamente con <a href="http://www.lilianapineda.com/">Liliana Pineda</a>
-                    </div>
-                </div>    
-
-            </div>        
-
-        </div>      
-
-        <div class="parallax1" style="background-image: url(img/index/parallax1.jpg)">  
+        <!-- <div class="parallax1" style="background-image: url(img/index/parallax1.jpg)">  
         </div>
-
+ -->
         
 
         <div class="timelineContainer">
@@ -180,7 +182,7 @@
                     <div class="content card hidden">
 
                         <div>
-                            <h3>Amerigas</h3>
+                            <h3>AMERIGAS</h3>
                             <img src="img/index/destacados1.jpg">
                         </div>       
 
@@ -195,7 +197,7 @@
                     <div class="content card hidden ">
 
                         <div>
-                            <h3>Wolosky Gym</h3>
+                            <h3>WOLOSKY GYM</h3>
                             <img src="img/index/destacados2.jpg">
                         </div>
                             
@@ -237,6 +239,45 @@
                   
                 </div> <!-- //timeline -->
             </div> <!-- TIMELINE CONTAINER -->    
+
+            <div class="contact">
+
+                <div class="formContact card hidden">
+
+                    <div class="information">
+                        <h1>Contacto</h1>
+                        <p>¿Tienes algun proyecto en mente? 
+                            <br><br>- ¡Contáctame!, te ayudare a realizarlo
+                            solo mandame un mensaje o llamame. Podemos tomar ir por un cafe
+                            y conversar sobre tu negocio.
+                        </p>
+                        <a href="tel:+5219611221222"> 
+                            <i class="material-icons">local_phone</i> 
+                                961-122-1222</a>
+                        <br><br>
+                        <a href="mailto:jfcr@live.com">
+                            <i class="material-icons">mail</i> 
+                             jfcr@live.com</a>
+                    </div>
+
+                    <div>
+                        <form>
+                            
+                            <input type="text" placeholder="Nombre *">
+                            <input type="mail" placeholder="Correo *">
+                            
+
+                            <textarea placeholder="Mensaje"></textarea>
+
+                            <button>Enviar mensaje  <i class="material-icons">send</i></button>
+                        </form>
+                    </div>
+                </div>
+
+                <img class="backgr" alt="" data-type="image" src="img/index/contact.webp" >
+
+
+            </div>
         
         <script src="{{ url('js/jquery-2.1.1.min.js') }}"></script>
         <script src="{{ url('js/jquery.waypoints.min.js') }}"></script>
