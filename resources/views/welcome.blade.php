@@ -26,7 +26,7 @@
     <body>
         
             
-      <!--   @include('loader') -->
+       @include('loader')
         @include('menuNav')
 
         <div class="slider">
