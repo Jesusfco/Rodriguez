@@ -7,9 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Rodriguez Service | Nuevo Contacto </h1>
-    <p>Cliente: {{ $client }}</p>
-    <p>Cliente: {{ $mail }}</p>
-    <p>Cliente: {{ $text }}</p>
+    <h1>Nuevo Contacto || {{ $client }}</h1>    
+    <p>CORREO: {{ $mail }}</p>
+    <p>MENSAJE:<br> <br> {{ $text }}</p>
 </body>
 </html>

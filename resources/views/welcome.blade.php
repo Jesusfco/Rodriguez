@@ -12,6 +12,7 @@
         <link href="{{ url('css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
         <link href="{{ url('css/loader.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
         <link href="{{ url('css/menu.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
+        <link href="{{ url('css/alert.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
         <link href="{{ url('css/index.css') }}" type="text/css" rel="stylesheet" media="screen,projection"> 
         
         <!-- Fonts -->      
@@ -259,21 +260,24 @@
                         </p>
                         <a href="tel:+5219611221222"> 
                             <i class="material-icons">local_phone</i> 
-                                961-122-1222</a>
+                                +52 1 961-122-1222</a>
                         <br><br>
-                        <a href="mailto:jfcr@live.com">
+                        <a href="mailto:rodriguez@amerigas.mx">
                             <i class="material-icons">mail</i> 
-                             jfcr@live.com</a>
+                             rodriguez@amerigas.mx</a>
                     </div>
 
-                    <div>
+                    <div style="position: relative">
+                        <div class="loaderMail hidden">
+                            <div class="spinner"></div>
+                        </div>
                         <form action="mail" method="POST">
                             {{ csrf_field() }}
-                            <input type="text" name="name" placeholder="Nombre *">
-                            <input type="mail" name="mail" placeholder="Correo *">
+                            <input type="text" name="name" placeholder="Nombre *" required>
+                            <input type="email" name="mail" placeholder="Correo *" required>
                             
 
-                            <textarea name="text" placeholder="Mensaje"></textarea>
+                            <textarea name="text" placeholder="Mensaje" required></textarea>
 
                             <button>Enviar mensaje  <i class="material-icons">send</i></button>
                         </form>
@@ -283,6 +287,13 @@
                 <img class="backgr" alt="" data-type="image" src="img/index/contact.webp" >
 
 
+            </div>
+
+            <div class="alert-container centrar hidden">
+                <div class="alert">
+                    <h1></h1>
+                    <p></p>
+                </div>
             </div>
         
         <script src="{{ url('js/jquery-2.1.1.min.js') }}"></script>
