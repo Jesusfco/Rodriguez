@@ -4,7 +4,7 @@ $('.programDiv:nth-child(1)').waypoint(function(direction) {
     else {
         $('.programDiv:nth-child(1)').addClass('hidden');
     }
-}, { offset: '75%' });
+}, { offset: '90%' });
 
 $('.programDiv:nth-child(2)').waypoint(function(direction) {
     if (direction == 'down')
@@ -12,7 +12,7 @@ $('.programDiv:nth-child(2)').waypoint(function(direction) {
     else {
         $('.programDiv:nth-child(2)').addClass('hidden');
     }
-}, { offset: '75%' });
+}, { offset: '85%' });
 
 $('.programDiv:nth-child(3)').waypoint(function(direction) {
     if (direction == 'down')
@@ -20,7 +20,7 @@ $('.programDiv:nth-child(3)').waypoint(function(direction) {
     else {
         $('.programDiv:nth-child(3)').addClass('hidden');
     }
-}, { offset: '75%' });
+}, { offset: '80%' });
 
 $('.programDiv:nth-child(4)').waypoint(function(direction) {
     if (direction == 'down')

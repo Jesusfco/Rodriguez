@@ -297,9 +297,9 @@
                     <div class="information">
                         <h1>Contacto</h1>
                         <p>¿Tienes algun proyecto en mente? 
-                            <br><br>- ¡Contáctame!, te ayudare a realizarlo
-                            solo mandame un mensaje o llamame. Podemos tomar ir por un cafe
-                            y conversar sobre tu negocio.
+                            <br><br>- ¡Contáctame!, te ayudare a realizarlo 
+                            solo mándame un mensaje o llámame. Podemos tomar 
+                            ir por un café y conversar sobre tu negocio.
                         </p>
                         <a href="tel:+5219611221222"> 
                             <i class="material-icons">local_phone</i> 
