@@ -7,6 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Http\request;
+
 class ContactMail extends Mailable
 {
     use Queueable, SerializesModels;
@@ -32,8 +33,8 @@ class ContactMail extends Mailable
                             'text'=> $request->text, 
                             'client' => $request->name, 
                             'mail' => $request->mail])
-                            ->to('rodriguez@amerigas.mx', 'Rodriguez Services')
-                                ->subject('RODRIGUEZ SERVICES || ' . $request->name . ' se esta contactando contigo.')
+                            ->to('jfcr@live.com', 'Rodriguez Services')
+                                ->subject('RODRIGUEZ SERVICES NEW CONTACT || ' . $request->name . ' se esta contactando contigo.')
                                 ->from($request->mail, $request->name);
                         
                             // ->to('jfcr@live.com');

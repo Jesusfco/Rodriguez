@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mail;
 use App\Mail\ContactMail;
+use App\Mail\AmerigasMail;
 
 class VisitorController extends Controller
 {
@@ -20,7 +21,7 @@ class VisitorController extends Controller
 	}
 
 	public function mail(){
-		// return 'holi';
+		
 			Mail::send(new ContactMail());
 
 			return 'Mail enviado || SERVIDOR';
@@ -31,6 +32,20 @@ class VisitorController extends Controller
 			// 	$message->to('rodriguez@amerigas.mx', 'TO Bitfumes')->subject('TEST EMAIL');
 			// 	$message->from('rodriguez@amerigas.mx', 'Rodriguez');
 			// });
+	}
+
+	public function amerigasContact(){
+		Mail::send(new AmerigasMail());
+		return response()->json(true);
+	}
+
+	public function test(Request $request){
+			$request->text= 'hola';
+			$request->name = 'DANIELA';
+			$request->mail = 'daniela@gmail.com';
+		Mail::send(new ContactMail());
+
+			return 'Mail enviado || SERVIDOR';
 	}
     
 }
