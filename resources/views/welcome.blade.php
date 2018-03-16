@@ -84,6 +84,7 @@
         </div>
 
         <div class="quien">
+
             <div class="quien-container card">
 
                 <div class="text">
@@ -104,9 +105,51 @@
                 <div class="img pc img-background" style="background-image: url({{ url('img/index/quien.jpg') }})"></div>
             </div>
 
-                <a href="CV_RODRIGUEZ_2018.pdf">
-                    <div class="btnCV">DESCARGAR CV</div>
+            <h2 class="title">Dominio de programas</h2>
+            <div class="programHability">
+                
+                <div class="programDiv hidden">
+                    <div class="centrar">Ai</div>
+                    <p>ILLUSTRATOR</p>
+                </div>    
+
+                <div class="programDiv hidden">
+                    <div class="centrar">Ps</div>
+                    <p>PHOTOSHOP</p>
+                </div> 
+
+                <div class="programDiv hidden">
+                    <div class="centrar">Pr</div>
+                    <p>PREMIER</p>
+                </div> 
+
+                <div class="programDiv hidden">
+                    <div class="centrar">Ae</div>
+                    <p>AFTER EFFECTS</p>
+                </div> 
+
+            </div>
+
+            <!-- <h2 class="title">Lenguajes de programación</h2>
+
+            <div class="codeHability">
+                
+            </div> -->
+
+            <div class="btnCV">
+                <a class="btn" href="CV_RODRIGUEZ_2018.pdf">
+                DESCARGAR CV
+                <span class='line-1'></span>
+                    <span class='line-2'></span>
+                    <span class='line-3'></span>
+                    <span class='line-4'></span>
                 </a>    
+            </div>    
+
+        </div>    
+
+        
+            
         </div>
                 
 
@@ -295,9 +338,14 @@
                     <p></p>
                 </div>
             </div>
-        
-        <script src="{{ url('js/jquery-2.1.1.min.js') }}"></script>
+            <script src="//code.jquery.com/jquery.min.js"></script>
+        <!-- <script src="{{ url('js/jquery-2.1.1.min.js') }}"></script> -->
         <script src="{{ url('js/jquery.waypoints.min.js') }}"></script>
+        <script src="https://www.jqueryscript.net/demo/jQuery-Circular-Progress-Bar-With-Text-Counter/scripts/plugin.js"></script>
+
+        
+        
+
         <script src="{{ url('js/index/waypoints.js') }}"></script>
         <script src="{{ url('js/loader.js') }}"></script>
         <script src="{{ url('js/menu.js') }}"></script>
@@ -305,5 +353,16 @@
         <script src="{{ url('js/index/mail.js') }}"></script>
         <script src="{{ url('js/index/parralax-image.js') }}"></script>
         <script src="js/index/slider-logos-enterprise.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115852534-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-115852534-1');
+        </script>
+
     </body> 
 </html>

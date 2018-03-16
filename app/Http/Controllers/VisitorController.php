@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Mail;
-use App\mail\ContactMail;
+use App\Mail\ContactMail;
 
 class VisitorController extends Controller
 {
