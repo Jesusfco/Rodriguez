@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 
         <title>Rodríguez Services</title>
 
@@ -375,7 +375,7 @@
             <script src="//code.jquery.com/jquery.min.js"></script>
         <!-- <script src="{{ url('js/jquery-2.1.1.min.js') }}"></script> -->
         <script src="{{ url('js/jquery.waypoints.min.js') }}"></script>
-        <script src="https://www.jqueryscript.net/demo/jQuery-Circular-Progress-Bar-With-Text-Counter/scripts/plugin.js"></script>
+        
 
         
         

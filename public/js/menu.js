@@ -48,14 +48,91 @@ $(document).ready(function() {
 
 var menuStartingX;
 
-menuTargetStart(event) {
+function menuTargetStart(event) {
     menuStartingX = event.touches[0].clientX;
 }
 
-menuTargetMove(event) {
+function menuTargetMove(event) {
+    
+    var touch = event.touches[0];
+    var change = menuStartingX - touch.clientX;
+    
+    console.log("MOVE: " + change);
+    if(change > 250){
+        return;
+    }
 
+    if(change >= 50 ) {
+        if(menuClick == 0)
+            openMenu();    
+    }
+
+    else if (change < 50 && change >= 0) {
+        if(menuClick == 1) 
+            closeMenu();
+    }
+
+    else if(change <= -50 ) {
+        if(menuClick == 1) 
+            closeMenu();
+
+    } else if(change > -50 && change < 50) {
+        if(menuClick == 0) 
+            openMenu();
+    }
+
+    // $('#menuTarget').css('right', change);
+    $('.movMenu').css({'transform': "translateX(" + (250 - change) + "px)", "transition": 0});
 }
 
-menuTargetEnd(event) {
+function menuTargetEnd(event) {
+    var changeEnd = menuStartingX - event.changedTouches[0].clientX;
+    console.log("FINAL: " + changeEnd);
 
+    if(changeEnd >= 50) {
+
+        $('.movMenu').removeClass('hidden');
+        $('.movMenu').css({'transform': "", "transition": ""});
+        $('#menuTarget').css('right', 250);
+
+    } else if(changeEnd < 50 && changeEnd >= 0) {
+
+        $('.movMenu').css({'transform': "", "transition": ""});
+        $('#menuTarget').css('right', 0);
+
+    }
+
+    else if(changeEnd <= -50) {
+
+        $('.movMenu').addClass('hidden');        
+        $('.movMenu').css({'transform': "", "transition": ""});
+        $('#menuTarget').css('right', 0);
+
+    } else if(changeEnd > -50 && changeEnd < 0) {
+
+        $('.movMenu').css({'transform': "", "transition": ""});
+        $('#menuTarget').css('right', 250);
+
+     }
+}
+
+function openMenu(){                            
+        
+        $('#nav-icon').addClass('open');                                    
+        setTimeout(function() { $('.movMenu li:nth-child(1)').removeClass('hidden'); }, 300);
+        setTimeout(function() { $('.movMenu li:nth-child(2)').removeClass('hidden'); }, 400);
+        setTimeout(function() { $('.movMenu li:nth-child(3)').removeClass('hidden'); }, 500);
+        setTimeout(function() { $('.movMenu li:nth-child(4)').removeClass('hidden'); }, 600);
+        setTimeout(function() { $('.movMenu li:nth-child(5)').removeClass('hidden'); }, 700);
+        menuClick++;
+}
+
+function closeMenu(){
+    $('#nav-icon').removeClass('open');                                    
+    setTimeout(function() { $('.movMenu li:nth-child(1)').addClass('hidden'); }, 300);
+    setTimeout(function() { $('.movMenu li:nth-child(2)').addClass('hidden'); }, 400);
+    setTimeout(function() { $('.movMenu li:nth-child(3)').addClass('hidden'); }, 500);
+    setTimeout(function() { $('.movMenu li:nth-child(4)').addClass('hidden'); }, 600);
+    setTimeout(function() { $('.movMenu li:nth-child(5)').addClass('hidden'); }, 700);
+    menuClick--;
 }
