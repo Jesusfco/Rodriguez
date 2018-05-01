@@ -9,18 +9,10 @@ $(document).ready(function() {
     generateCirclesCanvas(can3, 75, "#be0ddd", "Pr");
     generateCirclesCanvas(can4, 60, "#6504c0", "Ae");
 
-    var cavHTML = document.getElementById("html");
-    var cavJS = document.getElementById("js");
-    var cavPHP = document.getElementById("php");
-    var cavJ = document.getElementById("java");
-    var cavPY = document.getElementById("python");
-
-    generateBarProgressLenguages(cavHTML, 95);
-    generateBarProgressLenguages(cavJS, 85);
-    generateBarProgressLenguages(cavPHP, 90);
-    generateBarProgressLenguages(cavJ, 60);
-    generateBarProgressLenguages(cavPY, 45);
+    // we are firing function on waypoints
 });
+
+
 
 
 function generateCirclesCanvas(can, percentage, color, text) {
@@ -58,18 +50,39 @@ function generateCirclesCanvas(can, percentage, color, text) {
 
 function generateBarProgressLenguages(can, percentage) {
 
+    var progress = 0;
+
     can.width = can.offsetWidth;
     can.height = can.offsetHeight;
-
-
     var c = can.getContext("2d");
-    var fillableArea = ((can.width - 75) / 100) * percentage;
-    c.fillStyle = "#fccc00";
-    c.fillRect(0, 0, fillableArea, can.height);
 
-    c.font = "15px Open Sans";
-    c.fillStyle = "black";
-    c.textAlign = "right";
-    c.fillText(percentage + "%", fillableArea + 38, 15);
+    setInterval(function() {
+
+        if (progress >= percentage) return;
+
+        c.clearRect(0, 0, can.width, can.height);
+        var fillableArea = ((can.width - 75) / 100) * progress;
+        c.fillStyle = "#fccc00";
+        c.fillRect(0, 0, fillableArea, can.height);
+
+        c.font = "15px Open Sans";
+        c.fillStyle = "black";
+        c.textAlign = "right";
+        c.fillText(Math.round(progress) + "%", fillableArea + 38, 15);
+
+        if (progress >= percentage - 20) {
+            progress += .5;
+            if (progress >= percentage - 8)
+                progress -= .25;
+            return;
+        }
+
+        progress++;
+
+    }, 10);
+
+}
+
+function progressInterval() {
 
 }

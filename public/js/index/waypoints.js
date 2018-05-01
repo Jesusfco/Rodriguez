@@ -31,6 +31,28 @@ $('.programDiv:nth-child(4)').waypoint(function(direction) {
 }, { offset: '75%' });
 
 
+$('.codeHability').waypoint(function(direction) {
+
+    if (direction == 'down') {
+
+        var cavHTML = document.getElementById("html");
+        var cavJS = document.getElementById("js");
+        var cavPHP = document.getElementById("php");
+        var cavJ = document.getElementById("java");
+        var cavPY = document.getElementById("python");
+
+        generateBarProgressLenguages(cavHTML, 95);
+        generateBarProgressLenguages(cavJS, 85);
+        generateBarProgressLenguages(cavPHP, 90);
+        generateBarProgressLenguages(cavJ, 60);
+        generateBarProgressLenguages(cavPY, 45);
+
+    } else {
+        $('.servicios-piece:nth-child(1)').addClass('hidden');
+    }
+}, { offset: '75%' });
+
+
 $('.servicios-piece:nth-child(1)').waypoint(function(direction) {
     if (direction == 'down')
         $('.servicios-piece:nth-child(1)').removeClass('hidden');
@@ -38,6 +60,7 @@ $('.servicios-piece:nth-child(1)').waypoint(function(direction) {
         $('.servicios-piece:nth-child(1)').addClass('hidden');
     }
 }, { offset: '75%' });
+
 
 
 
