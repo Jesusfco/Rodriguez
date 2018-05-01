@@ -114,7 +114,20 @@ nav {
     display: none;
 }
 
+#menuTarget {
+    display: none;
+}
+
 @media screen and (max-width: 800px) {
+    #menuTarget {
+        display: block;
+        height: 100vh;
+        width: 20px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 15;
+    }
     .movMenu {
         display: block;
         position: fixed;

@@ -2,7 +2,7 @@ $(window).scroll(function() {
 
     var st = $(this).scrollTop();
     var sb = st + $(this).height();
-    
+
     if (st > 70) {
         $('nav').css({ 'height': 60, 'background': 'rgba(0, 58, 102, 0.75)' });
     } else {
@@ -44,3 +44,18 @@ $(document).ready(function() {
 
     });
 });
+
+
+var menuStartingX;
+
+menuTargetStart(event) {
+    menuStartingX = event.touches[0].clientX;
+}
+
+menuTargetMove(event) {
+
+}
+
+menuTargetEnd(event) {
+
+}

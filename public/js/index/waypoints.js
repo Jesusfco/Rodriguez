@@ -1,31 +1,43 @@
 $('.programDiv:nth-child(1)').waypoint(function(direction) {
-    if (direction == 'down')
+    if (direction == 'down') {
+
         $('.programDiv:nth-child(1)').removeClass('hidden');
-    else {
+        generateCirclesCanvas(can1, 85, "#dd590d", "Ai");
+
+    } else {
         $('.programDiv:nth-child(1)').addClass('hidden');
     }
 }, { offset: '90%' });
 
 $('.programDiv:nth-child(2)').waypoint(function(direction) {
-    if (direction == 'down')
+    if (direction == 'down') {
+
         $('.programDiv:nth-child(2)').removeClass('hidden');
-    else {
+        generateCirclesCanvas(can2, 90, "#0d6edd", "Ps");
+
+    } else {
         $('.programDiv:nth-child(2)').addClass('hidden');
     }
 }, { offset: '85%' });
 
 $('.programDiv:nth-child(3)').waypoint(function(direction) {
-    if (direction == 'down')
+    if (direction == 'down') {
+
         $('.programDiv:nth-child(3)').removeClass('hidden');
-    else {
+        generateCirclesCanvas(can3, 75, "#be0ddd", "Pr");
+
+    } else {
         $('.programDiv:nth-child(3)').addClass('hidden');
     }
 }, { offset: '80%' });
 
 $('.programDiv:nth-child(4)').waypoint(function(direction) {
-    if (direction == 'down')
+    if (direction == 'down') {
+
         $('.programDiv:nth-child(4)').removeClass('hidden');
-    else {
+        generateCirclesCanvas(can4, 60, "#6504c0", "Ae");
+
+    } else {
         $('.programDiv:nth-child(4)').addClass('hidden');
     }
 }, { offset: '75%' });
@@ -34,12 +46,6 @@ $('.programDiv:nth-child(4)').waypoint(function(direction) {
 $('.codeHability').waypoint(function(direction) {
 
     if (direction == 'down') {
-
-        var cavHTML = document.getElementById("html");
-        var cavJS = document.getElementById("js");
-        var cavPHP = document.getElementById("php");
-        var cavJ = document.getElementById("java");
-        var cavPY = document.getElementById("python");
 
         generateBarProgressLenguages(cavHTML, 95);
         generateBarProgressLenguages(cavJS, 85);
