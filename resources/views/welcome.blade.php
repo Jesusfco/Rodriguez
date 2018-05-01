@@ -106,35 +106,64 @@
             </div>
 
             <h2 class="title">Dominio de programas</h2>
+
+           
+
+            
+
+
             <div class="programHability">
                 
                 <div class="programDiv hidden">
-                    <div class="centrar">Ai</div>
+                    <canvas id="cav1"></canvas>
                     <p>ILLUSTRATOR</p>
                 </div>    
 
                 <div class="programDiv hidden">
-                    <div class="centrar">Ps</div>
+                    <canvas id="cav2"></canvas>
                     <p>PHOTOSHOP</p>
                 </div> 
 
                 <div class="programDiv hidden">
-                    <div class="centrar">Pr</div>
+                    <canvas id="cav3"></canvas>
                     <p>PREMIER</p>
                 </div> 
 
                 <div class="programDiv hidden">
-                    <div class="centrar">Ae</div>
+                    <canvas id="cav4"></canvas>
                     <p>AFTER EFFECTS</p>
                 </div> 
 
             </div>
 
-            <!-- <h2 class="title">Lenguajes de programación</h2>
+            <h2 class="title">Lenguajes de programación</h2>
 
             <div class="codeHability">
-                
-            </div> -->
+                <div>
+                    <h5>HTML & CSS</h5>
+                    <canvas id="html"></canvas>
+                </div>
+
+                <div>
+                    <h5>Javascript</h5>
+                    <canvas id="js"></canvas>
+                </div>
+
+                <div>
+                    <h5>PHP</h5>
+                    <canvas id="php"></canvas>
+                </div>
+
+                <div>
+                    <h5>Java</h5>
+                    <canvas id="java"></canvas>
+                </div>
+
+                <div>
+                    <h5>Python</h5>
+                    <canvas id="python"></canvas>
+                </div>
+            </div>
 
             <div class="btnCV">
                 <a class="btn" href="CV_RODRIGUEZ_2018.pdf">
@@ -144,7 +173,9 @@
                     <span class='line-3'></span>
                     <span class='line-4'></span>
                 </a>    
-            </div>    
+            </div> 
+
+            
 
         </div>    
 
@@ -199,7 +230,10 @@
         </div>      
 
         <div class="enterprise-slider">
-            <div class="enterprise-slider-container">
+            <div class="enterprise-slider-container"
+                ontouchstart="sliderTouchStart(event)"
+                ontouchmove="sliderTouchMove(event)"
+                ontouchend="sliderTouchEnd(event)">
                 <div><img src="img/index/enterprise-logo1.png"></div>
                 <div><img src="img/index/enterprise-logo2.png"></div>
                 <div><img src="img/index/enterprise-logo3.png"></div>
@@ -350,6 +384,7 @@
         <script src="{{ url('js/loader.js') }}"></script>
         <script src="{{ url('js/menu.js') }}"></script>
         <script src="{{ url('js/index/sliderIndex.js') }}"></script>
+        <script src="{{ url('js/index/skillPrograms.js') }}"></script>
         <script src="{{ url('js/index/mail.js') }}"></script>
         <script src="{{ url('js/index/parralax-image.js') }}"></script>
         <script src="js/index/slider-logos-enterprise.js"></script>
