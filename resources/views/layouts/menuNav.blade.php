@@ -2,7 +2,11 @@
     <div class="container">
         
         <div class="logo"> 
-            <img src="{{ url('img/logoNav.png') }}">
+
+            <a href="{{ url('/') }}">
+                <img src="{{ url('img/logoNav.png') }}">
+            </a>  
+
         </div>
         
         <div class="links">
@@ -11,8 +15,8 @@
             <a class="pc">PORTAFOLIO</a>
             <a class="pc">CONTACTO</a>
             <a class="pc">LOGIN</a>
-            <a class="pc"> <img src="{{ url('img/mex.png') }}"></a>
-            <a class="pc"> <img src="{{ url('img/usa.png') }}"></a>
+            <a class="pc" href="{{ url('/') }}"> <img src="{{ url('img/mex.png') }}"></a>
+            <a class="pc"href="{{ url('/eng') }}"> <img src="{{ url('img/usa.png') }}"></a>
 
             <div id="nav-icon" class="mov">
                 <span></span>
@@ -22,7 +26,11 @@
         </div>
 
         <div class="movMenu hidden" onclick="console.log('click en menu')">
-            <img src="{{ url('img/logoNav.png') }}">
+            
+            <a href="{{ url('/') }}">
+                <img src="{{ url('img/logoNav.png') }}">
+            </a>  
+            
             <ul>
                 <li class="hidden"> <i class="material-icons">home</i> INICIO</li>
                 <li class="hidden"> <i class="material-icons">person</i> QUIEN SOY</li>
@@ -33,8 +41,8 @@
             </ul>   
             
             <div class="lenguage">
-                <a> <img src="{{ url('img/mex.png') }}"></a>
-                <a> <img src="{{ url('img/usa.png') }}"></a>
+                <a href="{{ url('/') }}"> <img src="{{ url('img/mex.png') }}"></a>
+                <a href="{{ url('/eng') }}"> <img src="{{ url('img/usa.png') }}"></a>
             </div>
         </div>        
     </div>

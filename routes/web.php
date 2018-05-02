@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'VisitorController@index');
+Route::get('/eng', 'VisitorController@eng');
 
 Route::post('/mail', 'VisitorController@mail');
 

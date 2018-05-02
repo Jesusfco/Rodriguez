@@ -1,35 +1,12 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+@extends('layouts.visitorEng')
 
-        <title>Rodríguez Services</title>
+@section('title', 'Rodríguez Services || Home') 
 
-        <!-- CSS -->
-        <link href="{{ url('css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
-        <link href="{{ url('css/loader.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
-        <link href="{{ url('css/menu.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
-        <link href="{{ url('css/alert.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
-        <link href="{{ url('css/index.css') }}" type="text/css" rel="stylesheet" media="screen,projection"> 
-        
-        <!-- Fonts -->      
-        <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway:100i,300,400,900" rel="stylesheet">
-
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">        
-
-           
-
-        
-    </head>
-    <body>
-        
-        @if(!$visited)
-            @include('loader')
-         @endif   
-        @include('menuNav')
+@section('css')     
+    <link href="{{ url('css/index.css') }}" type="text/css" rel="stylesheet" media="screen,projection"> 
+@endsection    
+               
+@section('content')
 
         <div class="slider">
 
@@ -42,9 +19,9 @@
 
                     <div class="slider-piece centrar" style=" background-image: url('{{ url('img/index/1.jpg') }}') ">
                         <div>
-                            <h3>Apasionado por el Código</h3>
+                            <h3>IN LOVE WITH THE CODE</h3>
                             <a class="linea"></a>
-                            <p>El desarrollo de software ofrece el poder de crear únicamente necesitando un computador</p>
+                            <p>Software development offers the power to create only by needing a computer</p>
                             
                         </div>
                     </div>
@@ -52,9 +29,9 @@
                     <div class="slider-piece centrar" style=" background-image: url('{{ url('img/index/2.jpg') }}') ">
 
                         <div>
-                            <h3>Ideología</h3>
+                            <h3>IDEOLOGY</h3>
                             <a class="linea"></a>
-                            <p>Las metas de mi carrera profesional se resumen en la filosofía de un desarrollo y progreso constante (KAIZEN)</p>
+                            <p>The goals of my professional career are summarized in the philosophy of constant development and progress (KAIZEN)</p>
                             <a></a>
                         </div>
 
@@ -64,9 +41,9 @@
                     <div class="slider-piece centrar" style=" background-image: url('{{ url('img/index/4.jpg') }}') ">
 
                         <div>
-                            <h3>TRABAJO COLABORATIVO</h3>
+                            <h3>COLLABORATIVE WORK</h3>
                             <a class="linea"></a>
-                            <p>Próximo desarrollo de aplicación con enfoque en procesos conductuales.</p>
+                            <p>Next application development with a focus on behavioral processes.</p>
                             
                         </div>
 
@@ -92,13 +69,14 @@
 
                 <div class="text">
 
-                    <h1>SOY <br> FRANCISCO RODRÍGUEZ</h1>
+                    <h1>I'M <br> FRANCISCO RODRIGUEZ</h1>
                     <img class="mov" width="100%" src="{{ url('img/index/quien.jpg') }}">
-                    <p>Encontré en el desarrollo de software una pasión por la creación a través
-                        del código, siempre sintiéndome sediento de conocer más.
+                    <BR>
+                    <p>I found in software development a passion for creation through 
+                    of the code, always feeling thirsty to know more.
                         <br><br>
-                        Considero que el mundo de la programación se encuentra en constante evolución
-                        y expansión por lo que para mí es importante actualizarme continuamente.
+                        I believe that the world of programming is constantly evolving 
+                        and expansion so it's important for me to update myself continuously.
                     </p>
 
                     <div>LEER MAS...</div>
@@ -108,7 +86,7 @@
                 <div class="img pc img-background" style="background-image: url({{ url('img/index/quien.jpg') }})"></div>
             </div>
 
-            <h2 class="title">Dominio de programas</h2>
+            <h2 class="title">PROGRAMS SKILLS</h2>
 
            
 
@@ -139,7 +117,7 @@
 
             </div>
 
-            <h2 class="title">Lenguajes de programación</h2>
+            <h2 class="title">PROGRAMMING LANGUAGES</h2>
 
             <div class="codeHability">
                 <div>
@@ -169,8 +147,8 @@
             </div>
 
             <div class="btnCV">
-                <a class="btn" href="CV_RODRIGUEZ_2018.pdf">
-                DESCARGAR CV
+                <a class="btn" href="CV_RODRIGUEZ_2018_ENG.pdf">
+                DOWNLOAD CV
                 <span class='line-1'></span>
                     <span class='line-2'></span>
                     <span class='line-3'></span>
@@ -189,7 +167,7 @@
 
         <div class="servicios">
 
-            <h1>SERVICIOS</h1>
+            <h1>SERVICES</h1>
 
             <div class="servicios-container">
 
@@ -200,8 +178,8 @@
                     </div>
                     
                     
-                    <div class="pc"> Los servicios de software se divide en diversas ramas como la creación de páginas web (estaticas/ dinamicas), 
-                        aplicaciones de escritorio, aplicaciones moviles o aplicaciones web</div>
+                    <div class="pc"> Software services are divided into various branches such as the creation of web pages (static / dynamic),
+                         desktop applications, mobile applications or web applications</div>
                 </div>    
 
                 <div class="servicios-piece card hidden">
@@ -211,20 +189,20 @@
                     </div>
                         
                     <div class="pc"> 
-                        Los servicios de multimedia contiene diferentes variante como la creación 
-                        de comerciales, creación de animaciones o coberturas de eventos.
+                        The multimedia services contains different variant as the creation
+                         of commercials, creation of animations or coverage of events.
                     </div>
 
                 </div>    
 
                 <div class="servicios-piece card hidden">
                     <div class="imgCard">
-                        <h3>FOTOGRAFÍA</h3>
+                        <h3>PHOTOGRAPHY</h3>
                         <img src="img/index/servicio3.jpg">
                     </div>    
                     <div class="pc"> 
-                        Los servicios de fotografía abarcan distintos aspectos como cobertura de eventos (XV, BODAS, CUMPLEAÑOS, ETC),
-                         o sesiones fotograficas trabajando colaborativamente con <a href="http://www.lilianapineda.com/">Liliana Pineda</a>
+                        Photography services cover different aspects such as event coverage (XV, WEDDINGS, BIRTHDAYS, ETC),
+                        or photo sessions working collaboratively with <a href="http://www.lilianapineda.com/">Liliana Pineda</a>
                     </div>
                 </div>    
 
@@ -258,7 +236,7 @@
         
 
         <div class="timelineContainer">
-            <h1 text-align="center">TRABAJOS DESTACADOS</h1>
+            <h1 text-align="center">FEATURED WORKS</h1>
             <img class="backgr" alt="" data-type="image" src="img/index/timeline.webp" >
 
             <div class="timeline">
@@ -272,9 +250,9 @@
                             <img src="img/index/destacados1.jpg">
                         </div>       
 
-                        <p>Desarrollo de página y aplicación web Amerigas 
-                        enfocada a la administración de ventas y proveedores
-                        de productos químicos.</p>
+                        <p> Developt of Web Page and Web App focused on sales and supplier managemente
+                            of chemical products. Clients can access to their receiptments
+                        </p>
 
                     </div>
                   </div>
@@ -287,8 +265,9 @@
                             <img src="img/index/destacados2.jpg">
                         </div>
                             
-                        <p>Desarrollo de página y aplicación web de escritorio enfocada a la 
-                            administración de pagos de alumnos y profesores mediante el acceso con sistema biométrico</p>
+                        <p>Development of page and web app focus on the administration of the gym and
+                            development of a desktop application for have  access to the gym with a biometric system.
+                        </p>
 
                     </div>
                   </div>
@@ -301,8 +280,8 @@
                             <img src="img/index/destacados3.jpg">
                         </div>
                             
-                        <p>Desarrollo de página y aplicación web Residencial Chulavista enfocada a la administración de 
-                            contratos de venta y pagos de casa de un fraccionamiento. 
+                        <p> Development of page and web app from the company "Residencial Chulavista", focus on the administration
+                            of sale contract and payments of houses of the residential.                        
                         </p>
 
                     </div>
@@ -315,9 +294,9 @@
                             <h3>GRUPO RUILO</h3>
                             <img src="img/index/destacados4.jpg">
                         </div>    
-                        <p>Aplicación web enfocada a la administración de tareas a trabajadores 
-                            mediante una interfaz estilo proveedor de correo, diseñado para generar 
-                            bitácoras de progreso según las nuevas entradas de los empleados por la tarea asignada.
+                        <p> Web App focus on the administration of task to workers, with a interface
+                            with the style of a mail provider, designed for make progress bitacoras
+                            with every input from the workers.                        
                         </p>
 
                     </div>
@@ -332,11 +311,10 @@
                 <div class="progressBar hidden"></div>
 
                     <div class="information">
-                        <h1>Contacto</h1>
-                        <p>¿Tienes algun proyecto en mente? 
-                            <br><br>- ¡Contáctame!, te ayudare a realizarlo 
-                            solo mándame un mensaje o llámame. Podemos 
-                            ir por un café o realizar una videollamada y conversar sobre tu negocio.
+                        <h1>Contact</h1>
+                        <p>Do you have a proyect in your mind? 
+                            <br><br>- Contact me! I am going to help you to make it just send me a message or call me.
+                            We can take a coffe or make a video call and talk about your bussiness
                         </p>
                         <a href="tel:+5219611221222"> 
                             <i class="material-icons">local_phone</i> 
@@ -353,11 +331,11 @@
                         </div>
                         <form action="mail" method="POST">
                             {{ csrf_field() }}
-                            <input type="text" name="name" placeholder="Nombre *" required>
-                            <input type="email" name="mail" placeholder="Correo *" required>
+                            <input type="text" name="name" placeholder="Name *" required>
+                            <input type="email" name="mail" placeholder="Email *" required>
                             
 
-                            <textarea name="text" placeholder="Mensaje" required></textarea>
+                            <textarea name="text" placeholder="Message" required></textarea>
 
                             <button>Enviar mensaje  <i class="material-icons">send</i></button>
                         </form>
@@ -375,27 +353,16 @@
                     <p></p>
                 </div>
             </div>
-            <script src="//code.jquery.com/jquery.min.js"></script>
-        <!-- <script src="{{ url('js/jquery-2.1.1.min.js') }}"></script> -->
-        <script src="{{ url('js/jquery.waypoints.min.js') }}"></script>                        
-        <script src="{{ url('js/index/skillPrograms.js') }}"></script>
-        <script src="{{ url('js/index/waypoints.js') }}"></script>
-        <script src="{{ url('js/loader.js') }}"></script>
-        <script src="{{ url('js/menu.js') }}"></script>
-        <script src="{{ url('js/index/sliderIndex.js') }}"></script>        
-        <script src="{{ url('js/index/mail.js') }}"></script>
-        <script src="{{ url('js/index/parralax-image.js') }}"></script>
-        <script src="js/index/slider-logos-enterprise.js"></script>
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115852534-1"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+@endsection
+@section('scripts')
+    <script src="{{ url('js/jquery.waypoints.min.js') }}"></script>                        
+    <script src="{{ url('js/index/skillPrograms.js') }}"></script>
+    <script src="{{ url('js/index/waypoints.js') }}"></script>
+    <script src="{{ url('js/index/sliderIndex.js') }}"></script>        
+    <script src="{{ url('js/index/mail.js') }}"></script>
+    <script src="{{ url('js/index/parralax-image.js') }}"></script>
+    <script src="js/index/slider-logos-enterprise.js"></script>
+@endsection
+        
 
-        gtag('config', 'UA-115852534-1');
-        </script>
-
-    </body> 
-</html>

@@ -13,10 +13,20 @@ class VisitorController extends Controller
 	public function index(){
 		session_start();
 		if(isset($_SESSION["newsession"]))
-				return view('welcome')->with('visited', true);
+				return view('visitor/home')->with('visited', true);
 		else {
 			$_SESSION["newsession"] = true;
-			return view('welcome')->with('visited', false);
+			return view('visitor/home')->with('visited', false);
+		}
+	}
+
+	public function eng(){
+		session_start();
+		if(isset($_SESSION["newsession"]))
+				return view('visitor/eng')->with('visited', true);
+		else {
+			$_SESSION["newsession"] = true;
+			return view('visitor/eng')->with('visited', false);
 		}
 	}
 
