@@ -141,6 +141,10 @@ nav {
         padding-top: 80px;
         overflow: hidden;
     }
+
+    .transUnset {
+        transition: unset !important;
+    }
     .movMenu img {
         width: 80%;
         margin: 0 auto 40px auto;

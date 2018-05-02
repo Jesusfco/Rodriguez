@@ -21,7 +21,7 @@
             </div>
         </div>
 
-        <div class="movMenu hidden" onclick="console.log('click en menu')">
+        <div class="movMenu hidden">
             <img src="{{ url('img/logoNav.png') }}">
             <ul>
                 <li class="hidden"> <i class="material-icons">home</i> INICIO</li>
