@@ -40,9 +40,12 @@ function generateCirclesCanvas(can, percentage, color, text) {
     var progress = 0;
     var initPath = .35 * Math.PI;
 
-    setInterval(function() {
+    var interval = setInterval(function() {
 
-        if (progress >= percentage) return;
+        if (progress >= percentage) {
+            clearInterval(interval);
+            return;
+        }
 
         c.clearRect(0, 0, can.width, can.height);
         var percentageCircle = initPath + (((Math.PI * 2) / 100) * progress);
@@ -89,9 +92,12 @@ function generateBarProgressLenguages(can, percentage) {
     can.height = can.offsetHeight;
     var c = can.getContext("2d");
 
-    setInterval(function() {
+    var interval = setInterval(function() {
 
-        if (progress >= percentage) return;
+        if (progress >= percentage) {
+            clearInterval(interval);
+            return;
+        }
 
         c.clearRect(0, 0, can.width, can.height);
         var fillableArea = ((can.width - 75) / 100) * progress;

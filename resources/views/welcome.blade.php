@@ -35,7 +35,10 @@
 
             <div class="slider-container">
 
-                <div class="img-container">
+                <div class="img-container" 
+                    ontouchstart="sliderIndexTouchStart(event)"
+                    ontouchmove="sliderIndexTouchMove(event)"
+                    ontouchend="sliderIndexTouchEnd(event)">
 
                     <div class="slider-piece centrar" style=" background-image: url('{{ url('img/index/1.jpg') }}') ">
                         <div>
