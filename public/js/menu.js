@@ -11,10 +11,9 @@ $(window).scroll(function() {
 
 });
 var menuClick = 0;
-var menuTargetPosition;
+
 
 $(document).ready(function() {
-    menuTargetPosition = $('#menuTarget').position().left;
     $('#nav-icon').click(function() {
 
         if (menuClick == 0) {
@@ -27,7 +26,6 @@ $(document).ready(function() {
             setTimeout(function() { $('.movMenu li:nth-child(3)').toggleClass('hidden'); }, 500);
             setTimeout(function() { $('.movMenu li:nth-child(4)').toggleClass('hidden'); }, 600);
             setTimeout(function() { $('.movMenu li:nth-child(5)').toggleClass('hidden'); }, 700);
-            $('#menuTarget').css('right', 250);
             menuClick++;
             return;
         } else {
@@ -40,7 +38,6 @@ $(document).ready(function() {
             setTimeout(function() { $('.movMenu li:nth-child(5)').toggleClass('hidden'); }, 400);
 
             setTimeout(function() { $('.movMenu').toggleClass('hidden'); }, 300);
-            $('#menuTarget').css('right', 0);
             menuClick = 0;
         }
 
@@ -60,7 +57,7 @@ function menuTargetMove(event) {
     var touch = event.touches[0];
     var change = menuStartingX - touch.clientX;
     
-    //console.log("MOVE: " + change);
+    console.log("MOVE: " + change);
     if(change > 250){
         return;
     }
@@ -85,23 +82,13 @@ function menuTargetMove(event) {
     }
 
     // $('#menuTarget').css('right', change);
-
-    if(change < 0) {
-        $('.movMenu').css('transform', "translateX(" + (-change) + "px)");
-    } else {
-            if($("#menuTarget").position().left < menuTargetPosition) return;
-        $('.movMenu').css('transform', "translateX(" + (250 - change) + "px)");
-    }
-     
-    
-    $('.movMenu').addClass("transUnset");
+    $('.movMenu').css({'transform': "translateX(" + (250 - change) + "px)", "transition": 0});
 }
 
 function menuTargetEnd(event) {
-    
-    var changeEnd = menuStartingX - event.changedTouches[0].clientX;    
+    var changeEnd = menuStartingX - event.changedTouches[0].clientX;
+    console.log("FINAL: " + changeEnd);
 
-    $('.movMenu').removeClass("transUnset");
     if(changeEnd >= 50) {
 
         $('.movMenu').removeClass('hidden');
