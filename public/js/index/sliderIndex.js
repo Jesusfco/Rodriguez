@@ -132,14 +132,18 @@ function sliderIndexTouchMove(event) {
 }
 
 function sliderIndexTouchEnd(event) {
+
     var changeEnd = sliderStartingX - event.changedTouches[0].clientX;
     var width = $('.slider-piece:first-child').width();
-    console.log(changeEnd);
+
+    //RETURN TU NORMAL POSITION
     if (changeEnd < width / 2 && changeEnd > -width / 2) {
 
         $('.slider-piece:first-child').animate({
             left: 0,
         }, 300);
+
+        //NEXT SLIDER
     } else if (changeEnd >= width / 2) {
 
         sliderCircleBasic();
@@ -157,6 +161,7 @@ function sliderIndexTouchEnd(event) {
 
         textAnimations();
 
+        //BEFORE SLIDER
     } else if (changeEnd <= -width / 2) {
 
         sliderCircleBasicReturn();

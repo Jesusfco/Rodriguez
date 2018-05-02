@@ -335,8 +335,8 @@
                         <h1>Contacto</h1>
                         <p>¿Tienes algun proyecto en mente? 
                             <br><br>- ¡Contáctame!, te ayudare a realizarlo 
-                            solo mándame un mensaje o llámame. Podemos tomar 
-                            ir por un café y conversar sobre tu negocio.
+                            solo mándame un mensaje o llámame. Podemos 
+                            ir por un café o realizar una videollamada y conversar sobre tu negocio.
                         </p>
                         <a href="tel:+5219611221222"> 
                             <i class="material-icons">local_phone</i> 
@@ -377,17 +377,12 @@
             </div>
             <script src="//code.jquery.com/jquery.min.js"></script>
         <!-- <script src="{{ url('js/jquery-2.1.1.min.js') }}"></script> -->
-        <script src="{{ url('js/jquery.waypoints.min.js') }}"></script>
-        
-
-        
-        
-
+        <script src="{{ url('js/jquery.waypoints.min.js') }}"></script>                        
+        <script src="{{ url('js/index/skillPrograms.js') }}"></script>
         <script src="{{ url('js/index/waypoints.js') }}"></script>
         <script src="{{ url('js/loader.js') }}"></script>
         <script src="{{ url('js/menu.js') }}"></script>
-        <script src="{{ url('js/index/sliderIndex.js') }}"></script>
-        <script src="{{ url('js/index/skillPrograms.js') }}"></script>
+        <script src="{{ url('js/index/sliderIndex.js') }}"></script>        
         <script src="{{ url('js/index/mail.js') }}"></script>
         <script src="{{ url('js/index/parralax-image.js') }}"></script>
         <script src="js/index/slider-logos-enterprise.js"></script>
