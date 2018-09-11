@@ -48,9 +48,9 @@ $('.codeHability').waypoint(function(direction) {
     if (direction == 'down') {
 
         generateBarProgressLenguages(cavHTML, 95);
-        generateBarProgressLenguages(cavJS, 85);
+        generateBarProgressLenguages(cavJS, 92);
         generateBarProgressLenguages(cavPHP, 90);
-        generateBarProgressLenguages(cavJ, 60);
+        generateBarProgressLenguages(cavJ, 80);
         generateBarProgressLenguages(cavPY, 45);
 
     } else {
