@@ -320,9 +320,9 @@
                             <i class="material-icons">local_phone</i> 
                                 +52 1 961-122-1222</a>
                         <br><br>
-                        <a href="mailto:rodriguez@amerigas.mx">
+                        <a href="mailto:contact@roguezservices.com">
                             <i class="material-icons">mail</i> 
-                             rodriguez@amerigas.mx</a>
+                            contact@roguezservices.com</a>
                     </div>
 
                     <div style="position: relative">
@@ -337,7 +337,7 @@
 
                             <textarea name="text" placeholder="Message" required></textarea>
 
-                            <button>Enviar mensaje  <i class="material-icons">send</i></button>
+                            <button>Send Message  <i class="material-icons">send</i></button>
                         </form>
                     </div>
                 </div>
