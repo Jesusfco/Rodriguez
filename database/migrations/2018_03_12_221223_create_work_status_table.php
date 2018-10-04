@@ -16,7 +16,7 @@ class CreateWorkStatusTable extends Migration
         Schema::create('work_status', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->text('description');
+            $table->text('description')->nullable();
         });
     }
 

@@ -16,14 +16,17 @@ class CreateWorksTable extends Migration
         Schema::create('works', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
+            $table->integer('creator_id');
             $table->integer('service_id');
             $table->integer('work_status_id')->default(1);
-            $table->string('title');
+            $table->string('title')->unique();
             $table->text('resume')->nullable();
-
-            $table->integer('cost');
+            $table->text('description')->nullable();            
+            $table->double('cost', 8, 2);   
             $table->string('img')->nullable();
-
+            $table->boolean('public')->default(false);
+            $table->text('youtube')->nullable();
+            $table->integer('photos_quantity')->nullable();                                    
             $table->timestamps();
         });
     }
