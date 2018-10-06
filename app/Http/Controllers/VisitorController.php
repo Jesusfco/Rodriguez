@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Mail;
 use App\Mail\ContactMail;
 use App\Mail\AmerigasMail;
+use Auth;
 
 class VisitorController extends Controller
 {
@@ -57,5 +58,29 @@ class VisitorController extends Controller
 
 			return 'Mail enviado || SERVIDOR';
 	}
+
+	public function login() {
+
+		if(Auth::check()) {
+			return redirect('app');
+		}
+		return view('visitor/login')->with('visited', true);
+	}
+
+	public function signin(Request $request)
+    {        
+        $this->validate($request, [
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->password]) ) {
+
+            return redirect('/app');
+
+        }
+
+        return back();
+    }
     
 }

@@ -17,3 +17,8 @@ Route::get('/eng', 'VisitorController@eng');
 Route::post('/mail', 'VisitorController@mail');
 
 Route::get('/test', 'VisitorController@test');
+
+Route::get('login', 'VisitorController@login');
+Route::post('login', 'VisitorController@signin');
+
+Route::get('app', 'Auth\LoginController@indexLogin');

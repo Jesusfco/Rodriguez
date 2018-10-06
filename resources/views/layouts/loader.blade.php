@@ -12,7 +12,7 @@
 }
 </style>
 <div class="loader">
-    <div class="backgroundImg"></div>
+<div class="backgroundImg" style="background-image: url({{ url('img/loader.jpg') }})"></div>
     <div class="loaderContainer">
         <ul class="hidden" style="display:none">
             <li>R</li>
