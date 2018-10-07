@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use Mail;
 use App\Mail\ContactMail;
 use App\Mail\AmerigasMail;
+use App\Blog;
+use App\Service;
+use App\BlogComment;
+use App\BlogAnswer;
+use App\Work;
 use Auth;
 use Session;
 
@@ -17,15 +22,13 @@ class VisitorController extends Controller
 		if(Session::get('visited') == 1){
 			Session::put('visited', 2);
 		} else {
-			Session::put('visited',2);
+			Session::put('visited', 1);
 		}
 
-		Session::put('visited', 'PINCHE CARA DE NALGA');
-    }
-
-	public function index(){
-		echo Session::get('visited');
-		return;
+	}	
+	
+	public function index() {
+		
 		return view('visitor/home');
 		
 	}
@@ -51,7 +54,8 @@ class VisitorController extends Controller
 	}
 	
 	public function blog() {
-		
+		return view('visitor/blog')
+		->with('blogs', Blog::orderBy('date', 'DESC')->paginate(10));
 	}
 
 	public function test(Request $request){
@@ -68,7 +72,7 @@ class VisitorController extends Controller
 		if(Auth::check()) {
 			return redirect('app');
 		}
-		return view('visitor/login')->with('visited', true);
+		return view('visitor/login');
 	}
 
 	

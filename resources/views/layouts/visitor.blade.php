@@ -36,7 +36,7 @@
     </head>
     <body> 
 
-        @if(Session::get('visited') == false)
+        @if(Session::get('visited') == 1)
             @include('layouts.loader')
         @endif   
 
