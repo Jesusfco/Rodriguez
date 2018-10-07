@@ -7,28 +7,33 @@ use Mail;
 use App\Mail\ContactMail;
 use App\Mail\AmerigasMail;
 use Auth;
+use Session;
 
 class VisitorController extends Controller
 {
 
-	public function index(){
-		session_start();
-		if(isset($_SESSION["newsession"]))
-				return view('visitor/home')->with('visited', true);
-		else {
-			$_SESSION["newsession"] = true;
-			return view('visitor/home')->with('visited', false);
+	public function __construct() {		
+
+		if(Session::get('visited') == 1){
+			Session::put('visited', 2);
+		} else {
+			Session::put('visited',2);
 		}
+
+		Session::put('visited', 'PINCHE CARA DE NALGA');
+    }
+
+	public function index(){
+		echo Session::get('visited');
+		return;
+		return view('visitor/home');
+		
 	}
 
 	public function eng(){
-		session_start();
-		if(isset($_SESSION["newsession"]))
-				return view('visitor/eng')->with('visited', true);
-		else {
-			$_SESSION["newsession"] = true;
-			return view('visitor/eng')->with('visited', false);
-		}
+		
+		return view('visitor/eng');
+		
 	}
 
 	public function mail(){
@@ -44,10 +49,9 @@ class VisitorController extends Controller
 			// 	$message->from('rodriguez@amerigas.mx', 'Rodriguez');
 			// });
 	}
-
-	public function amerigasContact(){
-		Mail::send(new AmerigasMail());
-		return response()->json(true);
+	
+	public function blog() {
+		
 	}
 
 	public function test(Request $request){
@@ -66,6 +70,8 @@ class VisitorController extends Controller
 		}
 		return view('visitor/login')->with('visited', true);
 	}
+
+	
 
 	public function signin(Request $request)
     {        
