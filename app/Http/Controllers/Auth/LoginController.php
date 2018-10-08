@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 // use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Auth;
+use Socialite;
+use App\User;
+use Session;
 
 class LoginController extends Controller
 {
@@ -32,12 +36,64 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('admin');
-    }
+    // public function __construct()
+    // {
+        
+    // }
 
     public function indexLogin() {
-        return 'indexLÑogin';
+
+        if (Auth::check()) {
+
+            return view('admin/home');
+
+        }
+
+        return back();
+
     }
+
+    public function redirectToProvider($provider)
+    {
+        return Socialite::driver($provider)->redirect();
+    }
+
+    public function handleProviderCallback($provider)
+    {        
+
+        $user = Socialite::driver($provider)->user();
+        
+        // return get_object_vars ($user);
+        
+        $authUser = $this->findOrCreateUser($user, $provider);
+        Auth::login($authUser, true);
+
+        if (Session::has('lastUrl')) {
+
+            $url = Session::get('lastUrl');
+            Session::forget('lastUrl');
+            return redirect($url);
+
+        }
+
+        return redirect($this->redirectTo);
+
+    }
+
+   
+    public function findOrCreateUser($user, $provider)
+    {
+        $authUser = User::where('email', $user->email)->first();
+        
+        if ($authUser) {
+            return $authUser;
+        }
+        
+        return User::create([
+            'name'     => $user->name,
+            'email'    => $user->email,            
+        ]);
+        
+    }
+
 }
