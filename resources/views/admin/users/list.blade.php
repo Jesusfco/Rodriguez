@@ -49,12 +49,8 @@
                             <td>{{ $n->email }}</td>
                             <td>{{ $n->phone }}</td>
                             <td>
-                                @if($n->user_type == 1) Cliente 
-                                @elseif($n->user_type == 2) Vendedor
-                                @elseif($n->user_type == 3) Host
-                                @elseif($n->user_type == 4) Editor
-                                @elseif($n->user_type == 5) Manager
-                                @elseif($n->user_type == 10) Administrador
+                                @if($n->type == 1) Cliente                                 
+                                @elseif($n->type == 10) Administrador
                                 @endif
                             </td>
 

@@ -12,7 +12,7 @@
                     <h2>Trabajos >> Lista</h2>
                     </div>
 
-                    <a href="{{ url('app/blog/create') }}"><button class="btn">Crear Trabajo</button></a>
+                    <a href="{{ url('app/works/create') }}"><button class="btn">Crear Trabajo</button></a>
                     <div class="col-xs-12 col-sm-6">
                         
                     <form method="GET" class="navbar-form">

@@ -34,9 +34,9 @@
   <div class="col s12 profileImg">
 
         @if($user->img != NUll)
-            <img src="{{ url('images/users', $user->img) }}">
+            <img src="{{ url('img/app/users', $user->img) }}">
         @else
-            <img src="{{ url('images/app/user.png') }}">
+            <img src="{{ url('img/app/user.png') }}">
         @endif
   </div>
 
@@ -63,12 +63,8 @@
   <br>
 
   <div class="input-field col l6 s12">
-    <select name="user_type" v-model="user_type">            
-      <option value="1">Cliente</option>
-      <option value="2">Vendedor</option>
-      <option value="3">Host</option>
-      <option value="4">Editor</option>
-      <option value="5">Manager</option>
+    <select name="type" v-model="type">            
+      <option value="1">Cliente</option>      
       <option value="10">Administrador</option>
     </select>
     <label>Tipo de Usuario</label>
@@ -91,28 +87,8 @@
   </div>
 
   <div class="input-field col l6 s12">
-    <input type="date" name="birthday" value="{{ $user->birthday }}">
-    <label>Fecha de Nacimiento</label>
-  </div>
-
-  <div class="input-field col l6 s12">
-    <input type="text" name="state" value="{{ $user->state }}">
-    <label>Estado</label>
-  </div>
-
-  <div class="input-field col l6 s12">
-    <input type="text" name="city" value="{{ $user->city }}">
-    <label>Ciudad</label>
-  </div>
-
-  <div class="input-field col l6 s12">
-    <input type="text" name="country" value="{{ $user->country }}">
-    <label>País</label>
-  </div>
-
-  <div class="input-field col l6 s12">
-    <input type="text" name="ocupation" value="{{ $user->ocupation }}">
-    <label>Ocupación</label>
+    <input type="text" name="enterprise" value="{{ $user->enterprise }}">
+    <label>Empresa</label>
   </div>
 
   <div class="file-field input-field col l6 s12">
@@ -123,6 +99,11 @@
       <div class="file-path-wrapper">
         <input class="file-path validate" type="text">
       </div>
+    </div>
+
+    <div class="form-group col l6 s12">
+      <label for="exampleInputPassword1">Contraseña</label>
+      <input type="passwor" name="password" class="form-control"  placeholder="" >
     </div>
   
       
@@ -152,7 +133,7 @@
 
         data: {
             
-            user_type: {{ $user->user_type }},
+            type: {{ $user->type }},
             gender: {{ $user->gender }},
             status: {{ $user->status }},
             

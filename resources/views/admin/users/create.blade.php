@@ -29,12 +29,8 @@
     <br>
 
     <div class="input-field col l6 s12">
-      <select name="user_type">            
-        <option value="1" selected>Cliente</option>
-        <option value="2">Vendedor</option>
-        <option value="3">Host</option>
-        <option value="4">Editor</option>
-        <option value="5">Manager</option>
+      <select name="type">            
+        <option value="1" selected>Cliente</option>        
         <option value="10">Administrador</option>
       </select>
       <label>Tipo de Usuario</label>
@@ -53,31 +49,11 @@
         <option value="1" selected>Activo</option>        
       </select>
       <label>Status</label>
-    </div>
+    </div>    
 
     <div class="input-field col l6 s12">
-      <input type="date" name="birthday" value="{{ old('birthday') }}">
-      <label>Fecha de Nacimiento</label>
-    </div>
-
-    <div class="input-field col l6 s12">
-      <input type="text" name="state" value="{{ old('state') }}">
-      <label>Estado</label>
-    </div>
-
-    <div class="input-field col l6 s12">
-      <input type="text" name="city" value="{{ old('city') }}">
-      <label>Ciudad</label>
-    </div>
-
-    <div class="input-field col l6 s12">
-      <input type="text" name="country" value="{{ old('country') }}">
-      <label>País</label>
-    </div>
-
-    <div class="input-field col l6 s12">
-      <input type="text" name="ocupation" value="{{ old('ocupation') }}">
-      <label>Ocupación</label>
+      <input type="text" name="enterprise" value="{{ old('enterprise') }}">
+      <label>Empresa</label>
     </div>
 
     <div class="file-field input-field col l6 s12">
@@ -90,7 +66,10 @@
         </div>
       </div>
     
-        
+      <div class="form-group col l6 s12">
+        <label for="exampleInputPassword1">Contraseña</label>
+        <input type="password" name="password" class="form-control"  placeholder="" >
+      </div>
   
     
     <div class="col s12">

@@ -1,8 +1,19 @@
 @extends('layouts.admin')
+@section('styles')
+<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.9.1/themes/smoothness/jquery-ui.css">
+@endsection
+@section('content')         
 
-@section('content')            
+<h2>Crear Trabajo</h2>
+
             <form role="form" method="POST" enctype="multipart/form-data" onsubmit="return crearNoticia()">
                         {{ csrf_field() }}
+
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Cliente</label>
+                          <input type="text" name="client" class="form-control" id="client" placeholder="Cliente" required>
+                          <input type="hidden" name="client_id" id="client_id" required>
+                        </div>
 
                         <div class="form-group">
                           <label for="exampleInputEmail1">Titulo</label>
@@ -14,23 +25,39 @@
                           <input type="text" name="resume" class="form-control"  placeholder="Escribe brevemente de que se trara la noticia" required>
                         </div>
 
-                        <div class="form-group">
-                          <label>Imagen</label>
-                          <input type="file" name="img" id="imagen" accept="image/x-png,image/gif,image/jpeg" required>
-
-                          <p class="help-block">Cargue una fotografía de la noticia</p>
-                        </div>
-                        
-                        <div class="row"><div class="col-sm-12 col-lg-3">
+                        <div class="file-field input-field col l6 s12">
+                          <div class="btn">
+                            <span>Imagen</span>
+                            <input type="file" name="img" accept="image/x-png,image/gif,image/jpeg">
+                          </div>
+                          <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                          </div>
+                        </div>                                               
                             
-                         <div class="form-group">
-                          <label>Fecha</label>
-                          <input type="date" name="date" class="form-control" required>
+                        <div class="form-group">
+                          <label>Costo</label>
+                          <input type="number" name="cost" class="form-control" required>
                         </div>
                         
-                        </div></div>
+                       <div class="input-field col l6 s12">
+                        <select name="status">            
+                          <option value="1" selected>Planifiación</option>
+                          <option value="2">Proceso</option>          
+                          <option value="3">Entregado</option>          
+                        </select>
+                        <label>Status</label>
+                      </div>
+
+                      <div class="input-field col l6 s12">
+                        <select name="status">            
+                          <option value="0" selected>Sin Publicar</option>
+                          <option value="1">Publico</option>                                    
+                        </select>
+                        <label>Status</label>
+                      </div>
                                 
-                        <label>Redacta tu noticia</label>
+                        <label>Redacta tu Trabajo</label>
                         <textarea name="editor1" id="editor1" rows="10" cols="80">
 
                         </textarea>
@@ -42,25 +69,89 @@
                         </div>
                         
                         
-                        <button type="submit" class="btn btn-default">Crear Nueva Nota</button>
+                        <button type="submit" class="btn btn-default">Crear Nuevo Trabajo</button>
                       </form>
 
 @endsection
 
 @section('scripts')
-    <script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
-    <script>
-        // Replace the <textarea id="editor1"> with a CKEditor
-        // instance, using default configuration.
-        CKEDITOR.replace( 'editor1' );
+  <script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>  
+  <script src="https://code.jquery.com/ui/1.9.1/jquery-ui.min.js" integrity="sha256-UezNdLBLZaG/YoRcr48I68gr8pb5gyTBM+di5P8p6t8=" crossorigin="anonymous"></script>  
+  <script>
+      // Replace the <textarea id="editor1"> with a CKEditor
+      // instance, using default configuration.
+      CKEDITOR.replace( 'editor1' );
 
-        function crearNoticia(){
-            var data = CKEDITOR.instances.editor1.getData();
-            $('.contenidoNota').val(data);
+      function crearNoticia(){
+          var data = CKEDITOR.instances.editor1.getData();
+          $('.contenidoNota').val(data);
 
-            if(data.length == 0) return false;
+          if(data.length == 0) return false;
 
 //            return false;
-        }
-    </script>
+      }
+
+      $(document).ready(function(){
+        $('select').formSelect();
+      });
+  </script>
+
+<script>		
+
+  let sugest = [];
+
+  $(document).ready(function() {
+
+    let link = "{{ url('app/clientSugest')}}";			
+
+    $('#client').autocomplete({
+
+      source: function(request, response) {
+
+        $.ajax({
+
+          url: link,
+          dataType: "json",
+          data: {term: request.term },
+
+          success: function(data) {
+            console.log(data);
+            response(data);
+            sugest = data;
+          }
+
+        });
+
+      }, // another stuff
+
+      minLength: 3,
+      select: function(event, ui) {
+        
+        $('#client_id').val(ui.item.id);
+      }
+
+    });
+
+  });
+
+  function validateForm() {
+
+    let id = $('#idAsesor').val();
+
+    if(id == null) {
+
+      alert('Seleccione a un Asesor de las sugerencias');
+      return false;
+
+    } else {
+
+      return true;
+
+    }
+
+  }
+  
+
+  
+</script>
 @endsection

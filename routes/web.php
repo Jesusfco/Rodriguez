@@ -52,4 +52,12 @@ Route::get('/app/works/create', 'Auth\WorksController@create');
 Route::post('/app/works/create', 'Auth\WorksController@store');
 Route::get('/app/works/update/{id}', 'Auth\WorksController@edit');
 Route::post('/app/works/update/{id}', 'Auth\WorksController@update');
-Route::get('/app/works/destroy', 'Auth\WorksController@destroy');
+Route::get('/app/works/destroy/{id}', 'Auth\WorksController@destroy');
+
+//SERVICES
+Route::get('/app/services', 'Auth\ServicesController@list');
+Route::get('/app/services/create', 'Auth\ServicesController@create');
+Route::post('/app/services/create', 'Auth\ServicesController@store');
+Route::get('/app/services/update/{id}', 'Auth\ServicesController@edit');
+Route::post('/app/services/update/{id}', 'Auth\ServicesController@update');
+Route::get('/app/services/destroy/{id}', 'Auth\ServicesController@destroy');

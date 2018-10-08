@@ -37,9 +37,13 @@ class UsersController extends Controller
         $user = new User();
         $user->name = $this->upper($request->name);
         $user->email = strtolower($request->email);
-        $user->type = $request->type;
+        $user->phone = $request->phone;
+        $user->type = $request->type;        
         $user->status = 1;
-        $user->gender = $request->gender;                
+        $user->gender = $request->gender;
+        $user->enterprise = $request->enterprise;  
+        if($request->password != NULL)          
+            $user->password = bcrypt($request->password);              
         $user->save();
 
         if($request->file('img') != NULL)
@@ -71,9 +75,13 @@ class UsersController extends Controller
 
         $user->name = $this->upper($request->name);
         $user->email = strtolower($request->email);
-        $user->type = (int)$request->type;
-        $user->status = (int)$request->status;
-        $user->gender =(int) $request->gender;        
+        $user->phone = $request->phone;
+        $user->type = $request->type;        
+        $user->status = $request->status;
+        $user->gender = $request->gender;
+        $user->enterprise = $request->enterprise; 
+        if($request->password != NULL)          
+            $user->password = bcrypt($request->password);
 
         $user->save();
 
