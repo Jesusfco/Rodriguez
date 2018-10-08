@@ -53,6 +53,9 @@ Route::post('/app/works/create', 'Auth\WorksController@store');
 Route::get('/app/works/update/{id}', 'Auth\WorksController@edit');
 Route::post('/app/works/update/{id}', 'Auth\WorksController@update');
 Route::get('/app/works/update/{id}/parts', 'Auth\WorksController@workParts');
+Route::post('/app/works/update/{id}/storePart', 'Auth\WorksController@storePart');
+Route::post('/app/works/update/{id}/updatePart', 'Auth\WorksController@updatePart');
+Route::post('/app/works/update/{id}/deletePart', 'Auth\WorksController@deletePart');
 Route::get('/app/works/destroy/{id}', 'Auth\WorksController@destroy');
 
 //SERVICES

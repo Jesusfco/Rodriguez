@@ -5,13 +5,69 @@
 <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.9.1/themes/smoothness/jquery-ui.css">
 @endsection
 @section('content')         
-
+{{-- 
 <h2>{{ $work->title }}</h2>
 <h5>{{ $work->user->name }}</h5>
-<p>Costo Total: $<span>@{{ work.cost }}</span></p>
+<p>Costo Total: $<span>@{{ work.cost }}</span></p> --}}
 
-<form>
+{{-- <form v-if="!editMode" class="row" v-on:submit.prevent="create()">
+        <div class="form-group col s12">
+            <label for="exampleInputEmail1">Titulo</label>
+            <input type="text" placeholder="titulo" v-model="newPart.title" required>            
+        </div>
 
+        <div class="form-group col s12 m6">
+            <label for="exampleInputEmail1" >Costo</label>
+            <input type="number" placeholder="titulo" v-model="newPart.cost" required>            
+        </div>
+
+        <div class="form-group col s12 m6">
+            <select name="status" v-model="newPart.status">            
+                <option value="1">Planifiación</option>
+                <option value="2">Proceso</option>          
+                <option value="3">Entregado</option>          
+                </select>
+            <label>Status</label>            
+        </div>
+
+        <div class="form-group col s12">
+            <label for="exampleInputEmail1">Descripción</label>
+            <textarea v-model="newPart.description">            </textarea>
+        </div>
+
+        <div class="form-group col s12">
+            <button class="btn green">Agregar</button>
+        </div>
+</form>
+
+<form v-if="editMode" class="row" v-on:submit.prevent="update()">
+        <div class="form-group col s12">
+            <label for="exampleInputEmail1">Titulo</label>
+            <input type="text" placeholder="titulo" v-model="editPart.title" required>            
+        </div>
+
+        <div class="form-group col s12 m6">
+            <label for="exampleInputEmail1" >Costo</label>
+            <input type="number" placeholder="titulo" v-model="editPart.cost" required>            
+        </div>
+
+        <div class="form-group col s12 m6">
+            <select name="status" v-model="editPart.status">            
+                <option value="1">Planifiación</option>
+                <option value="2">Proceso</option>          
+                <option value="3">Entregado</option>          
+                </select>
+            <label>Status</label>            
+        </div>
+
+        <div class="form-group col s12">
+            <label for="exampleInputEmail1">Descripción</label>
+            <textarea v-model="editPart.description">            </textarea>
+        </div>
+
+        <div class="form-group col s12">
+            <button class="btn green">Actualizar</button>
+        </div>
 </form>
 
 <table>
@@ -33,11 +89,14 @@
             <td v-if="part.status == 3">Finalizado</td>
             <td>@{{ part.created_at }}</td>
             <td>
-
+                <button v-on:click="edit(part)" class="btn blue">Editar</button>
+                <button v-on:click="app.delete(part.id)"  class="btn red">Eliminar <i class="material-icons">trash</i></button>
             </td>
         </tr>
     </tbody>
-</table>
+</table> --}}
+
+<button v-on:click="test()">
                         
                         
 @endsection
@@ -48,27 +107,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
   <script>
-      // Replace the <textarea id="editor1"> with a CKEditor
-      // instance, using default configuration.
-    //   CKEDITOR.replace( 'editor1' );      
-
-    //     var data = CKEDITOR.instances.editor1.getData();
-    //     $('.contenidoNota').val(data);
-
-    //     let id = $('#client_id').val();
-
-    //       if(id == null) {
-
-    //         alert('Seleccione a un Cliente de las sugerencias');
-    //         return false;
-
-    //       } else {
-
-    //         return true;
-
-    //       }         
-
-    //   }
+     
 
       $(document).ready(function(){
         $('select').formSelect();
@@ -184,7 +223,7 @@
 
                     .then(function(response) {
 
-                        for(let i = 0: x < app.work.parts.length; i++) {
+                        for(let i = 0; x < app.work.parts.length; i++) {
 
                             if(app.work.parts[i].id == response.data.id) {
 
@@ -233,6 +272,10 @@
                         // app.errorHandler(error, i);
 
                     });
+            }, 
+
+            test: function() {
+                console.log('test');
             }
             
          }
