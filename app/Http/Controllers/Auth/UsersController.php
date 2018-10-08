@@ -119,4 +119,17 @@ class UsersController extends Controller
         return $string;
     }
 
+    public function sugestClient(Request $request) {
+
+        // return 'holi';
+        
+        return response()->json(
+
+            
+            User::where([
+                ['name', 'LIKE', '%'. $request->term . '%'],
+                ['type', '=', 1]
+            ])->limit(10)->get()
+        );
+    }
 }

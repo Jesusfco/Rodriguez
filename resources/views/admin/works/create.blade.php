@@ -6,41 +6,32 @@
 
 <h2>Crear Trabajo</h2>
 
-            <form role="form" method="POST" enctype="multipart/form-data" onsubmit="return crearNoticia()">
+            <form class="row" role="form" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
                         {{ csrf_field() }}
 
                         <div class="form-group">
                           <label for="exampleInputEmail1">Cliente</label>
-                          <input type="text" name="client" class="form-control" id="client" placeholder="Cliente" required>
+                          <input type="text" name="client" class="autocomplete" id="client" placeholder="Cliente" required>
                           <input type="hidden" name="client_id" id="client_id" required>
                         </div>
 
                         <div class="form-group">
                           <label for="exampleInputEmail1">Titulo</label>
-                          <input type="text" name="title" class="form-control"  placeholder="Titulo de la noticia" required>
+                          <input type="text" name="title" class="form-control"  placeholder="Nombre del Trabajo" required>
                         </div>
 
                         <div class="form-group">
                           <label for="exampleInputPassword1">Resumen</label>
-                          <input type="text" name="resume" class="form-control"  placeholder="Escribe brevemente de que se trara la noticia" required>
+                          <input type="text" name="resume" class="form-control"  placeholder="Escribe brevemente de que se el trabajo" required>
                         </div>
 
-                        <div class="file-field input-field col l6 s12">
-                          <div class="btn">
-                            <span>Imagen</span>
-                            <input type="file" name="img" accept="image/x-png,image/gif,image/jpeg">
-                          </div>
-                          <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
-                          </div>
-                        </div>                                               
-                            
-                        <div class="form-group">
+                        
+                        <div class="form-group  col l4 s12">
                           <label>Costo</label>
                           <input type="number" name="cost" class="form-control" required>
                         </div>
                         
-                       <div class="input-field col l6 s12">
+                       <div class="input-field col l4 s12">
                         <select name="status">            
                           <option value="1" selected>Planifiación</option>
                           <option value="2">Proceso</option>          
@@ -49,27 +40,51 @@
                         <label>Status</label>
                       </div>
 
-                      <div class="input-field col l6 s12">
+                      <div class="input-field col l4 s12">
                         <select name="status">            
                           <option value="0" selected>Sin Publicar</option>
                           <option value="1">Publico</option>                                    
                         </select>
                         <label>Status</label>
                       </div>
-                                
+
+                      <div class="input-field col l6 s12">
+                        <select name="service_id">            
+                          <option value="1" selected>Software</option>
+                          <option value="2">Publico</option>                                    
+                          <option value="3">Fotografía</option>                                    
+                        </select>
+                        <label>Tipo de servicio</label>
+                      </div>
+
+                      <div class="file-field input-field col l6 s12">
+                        <div class="btn">
+                          <span>Imagen</span>
+                          <input type="file" name="img" accept="image/x-png,image/gif,image/jpeg">
+                        </div>
+                        <div class="file-path-wrapper">
+                          <input class="file-path validate" type="text">
+                        </div>
+                      </div>                                               
+                          
+                            
+                      <div class=" col l12 s12">
                         <label>Redacta tu Trabajo</label>
                         <textarea name="editor1" id="editor1" rows="10" cols="80">
 
                         </textarea>
-                        <input type="hidden" class="contenidoNota" name="description" required>
+                        <input type="hidden" class="contenidoNota" name="description">
+                      </div>
                         
-                        <div class="form-group">
+                        <div class="form-group  col l12 s12">
                           <label>Iframe de Youtube</label>
                           <input type="text" name="youtube" class="form-control" name="youtube">
                         </div>
                         
-                        
-                        <button type="submit" class="btn btn-default">Crear Nuevo Trabajo</button>
+                        <div class=" col l6 s12">
+                          <button type="submit" class="btn btn-default">Crear Nuevo Trabajo</button>
+                        </div>
+
                       </form>
 
 @endsection
@@ -82,18 +97,30 @@
       // instance, using default configuration.
       CKEDITOR.replace( 'editor1' );
 
-      function crearNoticia(){
-          var data = CKEDITOR.instances.editor1.getData();
-          $('.contenidoNota').val(data);
+      function validateForm() {
 
-          if(data.length == 0) return false;
+        var data = CKEDITOR.instances.editor1.getData();
+        $('.contenidoNota').val(data);
 
-//            return false;
+        let id = $('#client_id').val();
+
+          if(id == null) {
+
+            alert('Seleccione a un Cliente de las sugerencias');
+            return false;
+
+          } else {
+
+            return true;
+
+          }         
+
       }
 
       $(document).ready(function(){
         $('select').formSelect();
       });
+      
   </script>
 
 <script>		
@@ -102,22 +129,29 @@
 
   $(document).ready(function() {
 
-    let link = "{{ url('app/clientSugest')}}";			
+    let link = "{{ url('app/util/clientSugest')}}";			
 
     $('#client').autocomplete({
 
       source: function(request, response) {
 
         $.ajax({
-
+          method: 'GET',
           url: link,
           dataType: "json",
           data: {term: request.term },
 
           success: function(data) {
             console.log(data);
-            response(data);
-            sugest = data;
+            
+
+            let users = [];
+            for(let d of data) {
+              users.push({value: d.name, data: d.id});
+            }
+            
+
+            response(users);
           }
 
         });
@@ -126,21 +160,23 @@
 
       minLength: 3,
       select: function(event, ui) {
-        
-        $('#client_id').val(ui.item.id);
+        console.log(ui);
+        $('#client_id').val(ui.item.data);
+        // $('#client').val(ui.item.date);
       }
 
     });
 
   });
 
+
   function validateForm() {
 
-    let id = $('#idAsesor').val();
+    let id = $('#client_id').val();
 
     if(id == null) {
 
-      alert('Seleccione a un Asesor de las sugerencias');
+      alert('Seleccione a un Cliente de las sugerencias');
       return false;
 
     } else {

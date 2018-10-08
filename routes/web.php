@@ -61,3 +61,6 @@ Route::post('/app/services/create', 'Auth\ServicesController@store');
 Route::get('/app/services/update/{id}', 'Auth\ServicesController@edit');
 Route::post('/app/services/update/{id}', 'Auth\ServicesController@update');
 Route::get('/app/services/destroy/{id}', 'Auth\ServicesController@destroy');
+
+//UTILS
+Route::get('app/util/clientSugest', 'Auth\UsersController@sugestClient');

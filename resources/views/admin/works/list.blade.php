@@ -43,7 +43,7 @@
                         <tbody>
                         @foreach($works as $work)
                         
-                        <tr id="noticia{{$n->id}}">
+                        <tr id="noticia{{$work->id}}">
                             <td>{{ $work->id }}</td>
                             <td>{{ $work->title }}</td>
                             <td>{{ $work->client }}</td>
