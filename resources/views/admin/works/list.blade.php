@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title', 'Trabajos') 
 @section('styles')
     <link href="{{url('assets/sweet/sweetalert.css')}}" rel="stylesheet">
 @endsection
@@ -46,7 +47,7 @@
                         <tr id="noticia{{$work->id}}">
                             <td>{{ $work->id }}</td>
                             <td>{{ $work->title }}</td>
-                            <td>{{ $work->client }}</td>
+                            <td>{{ $work->user->name }}</td>
                             <td>{{ $work->work_status }}</td>
                             <td>{{ $work->cost }}</td>
                             <td>{{ $work->public }}</td>

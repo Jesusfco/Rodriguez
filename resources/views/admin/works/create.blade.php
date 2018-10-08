@@ -1,4 +1,7 @@
 @extends('layouts.admin')
+
+@section('title', 'Nuevo Trabajo') 
+
 @section('styles')
 <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.9.1/themes/smoothness/jquery-ui.css">
 @endsection

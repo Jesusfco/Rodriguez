@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-
+@section('title', 'Editar Usuario') 
 @section('styles')
     <style>
     

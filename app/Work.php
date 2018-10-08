@@ -17,5 +17,15 @@ class Work extends Model
         $n = $query->where('title', 'LIKE', "%$name%")->get();
         return $query->where('title', 'LIKE', "%$name%");
     }
+
+    public function user()
+    {
+        return $this->hasOne('App\User', 'id', 'user_id');
+    }
+
+    public function creator()
+    {
+        return $this->hasOne('App\User', 'id', 'creator_id');
+    }
     
 }

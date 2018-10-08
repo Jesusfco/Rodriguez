@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-
+@section('title', 'Crear Servicio') 
 @section('content')            
 
 <h1>Nuevo Servicio</h1>

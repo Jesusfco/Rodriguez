@@ -31,6 +31,12 @@ class WorksController extends Controller
         return view('admin/works/create');
     }
 
+    public function edit($id) {
+        $work = Work::find($id);      
+        if($work == NULL)     return 'El Trabajo no existe';
+        return view('admin/works/edit')->with(['work'=> $work]);
+    }
+
     public function store(Request $request) {
 
         $this->validate($request, [
@@ -67,6 +73,31 @@ class WorksController extends Controller
             $this->saveImage($work, $request->file('img'));                     
 
         return redirect('/app/works');
+
+    }
+
+    public function update($id, Request $request) {
+
+        $work = Work::find($id);      
+        if($work == NULL)     return 'El Trabajo no existe';
+
+        $work->user_id = $request->client_id;
+        $work->creator_id = Auth::id();
+        $work->service_id = $request->service_id;
+        $work->work_status_id = $request->status;
+        $work->title = $request->title;
+        $work->resume = $request->resume;        
+        $work->description = $request->description;        
+        $work->youtube = $request->youtube;                      
+
+        //SERVICIO DE FOTOGRAFIA
+        if($work->service_id == 3)        
+            $work->photos_quantity = $request->photos_quantity;   
+
+        if($request->file('img') != NULL)
+            $this->saveImage($work, $request->file('img'));                     
+                    
+        $work->save();
 
     }
 

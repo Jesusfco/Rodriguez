@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title', 'Blog') 
 @section('styles')
     <link href="{{url('assets/sweet/sweetalert.css')}}" rel="stylesheet">
 @endsection

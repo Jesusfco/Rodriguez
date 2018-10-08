@@ -1,6 +1,7 @@
 @extends('layouts.admin')
-
-@section('content')            
+@section('title', 'Nuevo Blog') 
+@section('content')       
+<h1> Nuevo Blog</h1>     
             <form role="form" method="POST" enctype="multipart/form-data" onsubmit="return crearNoticia()">
                         {{ csrf_field() }}
 
