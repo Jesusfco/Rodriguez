@@ -12,20 +12,21 @@ class Work extends Model
         'comentary_client'
     ];
 
-    public function scopeSearch($query, $name) 
-    {
+    public function scopeSearch($query, $name) {
         $n = $query->where('title', 'LIKE', "%$name%")->get();
         return $query->where('title', 'LIKE', "%$name%");
     }
 
-    public function user()
-    {
+    public function user() {
         return $this->hasOne('App\User', 'id', 'user_id');
     }
 
-    public function creator()
-    {
+    public function creator() {
         return $this->hasOne('App\User', 'id', 'creator_id');
+    }
+
+    public function parts(){
+        return $this->hasMany('App\WorksPart', 'work_id', 'id');
     }
     
 }

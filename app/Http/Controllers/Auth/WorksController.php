@@ -37,6 +37,13 @@ class WorksController extends Controller
         return view('admin/works/edit')->with(['work'=> $work]);
     }
 
+    public function workParts($id) {
+        $work = Work::find($id);      
+            if($work == NULL)  return 'El Trabajo no existe';
+        
+        return view('admin/works/workParts')->with(['work'=> $work]);
+    }
+
     public function store(Request $request) {
 
         $this->validate($request, [
@@ -99,6 +106,34 @@ class WorksController extends Controller
                     
         $work->save();
 
+    }    
+
+    public function storePart($id, Request $re) {
+        $part = new WorksPart();
+        $part->work_id = $id;
+        $part->title = $re->title;
+        $part->description = $re->description;
+        $part->cost = $re->cost;
+        $part->status = $re->status;
+        $part->save();
+
+        return response()->json($part);
+    }
+
+    public function updatePart($id, Request $re) {
+        $part = WorksPart::find($re->id);        
+        $part->title = $re->title;
+        $part->description = $re->description;
+        $part->cost = $re->cost;
+        $part->status = $re->status;
+        $part->save();
+
+        return response()->json($part);
+    }
+
+    public function deletePart($id, Request $re) {
+        WorksPart::delete($re->id);                
+        return response()->json(true);
     }
 
     public function saveImage (Work $work, $img) {
