@@ -28,7 +28,7 @@ Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallb
 
 Route::get('app', 'Auth\LoginController@indexLogin');
 
-// blog admin
+//BLOG ADMIN
 Route::get('/app/blog', 'Auth\BlogController@index');
 Route::get('/app/blog/create', 'Auth\BlogController@create');
 Route::post('/app/blog/create', 'Auth\BlogController@store');
@@ -46,3 +46,10 @@ Route::get('/app/users/update/{id}', 'Auth\UsersController@edit');
 Route::post('/app/users/update/{id}', 'Auth\UsersController@update');
 Route::get('/app/users/destroy', 'Auth\UsersController@destroy');
 
+//WORKS
+Route::get('/app/works', 'Auth\WorksController@list');
+Route::get('/app/works/create', 'Auth\WorksController@create');
+Route::post('/app/works/create', 'Auth\WorksController@store');
+Route::get('/app/works/update/{id}', 'Auth\WorksController@edit');
+Route::post('/app/works/update/{id}', 'Auth\WorksController@update');
+Route::get('/app/works/destroy', 'Auth\WorksController@destroy');
