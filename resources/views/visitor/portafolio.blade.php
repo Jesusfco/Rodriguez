@@ -1,6 +1,6 @@
 @extends('layouts.visitor')
 
-@section('title', 'Rodríguez Services || Home') 
+@section('title', 'Portafolio || Rodríguez Services ') 
 
 @section('css')     
     <link href="{{ url('css/visitor/portafolio.css') }}" type="text/css" rel="stylesheet" media="screen,projection"> 
@@ -10,13 +10,13 @@
 
 <div class="portafolio-container">
     @foreach($works as $work)
-    <a class="portafolio">
+    <a href="{{ url('/portafolio', $work->id)}}" class="portafolio">
         <div class="backgrundImg" style="background-image: url({{ url('img/app/works/' . $work->id . '/' . $work->img)}})"></div>
         <div class="backgroundColor"></div>
 
         <div class="letter">
             <h2>{{ $work->title}}</h2>
-            <p>{{ $work->description}}</p>
+            <p>{{ $work->resume}}</p>
         </div>
     </a>
     @endforeach

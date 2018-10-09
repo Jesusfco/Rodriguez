@@ -52,6 +52,9 @@
 
 @section('scripts')
     <script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+    <script src="https://code.jquery.com/ui/1.9.1/jquery-ui.min.js" integrity="sha256-UezNdLBLZaG/YoRcr48I68gr8pb5gyTBM+di5P8p6t8=" crossorigin="anonymous"></script>  
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
     <script>
         // Replace the <textarea id="editor1"> with a CKEditor
         // instance, using default configuration.

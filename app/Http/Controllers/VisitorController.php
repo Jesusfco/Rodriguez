@@ -63,6 +63,12 @@ class VisitorController extends Controller
 		return view('visitor/portafolio')->with('works', $works);
 	}
 
+	public function work($id) {
+		$work = Work::find($id);
+		if($work == NULL || $work->public == false) return 'Trabajo no disponible';
+		return view('visitor/work')->with('work', $work);
+	}
+
 	public function test(Request $request){
 			$request->text= 'hola';
 			$request->name = 'DANIELA';

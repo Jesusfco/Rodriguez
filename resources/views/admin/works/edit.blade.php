@@ -72,8 +72,8 @@
                             
                       <div class=" col l12 s12">
                         <label>Redacta tu Trabajo</label>
-                        <textarea name="editor1" id="editor1" rows="10" cols="80">
-                            {{ $work->description }}
+                        <textarea  id="editor1" rows="10" cols="80">
+                          {{ $work->description }}
                         </textarea>
                         <input type="hidden" class="contenidoNota" name="description">
                       </div>
@@ -102,37 +102,35 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
   <script>
-      // Replace the <textarea id="editor1"> with a CKEditor
-      // instance, using default configuration.
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    
+
+    function validateForm() {
+
+      var data = CKEDITOR.instances.editor1.getData();
+      $('.contenidoNota').val(data);
+
+      let id = $('#client_id').val();
+
+        if(id == null) {
+
+          alert('Seleccione a un Cliente de las sugerencias');
+          return false;
+
+        } else {
+
+          return true;
+
+        }         
+
+    }
+
+    $(document).ready(function(){
+      $('select').formSelect();
       CKEDITOR.replace( 'editor1' );
-
-      function validateForm() {
-
-        var data = CKEDITOR.instances.editor1.getData();
-        $('.contenidoNota').val(data);
-
-        let id = $('#client_id').val();
-
-          if(id == null) {
-
-            alert('Seleccione a un Cliente de las sugerencias');
-            return false;
-
-          } else {
-
-            return true;
-
-          }         
-
-      }
-
-      $(document).ready(function(){
-        $('select').formSelect();
-      });
+    });
       
-  </script>
-
-<script>
     
   var app = new Vue({
       el: '#app',
@@ -192,24 +190,6 @@
     });
 
   });
-
-
-  function validateForm() {
-
-    let id = $('#client_id').val();
-
-    if(id == null) {
-
-      alert('Seleccione a un Cliente de las sugerencias');
-      return false;
-
-    } else {
-
-      return true;
-
-    }
-
-  }
 
 </script>
 @endsection
