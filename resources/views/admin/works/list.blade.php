@@ -38,6 +38,8 @@
                             <th>Cliente</th>
                             <th>Status</th>
                             <th>Costo</th>
+                            <th>Deposito</th>
+                            <th>Pendiente</th>
                             <th>Publico</th>
                             <th>Acciones</th>
                         </thead>
@@ -48,9 +50,11 @@
                             <td>{{ $work->id }}</td>
                             <td>{{ $work->title }}</td>
                             <td>{{ $work->user->name }}</td>
-                            <td>{{ $work->work_status }}</td>
-                            <td>{{ $work->cost }}</td>
-                            <td>{{ $work->public }}</td>
+                            <td>{{ $work->status() }}</td>
+                            <td>${{ $work->cost() }}</td>
+                            <td>${{ $work->deposit() }}</td>
+                            <td>${{ $work->debt() }}</td>
+                            <td>{{ $work->public() }}</td>
                             <td>
                                 <a href="{{ url('app/works/update/'.$work->id.'/uploadPhotos') }}" class="btn purple">Administrar Fotos </a>                                
                                 <a href="{{ url('app/works/update/'.$work->id.'/parts') }}" class="btn orange">Partes </a>                                

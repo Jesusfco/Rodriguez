@@ -108,63 +108,65 @@
   <script>
      
 
-      $(document).ready(function(){
-        $('select').formSelect();
-      });
-      
-  </script>
-
-<script>
+    $(document).ready(function(){
+    $('select').formSelect();
+    });
     
-  var app = new Vue({
-      el: '#app',
+    
+    var app = new Vue({
+        el: '#app',
       
 
-      data: {
-         work: {
+        data: {
+            work: {
              id: {{ $work->id }},
-             cost: {{ $work->cost }},
-             status: {{ $work->work_status_id }},
-             public: {{ $work->public }},
-             service: {{ $work->service_id }},  
-             parts: [
-                 @foreach($work->parts as $part)
-                    {id: {{$part->id}},
-                    work_id: {{$part->work_id}},
-                    title:"{{ $part->title }}",
-                    description:"{{ $part->description }}",
-                    cost: {{$part->cost}},
-                    status: {{ $part->status}},
-                    created_at: "{{ $part->created_at}}",
-                    },
-                 @endforeach
-             ],
+                cost: {{ $work->cost }},
+                status: {{ $work->work_status_id }},
+                public: {{ $work->public }},
+                service: {{ $work->service_id }},  
+                parts: [],                
 
-         }, 
+            }, 
 
-         newPart: {
-             id: null,
-             work_id: {{ $work->id }},
-             cost: 0,
-             status: 1,
-             title: '',
-             description: '',
-             created_at: '',
-         },
+            newPart: {
+                id: null,
+                work_id: {{ $work->id }},
+                cost: 0,
+                status: 1,
+                title: '',
+                description: '',
+                created_at: '',
+            },
 
-         editMode: false,
+            editMode: false,
 
-         editPart: {
-            id: null,
-            work_id: null,
-            cost: 0,
-            status: 1,
-            title: '',
-            description: '',
-            created_at: '',
-         },
-      },       
-         methods: {
+            editPart: {
+                id: null,
+                work_id: null,
+                cost: 0,
+                status: 1,
+                title: '',
+                description: '',
+                created_at: '',
+            },
+        },
+
+        created: function () {
+
+            axios.get('getParts')
+                .then(function(response) {
+                    
+                    for(let d of response.data) {
+                        app.work.parts.push(d);
+                    }
+                    
+                }).catch(function(error) {
+
+                });
+
+        },
+
+        methods: {
 
             create: function() {
 
@@ -182,11 +184,8 @@
                         app.work.parts.push(response.data);
                         app.setNewPart();
 
-
                     }).catch(function(error) {
 
-                        // app.uploading = false;
-                        // app.errorHandler(error, i);
 
                     });
 
@@ -226,18 +225,13 @@
 
                         for(let i = 0; x < app.work.parts.length; i++) {
 
-                            if(app.work.parts[i].id == response.data.id) {
-
-                                app.work.parts[i] = response.data;
-
+                            if(app.work.parts[i].id == response.data.id) { 
+                                app.work.parts[i] = response.data; 
                             }
 
                         }                                                                        
 
-                    }).catch(function(error) {
-
-                        // app.uploading = false;
-                        // app.errorHandler(error, i);
+                    }).catch(function(error) {                        
 
                     });
             }, 
@@ -270,14 +264,7 @@
                         // app.errorHandler(error, i);
 
                     });
-            }, 
-
-            test: function() {
-                console.log('test');
-            }
-            
-         
-
+            },                      
 
       },
 

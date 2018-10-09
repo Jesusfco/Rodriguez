@@ -53,10 +53,19 @@ Route::post('/app/works/create', 'Auth\WorksController@store');
 Route::get('/app/works/update/{id}', 'Auth\WorksController@edit');
 Route::post('/app/works/update/{id}', 'Auth\WorksController@update');
 Route::get('/app/works/update/{id}/parts', 'Auth\WorksController@workParts');
+Route::get('/app/works/update/{id}/getParts', 'Auth\WorksController@getParts');
 Route::post('/app/works/update/{id}/storePart', 'Auth\WorksController@storePart');
 Route::post('/app/works/update/{id}/updatePart', 'Auth\WorksController@updatePart');
 Route::post('/app/works/update/{id}/deletePart', 'Auth\WorksController@deletePart');
 Route::get('/app/works/destroy/{id}', 'Auth\WorksController@destroy');
+
+//PAGOS DE CLIENTES
+Route::get('/app/receipts', 'Auth\PaymentsController@list');
+Route::get('/app/receipts/create', 'Auth\PaymentsController@create');
+Route::post('/app/receipts/create', 'Auth\PaymentsController@store');
+Route::get('/app/receipts/update/{id}', 'Auth\PaymentsController@edit');
+Route::post('/app/receipts/update/{id}', 'Auth\PaymentsController@update');
+Route::get('/app/receipts/destroy/{id}', 'Auth\PaymentsController@destroy');
 
 //SERVICES
 Route::get('/app/services', 'Auth\ServicesController@list');
@@ -68,3 +77,4 @@ Route::get('/app/services/destroy/{id}', 'Auth\ServicesController@destroy');
 
 //UTILS
 Route::get('app/util/clientSugest', 'Auth\UsersController@sugestClient');
+Route::get('app/util/workSugest', 'Auth\WorksController@sugestWork');

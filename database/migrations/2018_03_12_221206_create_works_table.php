@@ -28,6 +28,7 @@ class CreateWorksTable extends Migration
             $table->text('youtube')->nullable();
             $table->integer('photos_quantity')->nullable();                                    
             $table->string('commentary_client')->nullable();
+            $table->string('link')->nullable();
             $table->timestamps();
         });
     }

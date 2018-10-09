@@ -61,7 +61,9 @@ class WorksController extends Controller
         $work->resume = $request->resume;        
         $work->description = $request->description;
         $work->cost = $request->cost;
-        $work->youtube = $request->youtube;                      
+        $work->youtube = $request->youtube;
+        $work->public = $request->public;
+        $work->link = $request->link;                      
         if($work->service_id == 3)        
             $work->photos_quantity = $request->photos_quantity;                      
                     
@@ -95,7 +97,9 @@ class WorksController extends Controller
         $work->title = $request->title;
         $work->resume = $request->resume;        
         $work->description = $request->description;        
-        $work->youtube = $request->youtube;                      
+        $work->youtube = $request->youtube;
+        $work->public = $request->public;
+        $work->link = $request->link;                  
 
         //SERVICIO DE FOTOGRAFIA
         if($work->service_id == 3)        
@@ -106,7 +110,13 @@ class WorksController extends Controller
                     
         $work->save();
 
+        return back()->with('msj', 'Actualizado Correctamente');
+
     }    
+
+    public function getParts($id) {
+        return response()->json(Work::find($id)->parts);
+    }
 
     public function storePart($id, Request $re) {
         $part = new WorksPart();
@@ -138,7 +148,7 @@ class WorksController extends Controller
 
     public function saveImage (Work $work, $img) {
 
-        ini_set('memory_limit','256M');
+        ini_set('memory_limit','256M');        
 
         if($work->img != NULL) {
             File::delete('img/app/works/'. $work->id . '/'. $work->img);
@@ -152,5 +162,16 @@ class WorksController extends Controller
 
         $work->save();
 
+    }
+
+    public function sugestWork(Request $re) {
+
+        return response()->json(
+            
+            Work::where([
+                ['title', 'LIKE', '%'. $re->term . '%'],                
+            ])->limit(10)->get()
+
+        );
     }
 }

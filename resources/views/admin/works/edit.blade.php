@@ -44,7 +44,7 @@
 
                       <div class="input-field col l4 s12">
                         <select name="public" v-model="public">            
-                          <option value="0" selected>Sin Publicar</option>
+                          <option value="0">Sin Publicar</option>
                           <option value="1">Publico</option>                                    
                         </select>
                         <label>Publico</label>
@@ -52,8 +52,8 @@
 
                       <div class="input-field col l6 s12">
                         <select name="service_id" v-model="service">            
-                          <option value="1" selected>Software</option>
-                          <option value="2">Publico</option>                                    
+                          <option value="1">Software</option>
+                          <option value="2">Multimedia</option>                                    
                           <option value="3">Fotografía</option>                                    
                         </select>
                         <label>Tipo de servicio</label>
@@ -73,14 +73,19 @@
                       <div class=" col l12 s12">
                         <label>Redacta tu Trabajo</label>
                         <textarea name="editor1" id="editor1" rows="10" cols="80">
-
+                            {{ $work->description }}
                         </textarea>
                         <input type="hidden" class="contenidoNota" name="description">
                       </div>
                         
                         <div class="form-group  col l12 s12">
                           <label>Iframe de Youtube</label>
-                          <input type="text" name="youtube" class="form-control" name="youtube">
+                          <input type="text" name="youtube" value="{{ $work->youtube }}" class="form-control" name="youtube">
+                        </div>
+
+                        <div class="form-group  col l12 s12">
+                          <label>Link</label>
+                        <input type="text" name="link" value="{{ $work->link }}" class="form-control" name="youtube">
                         </div>
                         
                         <div class=" col l6 s12">
@@ -134,23 +139,15 @@
       
 
       data: {
-         description: {
+         
              status: {{ $work->work_status_id }},
              public: {{ $work->public }},
              service: {{ $work->service_id }},             
 
-         },
-
-         descriptions: [],
-
-
-
-      },
+      },      
 
      
   });
-
-<script>		
 
   let sugest = [];
 
@@ -213,8 +210,6 @@
     }
 
   }
-  
 
-  
 </script>
 @endsection
