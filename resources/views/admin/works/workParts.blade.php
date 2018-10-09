@@ -5,12 +5,11 @@
 <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.9.1/themes/smoothness/jquery-ui.css">
 @endsection
 @section('content')         
-{{-- 
-<h2>{{ $work->title }}</h2>
-<h5>{{ $work->user->name }}</h5>
-<p>Costo Total: $<span>@{{ work.cost }}</span></p> --}}
 
-{{-- <form v-if="!editMode" class="row" v-on:submit.prevent="create()">
+<h2>Trabajo: <br>{{ $work->title }}</h2>
+<h5>Cliente: {{ $work->user->name }}</h5>
+<p>Costo Total: $<span>@{{ work.cost }}</span></p> 
+<form v-if="!editMode" class="row" v-on:submit.prevent="create()">
         <div class="form-group col s12">
             <label for="exampleInputEmail1">Titulo</label>
             <input type="text" placeholder="titulo" v-model="newPart.title" required>            
@@ -83,20 +82,20 @@
         <tr v-for="part in work.parts">            
             <td>@{{ part.title }}</td>
             <td>@{{ part.description }}</td>
-            <td>@{{ part.cost }}</td>
+            <td>$@{{ part.cost }}</td>
             <td v-if="part.status == 1">Planificación</td>
             <td v-if="part.status == 2">En Progreso</td>
             <td v-if="part.status == 3">Finalizado</td>
             <td>@{{ part.created_at }}</td>
             <td>
                 <button v-on:click="edit(part)" class="btn blue">Editar</button>
-                <button v-on:click="app.delete(part.id)"  class="btn red">Eliminar <i class="material-icons">trash</i></button>
+                <button v-on:click="destroy(part.id)"  class="btn red">Eliminar <i class="material-icons">trash</i></button>
             </td>
         </tr>
     </tbody>
-</table> --}}
+</table>
 
-<button v-on:click="test()">
+
                         
                         
 @endsection
@@ -164,7 +163,7 @@
             description: '',
             created_at: '',
          },
-                 
+      },       
          methods: {
 
             create: function() {
@@ -233,7 +232,7 @@
 
                         }
                         
-                        app.editMode = false;
+                        app.editMode = !app.editMode;
 
 
                     }).catch(function(error) {
@@ -244,7 +243,7 @@
                     });
             }, 
 
-            delete: function(id) {
+            destroy: function(id) {
 
                 var formD = new FormData();
                 formD.append('id', id);                
@@ -278,7 +277,7 @@
                 console.log('test');
             }
             
-         }
+         
 
 
       },
