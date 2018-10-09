@@ -58,6 +58,11 @@ class VisitorController extends Controller
 		->with('blogs', Blog::orderBy('date', 'DESC')->paginate(10));
 	}
 
+	public function portafolio() {
+		$works = Work::where('public', true)->get();
+		return view('visitor/portafolio')->with('works', $works);
+	}
+
 	public function test(Request $request){
 			$request->text= 'hola';
 			$request->name = 'DANIELA';

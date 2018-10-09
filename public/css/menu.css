@@ -7,6 +7,7 @@ nav {
     position: fixed;
     z-index: 10;
     transition: all .6s;
+    top: 0;
 }
 
 nav .container {
