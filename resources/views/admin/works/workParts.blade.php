@@ -205,7 +205,7 @@
             },
 
             edit: function(part) {
-                this.editMode =  true;
+                this.editMode = true;
                 this.editPart = part;
             },
 
@@ -222,6 +222,8 @@
 
                     .then(function(response) {
 
+                        app.editMode = !app.editMode;                        
+
                         for(let i = 0; x < app.work.parts.length; i++) {
 
                             if(app.work.parts[i].id == response.data.id) {
@@ -230,10 +232,7 @@
 
                             }
 
-                        }
-                        
-                        app.editMode = !app.editMode;
-
+                        }                                                                        
 
                     }).catch(function(error) {
 

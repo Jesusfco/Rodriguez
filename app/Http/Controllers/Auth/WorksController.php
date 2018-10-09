@@ -132,7 +132,7 @@ class WorksController extends Controller
     }
 
     public function deletePart($id, Request $re) {
-        WorksPart::delete($re->id);                
+        WorksPart::find($re->id)->delete();                
         return response()->json(true);
     }
 

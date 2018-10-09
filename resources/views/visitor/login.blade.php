@@ -23,7 +23,7 @@
 
         <div id="formSpace">
 
-            <form (submit)="accesar()" method="POST" action="" autocomplete="off">
+            <form (submit)="accesar()" method="POST" action="" autocomplete="on">
                 
                 {{ csrf_field() }}
 
@@ -31,11 +31,8 @@
 
                 <input  name="password" type="password" placeholder="Contraseña"><br>
 
-
-
                 <button type="submit" class="btn black">Iniciar sesión</button>
                 
-
             </form>
 
             <p>¿Olvidaste tu Contraseña?</p>
