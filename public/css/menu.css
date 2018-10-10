@@ -153,14 +153,16 @@ nav {
         position: relative;
         top: 4px;
     }
-    .movMenu li {
+    .movMenu .movLinksContainer a {
+        display: block;
+        width: 100%;
         list-style: none;
         color: white;
         padding: 10px 20px;
         border-top: 1px solid rgb(71, 71, 71);
         transition: .3s ease;
     }
-    .movMenu li.hidden {
+    .movMenu a.hidden {
         transform: translateX( -100%);
     }
     .movMenu.hidden {

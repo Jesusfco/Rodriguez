@@ -32,15 +32,15 @@
                 <img src="{{ url('img/logoNav.png') }}">
             </a>  
             
-            <ul>
-                <li href="{{url('/')}}"  class="hidden"> <i class="material-icons">home</i> INICIO</li>
-                <li href="{{url('quien-soy')}}"  class="hidden"> <i class="material-icons">person</i> QUIEN SOY</li>
-                <li href="{{url('servicios')}}"  class="hidden"> <i class="material-icons">build</i> SERVICIOS</li>
-                <li href="{{url('portafolio')}}"  class="hidden"> <i class="material-icons">folder_special</i> PORTAFOLIO</li>
-                <li href="{{url('blog')}}"  class="hidden"> <i class="material-icons">terrain</i> Blog</li>
-                <li class="hidden"> <i class="material-icons">message</i> CONTACTO</li>
-                <li href="{{url('login')}}"  class="hidden"> <i class="material-icons">account_circle</i> LOGIN</li>
-            </ul>   
+            <div class="movLinksContainer">
+                <a href="{{url('/')}}"  class="hidden"> <i class="material-icons">home</i> INICIO</a>
+                <a href="{{url('quien-soy')}}"  class="hidden"> <i class="material-icons">person</i> QUIEN SOY</a>
+                <a href="{{url('servicios')}}"  class="hidden"> <i class="material-icons">build</i> SERVICIOS</a>
+                <a href="{{url('portafolio')}}"  class="hidden"> <i class="material-icons">folder_special</i> PORTAFOLIO</a>
+                <a href="{{url('blog')}}"  class="hidden"> <i class="material-icons">terrain</i> Blog</a>
+                <a class="hidden"> <i class="material-icons">message</i> CONTACTO</a>
+                <a href="{{url('login')}}"  class="hidden"> <i class="material-icons">account_circle</i> LOGIN</a>
+            </div>   
             
             <div class="lenguage">
                 <a href="{{ url('/') }}"> <img src="{{ url('img/mex.png') }}"></a>

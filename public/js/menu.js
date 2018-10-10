@@ -21,25 +21,25 @@ $(document).ready(function() {
 
             $('.movMenu').toggleClass('hidden');
 
-            setTimeout(function() { $('.movMenu li:nth-child(1)').toggleClass('hidden'); }, 300);
-            setTimeout(function() { $('.movMenu li:nth-child(2)').toggleClass('hidden'); }, 400);
-            setTimeout(function() { $('.movMenu li:nth-child(3)').toggleClass('hidden'); }, 500);
-            setTimeout(function() { $('.movMenu li:nth-child(4)').toggleClass('hidden'); }, 600);
-            setTimeout(function() { $('.movMenu li:nth-child(5)').toggleClass('hidden'); }, 700);
-            setTimeout(function() { $('.movMenu li:nth-child(6)').toggleClass('hidden'); }, 780);
-            setTimeout(function() { $('.movMenu li:nth-child(7)').toggleClass('hidden'); }, 850);
+            setTimeout(function() { $('.movMenu a:nth-child(1)').toggleClass('hidden'); }, 300);
+            setTimeout(function() { $('.movMenu a:nth-child(2)').toggleClass('hidden'); }, 400);
+            setTimeout(function() { $('.movMenu a:nth-child(3)').toggleClass('hidden'); }, 500);
+            setTimeout(function() { $('.movMenu a:nth-child(4)').toggleClass('hidden'); }, 600);
+            setTimeout(function() { $('.movMenu a:nth-child(5)').toggleClass('hidden'); }, 700);
+            setTimeout(function() { $('.movMenu a:nth-child(6)').toggleClass('hidden'); }, 780);
+            setTimeout(function() { $('.movMenu a:nth-child(7)').toggleClass('hidden'); }, 850);
             menuClick++;
             return;
         } else {
             $(this).toggleClass('open');
 
-            setTimeout(function() { $('.movMenu li:nth-child(1)').toggleClass('hidden'); }, 0);
-            setTimeout(function() { $('.movMenu li:nth-child(2)').toggleClass('hidden'); }, 100);
-            setTimeout(function() { $('.movMenu li:nth-child(3)').toggleClass('hidden'); }, 200);
-            setTimeout(function() { $('.movMenu li:nth-child(4)').toggleClass('hidden'); }, 300);
-            setTimeout(function() { $('.movMenu li:nth-child(5)').toggleClass('hidden'); }, 400);
-            setTimeout(function() { $('.movMenu li:nth-child(6)').toggleClass('hidden'); }, 450);
-            setTimeout(function() { $('.movMenu li:nth-child(7)').toggleClass('hidden'); }, 500);
+            setTimeout(function() { $('.movMenu a:nth-child(1)').toggleClass('hidden'); }, 0);
+            setTimeout(function() { $('.movMenu a:nth-child(2)').toggleClass('hidden'); }, 100);
+            setTimeout(function() { $('.movMenu a:nth-child(3)').toggleClass('hidden'); }, 200);
+            setTimeout(function() { $('.movMenu a:nth-child(4)').toggleClass('hidden'); }, 300);
+            setTimeout(function() { $('.movMenu a:nth-child(5)').toggleClass('hidden'); }, 400);
+            setTimeout(function() { $('.movMenu a:nth-child(6)').toggleClass('hidden'); }, 450);
+            setTimeout(function() { $('.movMenu a:nth-child(7)').toggleClass('hidden'); }, 500);
 
             setTimeout(function() { $('.movMenu').toggleClass('hidden'); }, 300);
             menuClick = 0;
@@ -117,24 +117,24 @@ function menuTargetEnd(event) {
 function openMenu() {
 
     $('#nav-icon').addClass('open');
-    setTimeout(function() { $('.movMenu li:nth-child(1)').removeClass('hidden'); }, 300);
-    setTimeout(function() { $('.movMenu li:nth-child(2)').removeClass('hidden'); }, 400);
-    setTimeout(function() { $('.movMenu li:nth-child(3)').removeClass('hidden'); }, 500);
-    setTimeout(function() { $('.movMenu li:nth-child(4)').removeClass('hidden'); }, 600);
-    setTimeout(function() { $('.movMenu li:nth-child(5)').removeClass('hidden'); }, 700);
-    setTimeout(function() { $('.movMenu li:nth-child(6)').removeClass('hidden'); }, 780);
-    setTimeout(function() { $('.movMenu li:nth-child(7)').removeClass('hidden'); }, 850);
+    setTimeout(function() { $('.movMenu a:nth-child(1)').removeClass('hidden'); }, 300);
+    setTimeout(function() { $('.movMenu a:nth-child(2)').removeClass('hidden'); }, 400);
+    setTimeout(function() { $('.movMenu a:nth-child(3)').removeClass('hidden'); }, 500);
+    setTimeout(function() { $('.movMenu a:nth-child(4)').removeClass('hidden'); }, 600);
+    setTimeout(function() { $('.movMenu a:nth-child(5)').removeClass('hidden'); }, 700);
+    setTimeout(function() { $('.movMenu a:nth-child(6)').removeClass('hidden'); }, 780);
+    setTimeout(function() { $('.movMenu a:nth-child(7)').removeClass('hidden'); }, 850);
     menuClick++;
 }
 
 function closeMenu() {
     $('#nav-icon').removeClass('open');
-    setTimeout(function() { $('.movMenu li:nth-child(1)').addClass('hidden'); }, 300);
-    setTimeout(function() { $('.movMenu li:nth-child(2)').addClass('hidden'); }, 400);
-    setTimeout(function() { $('.movMenu li:nth-child(3)').addClass('hidden'); }, 500);
-    setTimeout(function() { $('.movMenu li:nth-child(4)').addClass('hidden'); }, 600);
-    setTimeout(function() { $('.movMenu li:nth-child(5)').addClass('hidden'); }, 700);
-    setTimeout(function() { $('.movMenu li:nth-child(6)').addClass('hidden'); }, 780);
-    setTimeout(function() { $('.movMenu li:nth-child(7)').addClass('hidden'); }, 850);
+    setTimeout(function() { $('.movMenu a:nth-child(1)').addClass('hidden'); }, 300);
+    setTimeout(function() { $('.movMenu a:nth-child(2)').addClass('hidden'); }, 400);
+    setTimeout(function() { $('.movMenu a:nth-child(3)').addClass('hidden'); }, 500);
+    setTimeout(function() { $('.movMenu a:nth-child(4)').addClass('hidden'); }, 600);
+    setTimeout(function() { $('.movMenu a:nth-child(5)').addClass('hidden'); }, 700);
+    setTimeout(function() { $('.movMenu a:nth-child(6)').addClass('hidden'); }, 780);
+    setTimeout(function() { $('.movMenu a:nth-child(7)').addClass('hidden'); }, 850);
     menuClick--;
 }
