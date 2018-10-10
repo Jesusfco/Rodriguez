@@ -23,7 +23,7 @@
                             <th>ID</th>
                             <th>Nombre</th>
                             <th>Resumen</th>
-                            <th>Fecha de Creación</th>
+                            <th>Publico</th>
                             <th>Acciones</th>
                         </thead>
                         <tbody>
@@ -32,8 +32,8 @@
                         <tr id="noticia{{$n->id}}">
                             <td>{{ $n->id }}</td>
                             <td>{{ $n->name }}</td>
-                            <td>{{ $n->resumen }}</td>
-                            <td>{{ $n->created_at }}</td>
+                            <td>{{ $n->resume }}</td>
+                            <td>{{ $n->public() }}</td>
                             <td>                                
                                 <a href="{{ url('app/services/update/'.$n->id.'') }}" class="btn yellow">Editar </a>
                                 {{-- <a  onclick="eliminar({{ $n->id }}, '{{ $n->title }}')" class="btn red"> Eliminar</a>

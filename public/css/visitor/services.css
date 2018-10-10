@@ -1,0 +1,89 @@
+.topImgContainer {
+    height: 40vh;
+}
+
+.topImgContainer div {
+    height: 100%;
+}
+
+.servicios {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background: #e6e6e6;
+}
+
+.servicios-container {
+    display: flex;
+    width: 85%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 20px;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.servicios-piece {
+    width: 30%;
+    display: block;
+    cursor: pointer;
+    transition: 1s ease;
+    transform: translate(0, 0);
+}
+
+.servicios-piece.hidden {
+    transform: translate(-100vw, 0);
+    opacity: 0;
+}
+
+.servicios-piece .imgCard {
+    position: relative;
+    padding: 0;
+}
+
+.servicios-piece .imgCard h3 {
+    position: absolute;
+    display: block;
+    bottom: 3px;
+    left: 10px;
+    color: white;
+    font-size: 1.5em;
+    text-shadow: 0px 2px 4px #000001b5;
+}
+
+.servicios-piece h3 {
+    text-align: center;
+}
+
+.servicios-piece img {
+    width: 100%;
+    display: block;
+}
+
+.servicios-piece .pc {
+    padding: 15px !important;
+}
+
+.servicios-piece div:nth-child(2) {
+    width: 100%;
+    height: 120px;
+    padding: 7px;
+    background: rgb(37, 37, 37);
+    color: white;
+    font-size: 12px;
+}
+
+.servicios-piece a {
+    color: rgb(252, 204, 0);
+    font-style: normal;
+}
+
+@media screen and (max-width: 800px) {
+    .servicios-container {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .servicios-piece {
+        width: 100%;
+    }
+}

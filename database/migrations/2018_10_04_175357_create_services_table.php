@@ -20,6 +20,7 @@ class CreateServicesTable extends Migration
             $table->text('description')->nullable();                         
             $table->string('img')->nullable();            
             $table->text('youtube')->nullable();
+            $table->boolean('public')->default(false);
             $table->timestamps();
         });
     }

@@ -33,6 +33,14 @@
                 <input class="file-path validate" type="text">
               </div>
             </div>
+
+            <div class="input-field col l4 s12">
+                <select name="public" v-model="public">            
+                  <option value="0">Sin Publicar</option>
+                  <option value="1">Publico</option>                                    
+                </select>
+                <label>Publico</label>
+              </div>
             
             <div class="form-group">
               <label>Iframe de Youtube</label>
@@ -45,19 +53,34 @@
 @endsection
 
 @section('scripts')
-    <script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
-    <script>
-        // Replace the <textarea id="editor1"> with a CKEditor
-        // instance, using default configuration.
-        CKEDITOR.replace( 'editor1' );
+  <script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.        
 
-        function crearNoticia(){
-            var data = CKEDITOR.instances.editor1.getData();
-            $('.contenidoNota').val(data);
+    function crearNoticia(){
+        var data = CKEDITOR.instances.editor1.getData();
+        $('.contenidoNota').val(data);        
+    }
 
-            
+    $(document).ready(function(){
+      $('select').formSelect();
+      CKEDITOR.replace( 'editor1' );
+    });
+      
+    
+  var app = new Vue({
+      el: '#app',
+      
 
-//            return false;
-        }
+      data: {
+                      
+             public: {{ $service->public }},             
+
+      },      
+
+     
+  });
     </script>
 @endsection

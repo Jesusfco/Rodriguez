@@ -19,7 +19,7 @@ class VisitorController extends Controller
 
 	public function __construct() {		
 
-		if(Session::get('visited') == 1){
+		if(Session::get('visited') == 1 || Session::get('visited') == 2){
 			Session::put('visited', 2);
 		} else {
 			Session::put('visited', 1);
@@ -52,11 +52,6 @@ class VisitorController extends Controller
 		// 	$message->from('rodriguez@amerigas.mx', 'Rodriguez');
 		// });
 	}
-	
-	public function blog() {
-		return view('visitor/blog')
-		->with('blogs', Blog::orderBy('date', 'DESC')->paginate(10));
-	}
 
 	public function portafolio() {
 		$works = Work::where('public', true)->get();
@@ -67,6 +62,29 @@ class VisitorController extends Controller
 		$work = Work::find($id);
 		if($work == NULL || $work->public == false) return 'Trabajo no disponible';
 		return view('visitor/work')->with('work', $work);
+	}
+
+	public function services() {
+		$services = Service::where('public', true)->get();
+		return view('visitor/services')->with('services', $services);
+	}
+
+	public function blogs() {
+		$blogs = Blog::orderBy('date', 'DESC')->paginate(9);
+		return view('visitor/blogs')->with('blogs', $blogs);
+	}
+
+	
+	public function blog($id) {
+		$blog = Blog::find($id);
+		if($blog == NULL) return 'Articulo inexistente';
+		return view('visitor/blog')->with('blog', $blog);
+	}
+
+	public function service($name) {
+		$service = Service::where('name', 'LIKE', $name)->first();
+		if($service == NULL) return 'Servicio inexistente';		
+		return view('visitor/service')->with('service', $service);
 	}
 
 	public function test(Request $request){

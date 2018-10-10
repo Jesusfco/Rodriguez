@@ -16,6 +16,10 @@ Route::get('/eng', 'VisitorController@eng');
 
 Route::get('/portafolio', 'VisitorController@portafolio');
 Route::get('/portafolio/{id}', 'VisitorController@work');
+Route::get('/servicios', 'VisitorController@services');
+Route::get('/servicios/{name}', 'VisitorController@service');
+Route::get('/blog', 'VisitorController@blogs');
+Route::get('/blog/{id}', 'VisitorController@blog');
 
 Route::post('/mail', 'VisitorController@mail');
 

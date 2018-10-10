@@ -33,6 +33,13 @@
                             <input class="file-path validate" type="text">
                           </div>
                         </div>
+                        <div class="input-field col l4 s12">
+                            <select name="public">            
+                              <option value="0" selected>Sin Publicar</option>
+                              <option value="1">Publico</option>                                    
+                            </select>
+                            <label>Publico</label>
+                          </div>
                         
                         <div class="form-group">
                           <label>Iframe de Youtube</label>
@@ -60,5 +67,10 @@
 
 //            return false;
         }
+
+         $(document).ready(function(){
+          $('select').formSelect();
+          
+        });
     </script>
 @endsection

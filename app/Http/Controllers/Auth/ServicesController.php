@@ -36,7 +36,8 @@ class ServicesController extends Controller
         $service->name = $this->upper($request->name);
         $service->resume = $request->resume;
         $service->description = $request->description;
-        $service->youtube = $request->youtube;        
+        $service->youtube = $request->youtube;   
+        $service->public = $request->public;        
         $service->save();
 
         if($request->file('img') != NULL)
@@ -61,7 +62,8 @@ class ServicesController extends Controller
         $service->name = $this->upper($request->name);
         $service->resume = $request->resume;
         $service->description = $request->description;
-        $service->youtube = $request->youtube;        
+        $service->youtube = $request->youtube;   
+        $service->public = $request->public;             
         $service->save();
 
         if($request->file('img') != NULL)

@@ -1,6 +1,6 @@
 @extends('layouts.visitor')
 
-@section('title', 'Portafolio || Rodríguez Services ') 
+@section('title', $work->name . ' || Rodríguez Services ') 
 
 @section('css')     
     <link href="{{ url('css/visitor/work.css') }}" type="text/css" rel="stylesheet" media="screen,projection"> 
@@ -8,12 +8,22 @@
                
 @section('content')
 
-<div class="letter">
-        <h2>{{ $work->title}}</h2>
-        <img src="{{ url('img/app/works/' . $work->id . '/' . $work->img)}})">
+<div class="navPadding topImgContainer">
+    <div class="img-background"
+    style="background-image: url({{ url('img/app/works/' . $work->id . '/' . $work->img)}})"></div>
+</div>
+
+<div class="principal-inf">
+    <div class="container">
+        <div class="principalImgContainer">
+            <img class="principalImg" src="{{ url('img/app/works/' . $work->id . '/' . $work->img)}}">
+        </div>
+        <h1>{{ $work->title}}</h1>
+        
         <p>{{ $work->resume}}</p>
         <div>{!! $work->description !!}</div>
     </div>
+</div>
 
 @section('scripts')
     
