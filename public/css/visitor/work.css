@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Bai+Jamjuree:200,200i,300,300i,400,700');
 .topImgContainer {
     height: 50vh;
 }
@@ -38,10 +39,31 @@
     transform: scale(1.05);
 }
 
+.resume {
+    font-family: 'Bai Jamjuree', sans-serif;
+    /* font-size: 19px; */
+    font-weight: 300;
+}
+
+.principal-inf .container p {
+    text-align: justify;
+    font-family: 'Bai Jamjuree', sans-serif;
+}
+
 @media screen and (min-width: 1400px) {
     .principalImg {
         width: 50%;
         margin: -17vh auto 15px auto;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .principalImg {
+        width: 50%;
+        margin: -17vh auto 15px auto;
+    }
+    .principal-inf .container {
+        width: 90%;
     }
 }
 

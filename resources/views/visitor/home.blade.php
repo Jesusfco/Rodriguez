@@ -2,6 +2,14 @@
 
 @section('title', 'Rodríguez Services || Home') 
 
+@section('metatags')
+<meta property="og:url"                content="{{ url('/')}}" />
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="Rodriguez Services || Code Master" />
+<meta property="og:description"        content="Rodriguez Services somos empresa dedicada a brindar distintos tipos de servicios y soluciones a empresas, Software a medida, Videos, Animación y Fotografía" />
+<meta property="og:image"              content="{{ url('img/index/link.jpg') }}" />
+@endsection
+
 @section('css')     
     <link href="{{ url('css/index.css') }}" type="text/css" rel="stylesheet" media="screen,projection"> 
 @endsection    
@@ -70,7 +78,7 @@
                 <div class="text">
 
                     <h1>SOY <br> FRANCISCO RODRÍGUEZ</h1>
-                    <img class="mov" width="100%" src="{{ url('img/index/quien.jpg') }}">
+                    <img class="mov" width="100%" src="{{ url('img/index/quien2.jpg') }}">
                     <p>Encontré en el desarrollo de software una pasión por la creación a través
                         del código, siempre sintiéndome sediento de conocer más.
                         <br><br>
@@ -82,7 +90,7 @@
 
                 </div>
 
-                <div class="img pc img-background" style="background-image: url({{ url('img/index/quien.jpg') }})"></div>
+                <div class="img pc img-background" style="background-image: url({{ url('img/index/quien2.jpg') }})"></div>
             </div>
 
             <h2 class="title">Dominio de programas</h2>

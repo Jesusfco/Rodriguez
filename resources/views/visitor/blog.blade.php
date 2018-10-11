@@ -2,8 +2,17 @@
 
 @section('title', $blog->title . ' || Rodríguez Services ') 
 
+@section('metatags')
+<meta property="og:url"                content="{{ url('blog', $blog->id)}}" />
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="{{ $blog->title }}" />
+<meta property="og:description"        content="{{ $blog->resume }}" />
+<meta property="og:image"              content="{{ url('img/app/blog/' . $blog->id . '/' . $blog->img) }}" />
+@endsection
+
 @section('css')     
-    <link href="{{ url('css/visitor/work.css') }}" type="text/css" rel="stylesheet" media="screen,projection"> 
+    <link href="{{ url('css/visitor/work.css') }}" type="text/css" rel="stylesheet" media="screen,projection">     
+
 @endsection    
                
 @section('content')
@@ -20,9 +29,9 @@
         <div class="principalImgContainer  pc">
             <img class="principalImg" src="{{ url('img/app/blog/' . $blog->id . '/' . $blog->img) }}">
         </div>
-        <h1>SERVICIO {{ $blog->name}}</h1>
+        <h1>{{ $blog->title }}</h1>
         
-        <p>{{ $blog->resume}}</p>
+        <p class="resume">{{ $blog->resume}}</p>
         <div>{!! $blog->description !!}</div>
     </div>
 </div>

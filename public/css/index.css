@@ -823,7 +823,7 @@
     }
     
     .formContact.hidden {
-        transform: translate(0, 0);
+        transform: translate(0, 0), scale(1.05);
     }
     
     .formContact div {
@@ -895,7 +895,9 @@
         margin-bottom: 25px;
     }
     
-    .formContact form button:hover {}
+    .formContact:hover {
+        transform: translate(0, -50%);
+    }
     
     .formContact form button i {
         position: relative;

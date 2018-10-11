@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+a {
+    color: rgb(224, 183, 0);
+}
+
 h1,
 h2,
 h3,
@@ -21,6 +25,7 @@ li,
 div {
     font-family: 'Open Sans', sans-serif;
     text-decoration: none;
+    line-height: 1.7;
 }
 
 .title {

@@ -4,6 +4,18 @@
 @section('content') 
 
 <h1>Editar Blog</h1>
+
+<style> 
+  .principalImg {
+    display: block;
+    margin: 0 auto;
+    width: 350px;
+  }
+
+</style>
+
+<img class="principalImg" src="{{ url('img/app/blog/' . $blog->id . '/' . $blog->img) }}">
+
             <form role="form" method="POST" enctype="multipart/form-data" onsubmit="return crearNoticia()">
                         {{ csrf_field() }}
 

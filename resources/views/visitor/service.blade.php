@@ -2,6 +2,14 @@
 
 @section('title', $service->name . ' || Rodríguez Services ') 
 
+@section('metatags')
+<meta property="og:url"                content="{{ url('servicios', $service->id)}}" />
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="{{ $service->name }}" />
+<meta property="og:description"        content="{{ $service->resume }}" />
+<meta property="og:image"              content="{{ url('img/app/services/', $service->img) }}" />
+@endsection
+
 @section('css')     
     <link href="{{ url('css/visitor/work.css') }}" type="text/css" rel="stylesheet" media="screen,projection"> 
 @endsection    

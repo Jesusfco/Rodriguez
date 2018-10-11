@@ -49,7 +49,7 @@
                                 <a href="{{ url('app/blog/update/'.$n->id.'/uploadPhotos') }}" class="btn purple">Administrar Fotos </a>                                
                                 <a href="{{ url('app/blog/update/'.$n->id.'') }}" class="btn yellow">Editar </a>
                                 <a  onclick="eliminar({{ $n->id }}, '{{ $n->title }}')" class="btn red"> Eliminar</a>
-                                <a href="{{ url('noticias', $n->id) }}" class="btn green">Ver</a>
+                                <a href="{{ url('blog', $n->id) }}" class="btn green">Ver</a>
                             </td>
                         </tr>
                         
