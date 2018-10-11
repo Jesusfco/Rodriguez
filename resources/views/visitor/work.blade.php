@@ -36,6 +36,8 @@
     </div>
 </div>
 
+@endsection
+
 @section('scripts')
     
 <script src="{{ url('js/jquery.waypoints.min.js') }}"></script>                        

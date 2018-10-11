@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+        <meta property="fb:app_id"              content="142501176704826" />
+        @yield('metatags')
 
         <title>@yield('title')</title>
 
@@ -14,8 +16,7 @@
         <link href="{{ url('css/menu.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
         <link href="{{ url('css/alert.css') }}" type="text/css" rel="stylesheet" media="screen,projection">    
         
-        @section('css')
-        @show
+        @yield('css')        
    
         
         <!-- Fonts -->      
@@ -42,17 +43,14 @@
 
         @include('layouts.menuNav')
 
-        @section('content')
-        @show
-
+        @yield('content')
 
         <script src="//code.jquery.com/jquery.min.js"></script>
         <!-- <script src="{{ url('js/jquery-2.1.1.min.js') }}"></script> -->
         <script src="{{ url('js/loader.js') }}"></script>
         <script src="{{ url('js/menu.js') }}"></script>
-        @section('scripts')
-        @show
 
+        @yield('scripts')
        
     </body>
 </html>
