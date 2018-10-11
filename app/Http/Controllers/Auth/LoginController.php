@@ -91,7 +91,9 @@ class LoginController extends Controller
         
         return User::create([
             'name'     => $user->name,
-            'email'    => $user->email,            
+            'email'    => $user->email,
+            'type'     => 1,
+            'status'   => 1
         ]);
         
     }
