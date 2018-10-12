@@ -8,11 +8,11 @@
                
 @section('content')
 
-<div class="navSpace"></div>
-{{-- <div class="navPadding topImgContainer">
+{{-- <div class="navSpace"></div> --}}
+<div class="navPadding topImgContainer">
     <div class="img-background"
-    style="background-image: url({{ url('img/blog/background2.jpg')}})"></div>
-</div> --}}
+    style="background-image: url({{ url('img/blog/background3.jpg')}})"></div>
+</div>
 <h1 class="title">Blog</h1>
 
 <div class="servicios-container">
