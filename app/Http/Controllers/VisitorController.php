@@ -11,6 +11,7 @@ use App\Service;
 use App\BlogComment;
 use App\BlogAnswer;
 use App\Work;
+use App\Photo;
 use Auth;
 use Session;
 
@@ -133,5 +134,12 @@ class VisitorController extends Controller
 		}
 
 		return redirect('login');
+	}
+
+	public function getBlogPhotos($id) {
+		return response()->json(Photo::where([
+			['foreign_id', $id],
+			['type', 1]
+			])->get());
 	}
 }

@@ -8,9 +8,10 @@ use App\Blog;
 use App\BlogPhoto;
 use App\BlogsComment;
 use App\BlogAnswer;
+use App\Photo;
 
-use Illuminate\Support\Facades\Auth;
-use Intervention\Image\Facades\Image;
+use Auth;
+use Image;
 use File;
 
 class BlogController extends Controller
@@ -129,5 +130,72 @@ class BlogController extends Controller
         $n->delete();
         return 'true';
     }
+
+    public function uploadPhotoView ($id) {        
+        $blog = Blog::find($id);          
+        if($blog == NULL ) return 'BLOG INEXISTENTE';
+
+        return view('admin/blog/uploadPhotos')->with(['blog'=> $blog]);
+    }
+
+    public function storePhoto(Request $request, $id) {
+        
+        $this->validate($request, [
+            'image' => 'required|image'
+        ]);
+
+        $img = $request->file('image');
+
+        //Verify Process uNIQUE FOR ALBUM
+        $verify = Photo::where([
+                    ['img', $img->getClientOriginalName() ],
+                    ['foreign_id', $id ],
+                    ['type', 1]
+                    ])->first();
+
+        if(isset($verify->id))  return response()->json(['error' => 'File Duplicate'], 403);
+
+        ini_set('memory_limit', '500M');
+        $file_route = $img->getClientOriginalName();
+        $image = Image::make($img);
+
+        if ($image->width() >= $image->height() && $image->width() < 1000) {            
+
+            $image->resize(1000, null, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+            
+            $image->save('img/app/blog/' . $id .'/' . $file_route);
+
+        } else  if ($image->width() < $image->height() && $image->height() < 1000) {
+
+            $image->resize(null, 1000, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+
+            $image->save('img/app/blog/' . $id .'/' . $file_route);
+
+        } else { 
+            $image->save('img/app/blog/' . $id .'/' . $file_route);
+        }
+
+        $photo = new Photo();
+        $photo->foreign_id = $id;
+        $photo->img = $file_route;
+        $photo->type = $id;
+        $photo->save();
+
+        return response()->json($photo);
+
+    }
+
+    public function deletePhoto(Request $request, $id) {
+        Photo::find($request->id)->delete();
+        File::delete('img/app/blog/' . $id . '/' . $request->name);
+        return response()->json(true);
+    }
+
 
 }

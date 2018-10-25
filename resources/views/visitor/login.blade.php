@@ -8,7 +8,7 @@
                
 @section('content')
 
-<div class="cardSpace">
+<div class="cardSpace navPadding">
 
 
 
@@ -17,7 +17,7 @@
 
         <img id="logo" src="{{url('img/logoLogin.png')}}">
 
-        <br>
+        
 
 
 

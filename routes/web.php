@@ -21,6 +21,7 @@ Route::get('/servicios', 'VisitorController@services');
 Route::get('/servicios/{name}', 'VisitorController@service');
 Route::get('/blog', 'VisitorController@blogs');
 Route::get('/blog/{id}', 'VisitorController@blog');
+Route::get('/blog/{id}/getPhotos', 'VisitorController@getBlogPhotos');
 
 Route::post('/mail', 'VisitorController@mail');
 
@@ -44,7 +45,10 @@ Route::get('/app/blog/update/{id}', 'Auth\BlogController@edit');
 Route::post('/app/blog/update/{id}', 'Auth\BlogController@update');
 Route::get('/app/blog/update/{id}/uploadPhotos', 'Auth\BlogController@uploadPhotoView');
 Route::post('/app/blog/update/{id}/uploadPhotos', 'Auth\BlogController@uploadPhoto');
+Route::get('/app/blog/update/{id}/getPhotos', 'Auth\BlogController@uploadPhotoView');
 Route::get('/app/blog/destroy', 'Auth\BlogController@destroy');
+Route::post('/app/blog/update/{id}/upload', 'Auth\BlogController@storePhoto');
+Route::post('/app/blog/update/{id}/deletePhoto' , 'Auth\BlogController@deletePhoto');
 
 // USUARIOS
 Route::get('/app/users', 'Auth\UsersController@list');
