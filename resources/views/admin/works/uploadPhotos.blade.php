@@ -1,6 +1,9 @@
 @extends('layouts.admin')
 @section('styles')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/dropzone.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/gallery/css/blueimp-gallery.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/gallery/css/blueimp-gallery-indicator.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/gallery/css/blueimp-gallery-video.css') }}">
 @stop
 @section('scripts')
 
@@ -11,6 +14,22 @@
 {{-- <script src="https://unpkg.com/packery@2/dist/packery.pkgd.min.js"></script> --}}
 <script type="text/javascript" src="{{ asset('js/admin/myDropzone.js') }}"></script>
 {{-- <script> $('.photoContainer').packery(); </script> --}}
+
+<script src="{{ asset('assets/gallery/js/blueimp-helper.js') }}"></script>
+<script src="{{ asset('assets/gallery/js/blueimp-gallery.js') }}"></script>
+<script src="{{ asset('assets/gallery/js/blueimp-gallery-fullscreen.js') }}"></script>
+<script src="{{ asset('assets/gallery/js/blueimp-gallery-indicator.js') }}"></script>
+<script src="{{ asset('assets/gallery/js/jquery.blueimp-gallery.js') }}"></script>
+<script>
+    document.getElementById('links').onclick = function (event) {
+        event = event || window.event;
+        var target = event.target || event.srcElement,
+            link = target.src ? target.parentNode : target,
+            options = {index: link, event: event},
+            links = this.getElementsByTagName('a');
+        blueimp.Gallery(links, options);
+    };
+        </script>
 @endsection
 
 @section('content')

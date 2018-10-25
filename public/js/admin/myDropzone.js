@@ -28,6 +28,10 @@ var app = new Vue({
 
             for (let pho of response.data) {
                 pho.img = pho.img.split(' ').join('%20');
+                if (pho.type == 1)
+                    pho.path = homePath + '/img/app/blog/' + id + '/' + pho.img;
+                else if (pho.type == 2)
+                    pho.path = homePath + '/img/app/works/' + id + '/' + pho.img;
                 app.photos.push(pho);
 
             }
@@ -212,11 +216,16 @@ var app = new Vue({
 
                     var doc = document.getElementById('pho-' + pho.id);
 
-                    if (pho.type == 1)
-                        doc.style.backgroundImage = 'url(' + homePath + '/img/app/blog/' + id + '/' + pho.img + ')';
-                    else if (pho.type == 2)
-                        doc.style.backgroundImage = 'url(' + homePath + '/img/app/works/' + id + '/' + pho.img + ')';
+                    if (pho.type == 1) {
 
+                        doc.style.backgroundImage = 'url(' + homePath + '/img/app/blog/' + id + '/' + pho.img + ')';
+                        pho.path = homePath + '/img/app/blog/' + id + '/' + pho.img;
+
+                    } else if (pho.type == 2) {
+
+                        doc.style.backgroundImage = 'url(' + homePath + '/img/app/works/' + id + '/' + pho.img + ')';
+                        pho.path = homePath + '/img/app/works/' + id + '/' + pho.img;
+                    }
 
                     var width = doc.offsetWidth;
                     doc.parentElement.style.height = width + 'px';
