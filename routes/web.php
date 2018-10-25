@@ -14,6 +14,7 @@
 Route::get('/', 'VisitorController@index');
 Route::get('/eng', 'VisitorController@eng');
 
+Route::get('/quien-soy', 'VisitorController@quienSoy');
 Route::get('/portafolio', 'VisitorController@portafolio');
 Route::get('/portafolio/{id}', 'VisitorController@work');
 Route::get('/servicios', 'VisitorController@services');

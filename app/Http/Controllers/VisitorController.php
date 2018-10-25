@@ -39,6 +39,10 @@ class VisitorController extends Controller
 		
 	}
 
+	public function quienSoy(){
+		return view('visitor/quien');
+	}
+
 	public function mail(){
 		
 		Mail::send(new ContactMail());
