@@ -657,18 +657,18 @@
     }
     /* Container around content */
     
-    .timeline .container {
+    .timeline .containerT {
         padding: 10px 40px;
         position: relative;
         background-color: ;
         width: 400px;
     }
     
-    .timeline .container div {
+    .timeline .containerT div {
         position: relative;
     }
     
-    .timeline .container div h3 {
+    .timeline .containerT div h3 {
         position: absolute;
         bottom: 10px;
         left: 10px;
@@ -676,18 +676,18 @@
         font-size: 25px;
     }
     
-    .timeline .container p {
+    .timeline .containerT p {
         padding: 15px;
         line-height: 150%;
         color: #525252;
     }
     
-    .timeline .container img {
+    .timeline .containerT img {
         width: 100%;
     }
     /* The circles on the timeline */
     
-    .timeline .container::after {
+    .timeline .containerT::after {
         content: '';
         position: absolute;
         width: 23px;

@@ -90,35 +90,35 @@ $('.servicios-piece:nth-child(3)').waypoint(function(direction) {
 
 
 
-$('.timeline .container:nth-child(1) .content').waypoint(function(direction) {
+$('.timeline .containerT:nth-child(1) .content').waypoint(function(direction) {
     if (direction == 'down')
-        $('.timeline .container:nth-child(1) .content').removeClass('hidden');
+        $('.timeline .containerT:nth-child(1) .content').removeClass('hidden');
     else {
-        $('.timeline .container:nth-child(1) .content').addClass('hidden');
+        $('.timeline .containerT:nth-child(1) .content').addClass('hidden');
     }
 }, { offset: '70%' });
 
-$('.timeline .container:nth-child(2) .content').waypoint(function(direction) {
+$('.timeline .containerT:nth-child(2) .content').waypoint(function(direction) {
     if (direction == 'down')
-        $('.timeline .container:nth-child(2) .content').removeClass('hidden');
+        $('.timeline .containerT:nth-child(2) .content').removeClass('hidden');
     else {
-        $('.timeline .container:nth-child(2) .content').addClass('hidden');
+        $('.timeline .containerT:nth-child(2) .content').addClass('hidden');
     }
 }, { offset: '70%' });
 
-$('.timeline .container:nth-child(3) .content').waypoint(function(direction) {
+$('.timeline .containerT:nth-child(3) .content').waypoint(function(direction) {
     if (direction == 'down')
-        $('.timeline .container:nth-child(3) .content').removeClass('hidden');
+        $('.timeline .containerT:nth-child(3) .content').removeClass('hidden');
     else {
-        $('.timeline .container:nth-child(3) .content').addClass('hidden');
+        $('.timeline .containerT:nth-child(3) .content').addClass('hidden');
     }
 }, { offset: '70%' });
 
-$('.timeline .container:nth-child(4) .content').waypoint(function(direction) {
+$('.timeline .containerT:nth-child(4) .content').waypoint(function(direction) {
     if (direction == 'down')
-        $('.timeline .container:nth-child(4) .content').removeClass('hidden');
+        $('.timeline .containerT:nth-child(4) .content').removeClass('hidden');
     else {
-        $('.timeline .container:nth-child(4) .content').addClass('hidden');
+        $('.timeline .containerT:nth-child(4) .content').addClass('hidden');
     }
 }, { offset: '70%' });
 

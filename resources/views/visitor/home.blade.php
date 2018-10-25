@@ -25,27 +25,15 @@
                     ontouchmove="sliderIndexTouchMove(event)"
                     ontouchend="sliderIndexTouchEnd(event)">
 
-                    <div class="slider-piece centrar" style=" background-image: url('{{ url('img/index/1.jpg') }}') ">
+                    <div class="slider-piece centrar" style=" background-image: url('{{ url('img/index/5.jpg') }}') ">
                         <div>
-                            <h3>Apasionado por el Código</h3>
+                            <h3>APASIONADO POR EL CÓDIGO</h3>
                             <a class="linea"></a>
                             <p>El desarrollo de software ofrece el poder de crear únicamente necesitando un computador</p>
                             
                         </div>
                     </div>
 
-                    <div class="slider-piece centrar" style=" background-image: url('{{ url('img/index/2.jpg') }}') ">
-
-                        <div>
-                            <h3>Ideología</h3>
-                            <a class="linea"></a>
-                            <p>Las metas de mi carrera profesional se resumen en la filosofía de un desarrollo y progreso constante (KAIZEN)</p>
-                            <a></a>
-                        </div>
-
-                    </div>
-
-                    
                     <div class="slider-piece centrar" style=" background-image: url('{{ url('img/index/4.jpg') }}') ">
 
                         <div>
@@ -57,7 +45,26 @@
 
                     </div>
 
-                    <div class="slider-piece" style=" background-image: url('{{ url('img/index/3.jpg') }}') "></div>
+                    <div class="slider-piece centrar" style=" background-image: url('{{ url('img/index/1.jpg') }}') ">
+
+                        <div>
+                            <h3>Ideología</h3>
+                            <a class="linea"></a>
+                            <p>Las metas de mi carrera profesional se resumen en la filosofía de un desarrollo y progreso constante (KAIZEN)</p>
+                            <a></a>
+                        </div>
+
+                    </div>                                       
+
+                    <div class="slider-piece centrar" style=" background-image: url('{{ url('img/index/6.jpg') }}') ">
+                    
+                        <div>
+                            <h3>FILOSOFÍA KAIZEN</h3>
+                            <a class="linea"></a>
+                            <p>No compito contra nadie, mas que contra mi mismo, el mejoramiento constante es el unico camino.</p>                                
+                        </div>
+
+                    </div>
 
                 </div>
                 <div class="indicators left" onclick="sliderBefore()"><i class="material-icons" >keyboard_arrow_left</i></div>
@@ -77,16 +84,17 @@
 
                 <div class="text">
 
-                    <h1>SOY <br> FRANCISCO RODRÍGUEZ</h1>
-                    <img class="mov" width="100%" src="{{ url('img/index/quien2.jpg') }}">
+                    <h1> FRANCISCO RODRÍGUEZ</h1>
+                    <img class="mov" width="100%" style="margin-bottom: 15px;" src="{{ url('img/index/quien2.jpg') }}">
+                    
                     <p>Encontré en el desarrollo de software una pasión por la creación a través
                         del código, siempre sintiéndome sediento de conocer más.
                         <br><br>
                         Considero que el mundo de la programación se encuentra en constante evolución
                         y expansión por lo que para mí es importante actualizarme continuamente.
                     </p>
-
-                    <div>LEER MAS...</div>
+                    <br>
+                    <p><a href="quien-soy">LEER MAS...</a></p>
 
                 </div>
 
@@ -174,22 +182,21 @@
 
         <div class="servicios">
 
-            <h1>SERVICIOS</h1>
+            <a class="title" href="servicios"><h1>SERVICIOS</h1></a>
 
             <div class="servicios-container">
 
-                <div class="servicios-piece card hidden">
+                <a href="servicios/SOFTWARE" class="servicios-piece card hidden">
                     <div class="imgCard">
                         <img src="img/index/servicio1.jpg">
                         <h3>SOFTWARE</h3>
                     </div>
-                    
-                    
+                                        
                     <div class="pc"> Los servicios de software se divide en diversas ramas como la creación de páginas web (estaticas/ dinamicas), 
                         aplicaciones de escritorio, aplicaciones moviles o aplicaciones web</div>
-                </div>    
+                </a>    
 
-                <div class="servicios-piece card hidden">
+                <a href="servicios/MULTIMEDIA" class="servicios-piece card hidden">
                     <div class="imgCard">
                         <h3>MULTIMEDIA</h3>
                         <img src="img/index/servicio2.jpg">
@@ -200,18 +207,18 @@
                         de comerciales, creación de animaciones o coberturas de eventos.
                     </div>
 
-                </div>    
+                </a>    
 
-                <div class="servicios-piece card hidden">
+                <a href="servicios/FOTOGRAFÍA" class="servicios-piece card hidden">
                     <div class="imgCard">
                         <h3>FOTOGRAFÍA</h3>
                         <img src="img/index/servicio3.jpg">
                     </div>    
                     <div class="pc"> 
                         Los servicios de fotografía abarcan distintos aspectos como cobertura de eventos (XV, BODAS, CUMPLEAÑOS, ETC),
-                         o sesiones fotograficas trabajando colaborativamente con <a href="http://www.lilianapineda.com/">Liliana Pineda</a>
+                         o sesiones fotograficas trabajando colaborativamente con Liliana Pineda
                     </div>
-                </div>    
+                </a>    
 
             </div>        
 
@@ -249,7 +256,7 @@
             <div class="timeline">
             
               
-                  <div class="container left">
+                  <div class="containerT left">
                     <div class="content card hidden">
 
                         <div>
@@ -264,7 +271,7 @@
                     </div>
                   </div>
 
-                  <div class="container right">
+                  <div class="containerT right">
                     <div class="content card hidden ">
 
                         <div>
@@ -278,7 +285,7 @@
                     </div>
                   </div>
 
-                  <div class="container left">
+                  <div class="containerT left">
                     <div class="content card hidden">
 
                         <div>
@@ -293,7 +300,7 @@
                     </div>
                   </div>
 
-                  <div class="container right">
+                  <div class="containerT right">
                     <div class="content card hidden">
 
                         <div>
