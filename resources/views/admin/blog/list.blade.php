@@ -46,7 +46,7 @@
                             <td>{{ $n->title }}</td>
                             <td>{{ $n->date }}</td>
                             <td>
-                                <a href="{{ url('app/blog/update/'.$n->id.'/uploadPhotos') }}" class="btn purple">Administrar Fotos </a>                                
+                                <a href="{{ url('app/blog/update/'.$n->id.'/gallery') }}" class="btn purple">Administrar Fotos </a>                                
                                 <a href="{{ url('app/blog/update/'.$n->id.'') }}" class="btn yellow">Editar </a>
                                 <a  onclick="eliminar({{ $n->id }}, '{{ $n->title }}')" class="btn red"> Eliminar</a>
                                 <a href="{{ url('blog', $n->id) }}" class="btn green">Ver</a>

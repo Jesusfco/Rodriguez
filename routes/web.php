@@ -45,8 +45,9 @@ Route::get('/app/blog/update/{id}', 'Auth\BlogController@edit');
 Route::post('/app/blog/update/{id}', 'Auth\BlogController@update');
 Route::get('/app/blog/update/{id}/uploadPhotos', 'Auth\BlogController@uploadPhotoView');
 Route::post('/app/blog/update/{id}/uploadPhotos', 'Auth\BlogController@uploadPhoto');
-Route::get('/app/blog/update/{id}/getPhotos', 'Auth\BlogController@uploadPhotoView');
 Route::get('/app/blog/destroy', 'Auth\BlogController@destroy');
+
+Route::get('/app/blog/update/{id}/gallery', 'Auth\BlogController@uploadPhotoView');
 Route::post('/app/blog/update/{id}/upload', 'Auth\BlogController@storePhoto');
 Route::post('/app/blog/update/{id}/deletePhoto' , 'Auth\BlogController@deletePhoto');
 
@@ -70,6 +71,11 @@ Route::post('/app/works/update/{id}/storePart', 'Auth\WorksController@storePart'
 Route::post('/app/works/update/{id}/updatePart', 'Auth\WorksController@updatePart');
 Route::post('/app/works/update/{id}/deletePart', 'Auth\WorksController@deletePart');
 Route::get('/app/works/destroy/{id}', 'Auth\WorksController@destroy');
+
+Route::get('/app/works/update/{id}/gallery', 'Auth\WorksController@uploadPhotoView');
+Route::get('/app/works/update/{id}/getPhotos', 'Auth\WorksController@getPhotos');
+Route::post('/app/works/update/{id}/upload', 'Auth\WorksController@storePhoto');
+Route::post('/app/works/update/{id}/deletePhoto' , 'Auth\WorksController@deletePhoto');
 
 //PAGOS DE CLIENTES
 Route::get('/app/receipts', 'Auth\PaymentsController@list');

@@ -19,10 +19,10 @@
 
 <div class="panel panel-default" id="principal">
     <div class="panel-heading">
-    <p> <a href="{{ url('app/blog') }}">Blog</a> >> Cargar Fotos</p></div>
+    <p> <a href="{{ url('app/works') }}">Trabajos</a> >> Cargar Fotos</p></div>
         <div class="panel-body">
 
-            <h5>{{ $blog->title }}</h5>
+            <h5>{{ $work->title }}</h5>
 
             <div id="app">
 
@@ -61,9 +61,9 @@
 
                 <br>
 
-                <input type="hidden" value="{{$blog->id}}" id="galleryId">
+                <input type="hidden" value="{{$work->id}}" id="galleryId">
                 <input type="hidden" value="{{url('/')}}" id="homePath">
-                <input type="hidden" value="1" id="photoType">
+                <input type="hidden" value="2" id="photoType">
 
                 <div id="links" class="photoContainer">
                     <div v-for="photo in photos" class="photo">

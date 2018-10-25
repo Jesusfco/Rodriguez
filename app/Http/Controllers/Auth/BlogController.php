@@ -155,7 +155,7 @@ class BlogController extends Controller
 
         if(isset($verify->id))  return response()->json(['error' => 'File Duplicate'], 403);
 
-        ini_set('memory_limit', '500M');
+        ini_set('memory_limit', '420M');
         $file_route = $img->getClientOriginalName();
         $image = Image::make($img);
 
@@ -165,8 +165,6 @@ class BlogController extends Controller
                 $constraint->aspectRatio();
                 $constraint->upsize();
             });
-            
-            $image->save('img/app/blog/' . $id .'/' . $file_route);
 
         } else  if ($image->width() < $image->height() && $image->height() < 1000) {
 
@@ -175,16 +173,14 @@ class BlogController extends Controller
                 $constraint->upsize();
             });
 
-            $image->save('img/app/blog/' . $id .'/' . $file_route);
-
-        } else { 
-            $image->save('img/app/blog/' . $id .'/' . $file_route);
-        }
+        } 
+        
+        $image->save('img/app/blog/' . $id .'/' . $file_route);       
 
         $photo = new Photo();
         $photo->foreign_id = $id;
         $photo->img = $file_route;
-        $photo->type = $id;
+        $photo->type = 1;
         $photo->save();
 
         return response()->json($photo);
@@ -193,7 +189,7 @@ class BlogController extends Controller
 
     public function deletePhoto(Request $request, $id) {
         Photo::find($request->id)->delete();
-        File::delete('img/app/blog/' . $id . '/' . $request->name);
+        File::delete('img/app/blog/' . $id . '/' . $request->img);
         return response()->json(true);
     }
 

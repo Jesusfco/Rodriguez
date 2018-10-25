@@ -1,5 +1,6 @@
 var homePath = $('#homePath').val();
-var idGallery = $('#galleryId').val();
+var id = $('#galleryId').val();
+var type = $('#photoType').val();
 
 
 var app = new Vue({
@@ -13,7 +14,15 @@ var app = new Vue({
 
     created: function() {
 
-        axios.get('getPhotos')
+        let url = homePath;
+
+        if (type == 1) {
+            url = url + '/blog/' + id + '/getPhotos';
+        } else if (type == 2) {
+            url = url + '/app/works/update/' + id + '/getPhotos';
+        }
+
+        axios.get(url)
 
         .then(function(response) {
 
@@ -202,7 +211,12 @@ var app = new Vue({
                 for (let pho of this.photos) {
 
                     var doc = document.getElementById('pho-' + pho.id);
-                    doc.style.backgroundImage = 'url(' + homePath + '/img/app/blog/' + idGallery + '/' + pho.img + ')';
+
+                    if (pho.type == 1)
+                        doc.style.backgroundImage = 'url(' + homePath + '/img/app/blog/' + id + '/' + pho.img + ')';
+                    else if (pho.type == 2)
+                        doc.style.backgroundImage = 'url(' + homePath + '/img/app/works/' + id + '/' + pho.img + ')';
+
 
                     var width = doc.offsetWidth;
                     doc.parentElement.style.height = width + 'px';

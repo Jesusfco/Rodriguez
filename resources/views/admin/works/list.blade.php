@@ -56,7 +56,7 @@
                             <td>${{ $work->debt() }}</td>
                             <td>{{ $work->public() }}</td>
                             <td>
-                                <a href="{{ url('app/works/update/'.$work->id.'/uploadPhotos') }}" class="btn purple">Administrar Fotos </a>                                
+                                <a href="{{ url('app/works/update/'.$work->id.'/gallery') }}" class="btn purple">Administrar Fotos </a>                                
                                 <a href="{{ url('app/works/update/'.$work->id.'/parts') }}" class="btn orange">Partes </a>                                
                                 <a href="{{ url('app/works/update/'.$work->id.'') }}" class="btn yellow">Editar </a>
                                 <a  onclick="eliminar({{ $work->id }}, '{{ $work->title }}')" class="btn red"> Eliminar</a>
