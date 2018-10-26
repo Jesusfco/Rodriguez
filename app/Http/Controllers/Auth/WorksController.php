@@ -211,14 +211,14 @@ class WorksController extends Controller
         $file_route = $img->getClientOriginalName();
         $image = Image::make($img);
 
-        if ($image->width() >= $image->height() && $image->width() < 1000) {            
+        if ($image->width() >= $image->height() && $image->width() > 1000) {            
 
             $image->resize(1000, null, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
             });                        
 
-        } else  if ($image->width() < $image->height() && $image->height() < 1000) {
+        } else  if ($image->width() < $image->height() && $image->height() > 1000) {
 
             $image->resize(null, 1000, function ($constraint) {
                 $constraint->aspectRatio();
