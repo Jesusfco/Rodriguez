@@ -77,14 +77,17 @@
 @section('scripts')
     
 <script src="{{ url('js/jquery.waypoints.min.js') }}"></script>  
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/visitor/galleryGeneric.js') }}"></script>
+
 <script src="{{ asset('assets/gallery/js/blueimp-helper.js') }}"></script>
 <script src="{{ asset('assets/gallery/js/blueimp-gallery.js') }}"></script>
 <script src="{{ asset('assets/gallery/js/blueimp-gallery-fullscreen.js') }}"></script>
 <script src="{{ asset('assets/gallery/js/blueimp-gallery-indicator.js') }}"></script>
 <script src="{{ asset('assets/gallery/js/jquery.blueimp-gallery.js') }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
-<script type="text/javascript" src="{{ asset('js/visitor/galleryGeneric.js') }}"></script>
 <script>
     document.getElementById('links').onclick = function (event) {
         event = event || window.event;
@@ -94,7 +97,7 @@
             links = this.getElementsByTagName('a');
         blueimp.Gallery(links, options);
     };
-</script>                      
+</script>                    
     
 @endsection
         

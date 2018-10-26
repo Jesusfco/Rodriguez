@@ -29,7 +29,7 @@
             links = this.getElementsByTagName('a');
         blueimp.Gallery(links, options);
     };
-        </script>
+</script>
 @endsection
 
 @section('content')
