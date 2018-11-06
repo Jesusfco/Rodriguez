@@ -89,6 +89,16 @@
 <script src="{{ asset('assets/gallery/js/blueimp-gallery-indicator.js') }}"></script>
 <script src="{{ asset('assets/gallery/js/jquery.blueimp-gallery.js') }}"></script>
 <script>
+
+    var gallery = blueimp.Gallery(
+        linkList,
+        {
+            onclose: function () {
+            // alert('cerrado');
+            },
+        }
+    );
+
     document.getElementById('links').onclick = function (event) {
         event = event || window.event;
         var target = event.target || event.srcElement,

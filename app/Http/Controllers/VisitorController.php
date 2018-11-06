@@ -142,4 +142,17 @@ class VisitorController extends Controller
 			['type', 1]
 			])->get());
 	}
+
+	public function getServicePhotos($name) {
+		$service = Service::where('name', 'LIKE', $name)->first();
+		if($service == null)
+		$service = Service::find($name);
+
+		if($service == NULL) return response()->json('error', 'Servicio no encontrado', 401);
+		
+		return response()->json(Photo::where([
+			['foreign_id', $service->id],
+			['type', 3]
+			])->get());
+	}
 }

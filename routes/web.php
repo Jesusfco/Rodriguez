@@ -19,6 +19,7 @@ Route::get('/portafolio', 'VisitorController@portafolio');
 Route::get('/portafolio/{id}', 'VisitorController@work');
 Route::get('/servicios', 'VisitorController@services');
 Route::get('/servicios/{name}', 'VisitorController@service');
+Route::get('/servicios/{name}/getPhotos', 'VisitorController@getServicePhotos');
 Route::get('/blog', 'VisitorController@blogs');
 Route::get('/blog/{id}', 'VisitorController@blog');
 Route::get('/blog/{id}/getPhotos', 'VisitorController@getBlogPhotos');
@@ -92,6 +93,11 @@ Route::post('/app/services/create', 'Auth\ServicesController@store');
 Route::get('/app/services/update/{id}', 'Auth\ServicesController@edit');
 Route::post('/app/services/update/{id}', 'Auth\ServicesController@update');
 Route::get('/app/services/destroy/{id}', 'Auth\ServicesController@destroy');
+
+Route::get('/app/services/update/{id}/gallery', 'Auth\ServicesController@uploadPhotoView');
+Route::get('/app/services/update/{id}/getPhotos', 'Auth\ServicesController@getPhotos');
+Route::post('/app/services/update/{id}/upload', 'Auth\ServicesController@storePhoto');
+Route::post('/app/services/update/{id}/deletePhoto' , 'Auth\ServicesController@deletePhoto');
 
 //UTILS
 Route::get('app/util/clientSugest', 'Auth\UsersController@sugestClient');

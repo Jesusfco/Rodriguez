@@ -19,17 +19,26 @@ var app = new Vue({
             if (type == 1) {
                 url = url + '/blog/' + id + '/getPhotos';
             } else if (type == 2) {
-                url = url + '/works/' + id + '/getPhotos';
+                url = url + '/portafolio/' + id + '/getPhotos';
+            } else if (type == 3) {
+                url = url + '/servicios/' + id + '/getPhotos';
             }
             axios.get(url)
                 .then((response) => {
 
                     for (let pho of response.data) {
+
                         pho.img = pho.img.split(' ').join('%20');
+
                         if (pho.type == 1)
                             pho.path = homePath + '/img/app/blog/' + id + '/' + pho.img;
+
                         else if (pho.type == 2)
                             pho.path = homePath + '/img/app/works/' + id + '/' + pho.img;
+
+                        else if (pho.type == 3)
+                            pho.path = homePath + '/img/app/services/' + id + '/' + pho.img;
+
                         app.photos.push(pho);
 
                     }
@@ -63,6 +72,10 @@ var app = new Vue({
 
                         doc.style.backgroundImage = 'url(' + homePath + '/img/app/works/' + id + '/' + pho.img + ')';
                         pho.path = homePath + '/img/app/works/' + id + '/' + pho.img;
+                    } else if (pho.type == 3) {
+
+                        doc.style.backgroundImage = 'url(' + homePath + '/img/app/services/' + id + '/' + pho.img + ')';
+                        pho.path = homePath + '/img/app/services/' + id + '/' + pho.img;
                     }
 
                     var width = doc.offsetWidth;

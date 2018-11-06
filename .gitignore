@@ -14,5 +14,7 @@ yarn-error.log
 *.zip
 *.sql
 *.sql
+public/img/app/users/*
 public/img/app/works/*
 public/img/app/blog/*
+public/img/app/services/*

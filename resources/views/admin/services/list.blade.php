@@ -35,6 +35,7 @@
                             <td>{{ $n->resume }}</td>
                             <td>{{ $n->public() }}</td>
                             <td>                                
+                                <a href="{{ url('app/services/update/'.$n->id.'/gallery') }}" class="btn purple">Administrar Fotos </a>                                
                                 <a href="{{ url('app/services/update/'.$n->id.'') }}" class="btn yellow">Editar </a>
                                 {{-- <a  onclick="eliminar({{ $n->id }}, '{{ $n->title }}')" class="btn red"> Eliminar</a>
                                 <a href="{{ url('noticias', $n->id) }}" class="btn green">Ver</a> --}}

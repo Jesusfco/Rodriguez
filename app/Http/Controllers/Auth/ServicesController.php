@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Service;
+use App\Photo;
 use Auth;
 use Image;
 use File;
@@ -98,5 +99,74 @@ class ServicesController extends Controller
         $string = strtoupper($string);
         $string =  strtr($string, "áéíóú", "ÁÉÍÓÚ");
         return $string;
+    }
+
+    public function getPhotos($id) {
+        return response()->json(Photo::where([
+			['foreign_id', $id],
+			['type', 3]
+			])->get());
+    }
+
+    public function uploadPhotoView ($id) {        
+        $service = Service::find($id);          
+        if($service == NULL ) return 'Servicio INEXISTENTE';
+
+        return view('admin/services/uploadPhotos')->with(['service'=> $service]);
+    }
+
+    public function storePhoto(Request $request, $id) {
+        
+        $this->validate($request, [
+            'image' => 'required|image'
+        ]);
+
+        $img = $request->file('image');
+
+        // verificar nombre unico dentro de ese album
+        $verify = Photo::where([
+                    ['img', $img->getClientOriginalName() ],
+                    ['foreign_id', $id ],
+                    ['type',3]
+                    ])->first();
+
+        if(isset($verify->id))  return response()->json(['error' => 'File Duplicate'], 403);
+
+        ini_set('memory_limit', '420M');
+        $file_route = $img->getClientOriginalName();
+        $image = Image::make($img);
+
+        if ($image->width() >= $image->height() && $image->width() > 800) {            
+
+            $image->resize(800, null, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });                        
+
+        } else  if ($image->width() < $image->height() && $image->height() > 800) {
+
+            $image->resize(null, 800, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+            
+        } 
+        
+        $image->save('img/app/services/' . $id .'/' . $file_route);
+
+        $photo = new Photo();
+        $photo->foreign_id = $id;
+        $photo->img = $file_route;
+        $photo->type = 3;
+        $photo->save();
+
+        return response()->json($photo);
+
+    }
+
+    public function deletePhoto(Request $request, $id) {
+        Photo::find($request->id)->delete();
+        File::delete('img/app/services/' . $id . '/' . $request->img);
+        return response()->json(true);
     }
 }
