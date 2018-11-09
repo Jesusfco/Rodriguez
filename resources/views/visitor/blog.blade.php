@@ -17,6 +17,36 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/gallery/css/blueimp-gallery.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/gallery/css/blueimp-gallery-indicator.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/gallery/css/blueimp-gallery-video.css') }}">
+    <style>
+    
+
+
+        .youtubeContainer {
+            position: relative;
+            width: 75%;
+            margin: 0 auto;
+            display: block;
+            height: 0;
+            padding-bottom: 56.25%;
+            margin-bottom: 35px;
+    
+        }
+    
+        .youtubeContainer iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    
+        @media screen and (max-width: 800px) {
+            .youtubeContainer {
+                width: 100%;
+            }
+        }
+    </style>
+
 @endsection    
                
 @section('content')
@@ -40,8 +70,12 @@
         
         <p class="resume">{{ $blog->resume}}</p>
         <div>{!! $blog->description !!}</div>
+        @if($blog->youtube != NULL)
+            <div class="youtubeContainer">{!! $blog->youtube !!}</div>
+        @endif
 
-        <div>
+
+        <div v-if="photos.length > 0">
 
             <h2>Galeria</h2>
                 <input type="hidden" value="{{$blog->id}}" id="galleryId">
