@@ -51,16 +51,21 @@
                         <label>Publico</label>
                       </div>
 
-                      <div class="input-field col l6 s12">
-                        <select name="service_id">            
+                      <div class="input-field col l4 s12">
+                        <select name="service_id" v-model="type">            
                           <option value="1" selected>Software</option>
                           <option value="2">Publico</option>                                    
                           <option value="3">Fotografía</option>                                    
                         </select>
                         <label>Tipo de servicio</label>
+                      </div>                      
+
+                      <div class="form-group  col l4 s12" v-if="type == 3">
+                        <label>Cantidad de fotos:</label>
+                        <input type="number" name="photos_quantity" class="form-control" v-model="quantity" >
                       </div>
 
-                      <div class="file-field input-field col l6 s12">
+                      <div class="file-field input-field col l4 s12">
                         <div class="btn">
                           <span>Imagen</span>
                           <input type="file" name="img" accept="image/x-png,image/gif,image/jpeg">
@@ -99,6 +104,7 @@
 
 @section('scripts')
   <script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>  
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://code.jquery.com/ui/1.9.1/jquery-ui.min.js" integrity="sha256-UezNdLBLZaG/YoRcr48I68gr8pb5gyTBM+di5P8p6t8=" crossorigin="anonymous"></script>  
   <script>
       // Replace the <textarea id="editor1"> with a CKEditor
@@ -195,7 +201,15 @@
 
   }
   
+  var app = new Vue({
+        el: '#app',
+        
 
+        data: {
+           type: 1,
+           quantity: 0,
+        },
+  });
   
 </script>
 @endsection

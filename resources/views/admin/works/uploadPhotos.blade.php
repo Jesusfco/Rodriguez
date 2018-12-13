@@ -48,7 +48,13 @@
                 <p>Añada sus imágenes</p>
 
                 <div class="opciones"> 
+
+                    
                     <button v-on:click="retryFiled" class="btn purple">Reintentar Carga</button>
+                    <label>
+                        <input type="checkbox" class="filled-in blue"  v-model="mark"/>
+                        <span>Colocar Marca de agua</span>
+                    </label>
                 </div>
 
 

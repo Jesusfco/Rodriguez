@@ -8,6 +8,7 @@ var app = new Vue({
     data: {
         formats: ['image/png', 'image/jpeg', 'image/jpg'],
         uploading: false,
+        mark: false,
         files: [],
         photos: [],
     },
@@ -53,6 +54,10 @@ var app = new Vue({
     },
 
     methods: {
+
+        check: function() {
+            console.log(this.mark);
+        },
         getFile: function() {
 
             var input = document.getElementById('files');
@@ -145,6 +150,7 @@ var app = new Vue({
             this.files[i].status = 1;
             var formD = new FormData();
             formD.append('image', this.files[i].formData);
+            formD.append('mark', this.mark);
 
 
             const config = {

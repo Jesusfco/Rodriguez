@@ -50,7 +50,7 @@
                         <label>Publico</label>
                       </div>
 
-                      <div class="input-field col l6 s12">
+                      <div class="input-field col l4 s12">
                         <select name="service_id" v-model="service">            
                           <option value="1">Software</option>
                           <option value="2">Multimedia</option>                                    
@@ -59,7 +59,12 @@
                         <label>Tipo de servicio</label>
                       </div>
 
-                      <div class="file-field input-field col l6 s12">
+                      <div class="form-group  col l4 s12" v-if="service == 3">
+                        <label>Cantidad de fotos:</label>
+                        <input type="number" name="photos_quantity" class="form-control" v-model="quantity" >
+                      </div>
+
+                      <div class="file-field input-field col l4 s12">
                         <div class="btn">
                           <span>Imagen</span>
                           <input type="file" name="img" accept="image/x-png,image/gif,image/jpeg">
@@ -141,7 +146,8 @@
              status: {{ $work->work_status_id }},
              public: {{ $work->public }},
              service: {{ $work->service_id }},             
-
+             
+            quantity: {{ $work->photos_quantityView() }},
       },      
 
      

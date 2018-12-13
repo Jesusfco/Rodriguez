@@ -197,6 +197,7 @@ class WorksController extends Controller
         ]);
 
         $img = $request->file('image');
+        $mark = $request->mark;
 
         // verificar nombre unico dentro de ese album
         $verify = Photo::where([
@@ -205,27 +206,49 @@ class WorksController extends Controller
                     ['type', 2]
                     ])->first();
 
-        if(isset($verify->id))  return response()->json(['error' => 'File Duplicate'], 403);
+        if($verify != NULL)  return response()->json(['error' => 'File Duplicate'], 403);
 
         ini_set('memory_limit', '420M');
         $file_route = $img->getClientOriginalName();
         $image = Image::make($img);
+        $work = Work::find($id);
 
-        if ($image->width() >= $image->height() && $image->width() > 1000) {            
+        if($work->service_id == 3) {
 
-            $image->resize(1000, null, function ($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-            });                        
+            if ($image->width() >= $image->height() && $image->width() > 800) {            
 
-        } else  if ($image->width() < $image->height() && $image->height() > 1000) {
-
-            $image->resize(null, 1000, function ($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-            });
+                $image->resize(800, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                });                        
+    
+            } else  if ($image->width() < $image->height() && $image->height() > 800) {
+    
+                $image->resize(null, 800, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                });
+                
+            } 
             
-        } 
+        } else {
+            if ($image->width() >= $image->height() && $image->width() > 1000) {            
+
+                $image->resize(1000, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                });                        
+    
+            } else  if ($image->width() < $image->height() && $image->height() > 1000) {
+    
+                $image->resize(null, 1000, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                });
+                
+            } 
+        }
+        
         
         $image->save('img/app/works/' . $id .'/' . $file_route);
 

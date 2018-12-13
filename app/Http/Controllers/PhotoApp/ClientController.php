@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\PhotoApp;
+namespace App\Http\Controllers\PhotoApp;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\AlbumClient;
-use App\AlbumImagesClient;
+use App\Work;
+use App\Photo;
 use App\User;
 use Auth;
 
@@ -21,58 +21,53 @@ class ClientController extends Controller
 
         $credentials = $request->only('email', 'password');
 
-        try {
-            if(!$token = JWTAuth::attempt($credentials)){
-                return response()->json([
-                    'error' => 'Credenciales Invalidas'
-                ], 401);
-            }
-        } catch (JWTException $e) {
-            return response()->json([
-                'error' => 'Could not create token!'
-            ], 500);
-        }        
-
-        $user = Auth::user();
+        if (Auth::attempt($credentials)) { 
+            $user = Auth::user();
         
-        return response()->json([
-                            'token' => $token,
-                            'user' => $user,
-                            ]);
+            return response()->json([
+                                'token' => $user->id,
+                                'user' => $user,
+                                ]);
+        } else {
+
+            return response()->json([
+                'error' => 'Credenciales Invalidas'
+            ], 401);
+
+        }
+
+       
         
     }
 
-    public function checkAuth() {
+    public function checkAuth(Request $re) {
         
-        $user = JWTAuth::parseToken()->authenticate();
+        $user = User::find($re->token);
+        if($user == NULL) 
+        return response()->json([
+            'error' => 'Credenciales Invalidas'
+        ], 402);
 
         return response()->json(['user' => $user]);
 
     }
 
-    public function getAlbums(){
+    public function getAlbums(Request $re){
 
-        $user = JWTAuth::parseToken()->authenticate();
-        $galerias = AlbumClient::where('client_id', $user->id)->orderBy('date','desc')->get();
-
-        return response()->json($galerias);
+        
+        $works = Work::where('user_id', $re->token)->orderBy('created_at','desc')->get();
+        return response()->json($works);
 
     }
 
     public function getPhotos($id) {
+        $work = Work::find($id);
+       
+        if($work != null)
+            return response()->json([ 'photos' => $work->photos(), 'album' => $work]);
+            
 
-        $user = JWTAuth::parseToken()->authenticate();
-        $galerias = AlbumClient::where('client_id', $user->id)->orderBy('date','desc')->get();
-
-        foreach($galerias as $g) {
-
-            if($g->id == $id){
-
-                $photos = AlbumImagesClient::where('album_clients_id', $id)->orderBy('path','desc')->get();
-                return response()->json([ 'photos' => $photos, 'album' => $g]);
-            }
-
-        }
+        
 
         return response()->json(['error' => 'Album Invalid'], 402);
 
@@ -82,27 +77,22 @@ class ClientController extends Controller
 
         $photos = $request->photos;
 
-        AlbumImagesClient::where('album_clients_id', $request->album_id)->update(['select' => 0]);
+        Photo::where([['foreign_id', $request->album_id] , ['type', 2]])->update(['select' => 0]);
 
         foreach($photos as $photo) {
 
             $photo = json_decode(json_encode($photo), FALSE);
 
             if($photo->select == true) {
-                $p = AlbumImagesClient::find($photo->id);
+                $p = Photo::find($photo->id);
                 $p->select = $photo->select;
                 $p->save();
             }
             
-        }
-
-        $album = AlbumClient::find($request->album_id);
-        $album->status = 2;
-        $album->save();
+        }        
 
         return response()->json('Seleccion Guardada');
-
-        // AlbumImagesClient::where('album_clients_id', $id)->orderBy('name','desc')->get();
+        
 
     }
     

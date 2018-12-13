@@ -17,6 +17,10 @@ class Work extends Model
         return $query->where('title', 'LIKE', "%$name%");
     }
 
+    public function photos_quantityView() {
+        if($this->photos_quantity == NULL) return 0;
+        return $this->photos_quantity;
+    }
     public function status() {
         if($this->work_status_id == 1) {
             return 'Planificación';
@@ -79,6 +83,10 @@ class Work extends Model
 
     public function parts(){
         return $this->hasMany('App\WorksPart', 'work_id', 'id');
+    }
+
+    public function photos() {
+        return Photo::where([['foreign_id', $this->id] , ['type', 2]])->get();
     }
     
 }
